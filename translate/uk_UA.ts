@@ -1,0 +1,1978 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="uk_UA">
+<context>
+    <name>AiAssistedAnnotationWidget</name>
+    <message>
+        <source>Polygon detail</source>
+        <translation>Деталізація полігона</translation>
+    </message>
+    <message>
+        <source>Smoother</source>
+        <translation>Плавніше</translation>
+    </message>
+    <message>
+        <source>More detail</source>
+        <translation>Більше деталей</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>Виведення</translation>
+    </message>
+    <message>
+        <source>Polygon</source>
+        <translation>Багатокутник</translation>
+    </message>
+    <message>
+        <source>Mask</source>
+        <translation>Маска</translation>
+    </message>
+    <message>
+        <source>Rectangle</source>
+        <translation>Прямокутник</translation>
+    </message>
+    <message>
+        <source>Oriented Rectangle</source>
+        <translation>Орієнтований прямокутник</translation>
+    </message>
+    <message>
+        <source>Circle</source>
+        <translation>Коло</translation>
+    </message>
+    <message>
+        <source>Output format: {format}</source>
+        <translation>Формат виведення: {format}</translation>
+    </message>
+    <message>
+        <source>AI-assisted annotation model</source>
+        <translation>Модель розмітки за допомогою AI</translation>
+    </message>
+    <message>
+        <source>AI-assisted annotation output format</source>
+        <translation>Формат виведення розмітки за допомогою AI</translation>
+    </message>
+    <message>
+        <source>Model</source>
+        <translation>Модель</translation>
+    </message>
+</context>
+<context>
+    <name>AiTextToAnnotationWidget</name>
+    <message>
+        <source>Run</source>
+        <translation>Запустити</translation>
+    </message>
+    <message>
+        <source>Score</source>
+        <translation>Оцінка</translation>
+    </message>
+    <message>
+        <source>IoU</source>
+        <translation>IoU</translation>
+    </message>
+    <message>
+        <source>Model</source>
+        <translation>Модель</translation>
+    </message>
+    <message>
+        <source>What to find</source>
+        <translation>Що знайти</translation>
+    </message>
+    <message>
+        <source>Prompt</source>
+        <translation>Запит</translation>
+    </message>
+    <message>
+        <source>Finding…</source>
+        <translation>Пошук…</translation>
+    </message>
+    <message>
+        <source>AI-Find All model</source>
+        <translation>Модель AI-Find All</translation>
+    </message>
+</context>
+<context>
+    <name>AiToolGroup</name>
+    <message>
+        <source>Options</source>
+        <translation>Параметри</translation>
+    </message>
+    <message>
+        <source>AI-Segment</source>
+        <translation>AI-Segment</translation>
+    </message>
+    <message>
+        <source>AI-Find All</source>
+        <translation>AI-Find All</translation>
+    </message>
+</context>
+<context>
+    <name>AnnotationFolderFooter</name>
+    <message>
+        <source>Annotation Folder</source>
+        <translation>Папка анотацій</translation>
+    </message>
+    <message>
+        <source>Next to Images</source>
+        <translation>Поруч із зображеннями</translation>
+    </message>
+    <message>
+        <source>Change Annotation Folder…</source>
+        <translation>Змінити папку анотацій…</translation>
+    </message>
+    <message>
+        <source>{annotated} of {total} annotated in</source>
+        <translation>{annotated} з {total} з анотаціями в</translation>
+    </message>
+    <message>
+        <source>Not found: %s · next to images</source>
+        <translation>Не знайдено: %s · поруч із зображеннями</translation>
+    </message>
+    <message>
+        <source>{annotated} of {total} annotated · next to images</source>
+        <translation>{annotated} з {total} з анотаціями · поруч із зображеннями</translation>
+    </message>
+</context>
+<context>
+    <name>BrightnessContrastDialog</name>
+    <message>
+        <source>Brightness/Contrast</source>
+        <translation>Яскравість/Контраст</translation>
+    </message>
+    <message>
+        <source>Brightness:</source>
+        <translation>Яскравість:</translation>
+    </message>
+    <message>
+        <source>Contrast:</source>
+        <translation>Контраст:</translation>
+    </message>
+</context>
+<context>
+    <name>Canvas</name>
+    <message>
+        <source>ESC to cancel</source>
+        <translation>ESC для скасування</translation>
+    </message>
+    <message>
+        <source>Enter or Space to finalize</source>
+        <translation>Enter або пробіл для завершення</translation>
+    </message>
+    <message>
+        <source>Editing shapes</source>
+        <translation>Редагування фігур</translation>
+    </message>
+    <message>
+        <source>Type what to find in AI-Find All, or click the first corner of a box around one example</source>
+        <translation>Введіть в AI-Find All, що потрібно знайти, або клацніть перший кут рамки навколо одного прикладу</translation>
+    </message>
+    <message>
+        <source>Click the opposite corner to exclude objects like this one</source>
+        <translation>Натисніть протилежний кут, щоб виключити об&apos;єкти, схожі на цей</translation>
+    </message>
+    <message>
+        <source>Click the opposite corner to find every object like this one</source>
+        <translation>Клацніть протилежний кут, щоб знайти всі такі самі об’єкти</translation>
+    </message>
+    <message>
+        <source>Click start point for line</source>
+        <translation>Натисніть початкову точку лінії</translation>
+    </message>
+    <message>
+        <source>Click end point for line</source>
+        <translation>Натисніть кінцеву точку лінії</translation>
+    </message>
+    <message>
+        <source>Click start point for linestrip</source>
+        <translation>Натисніть початкову точку для лінії</translation>
+    </message>
+    <message>
+        <source>Hold %s and click to add a point on the edge</source>
+        <translation>Утримуйте %s і клацніть, щоб додати точку на ребрі</translation>
+    </message>
+    <message>
+        <source>Drag a box</source>
+        <translation>Перетягніть рамку</translation>
+    </message>
+    <message>
+        <source>Drag around one example</source>
+        <translation>Обведіть рамкою один приклад</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Відхилити</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Додати</translation>
+    </message>
+    <message>
+        <source>Click to include</source>
+        <translation>Клацніть, щоб включити</translation>
+    </message>
+    <message>
+        <source>Click to exclude</source>
+        <translation>Клацніть, щоб виключити</translation>
+    </message>
+    <message>
+        <source>Add %d</source>
+        <translation>Додати %d</translation>
+    </message>
+    <message>
+        <source>Drag to exclude</source>
+        <translation>Перетягніть, щоб виключити</translation>
+    </message>
+    <message>
+        <source>Click center point for circle</source>
+        <translation>Натисніть центральну точку для кола</translation>
+    </message>
+    <message>
+        <source>Click points to include, hold %s and click to exclude, or drag a box. Hold %s and click to finish.</source>
+        <translation>Клацайте точки, щоб включити, утримуйте %s і клацніть, щоб виключити, або перетягніть рамку. Утримуйте %s і клацніть, щоб завершити.</translation>
+    </message>
+    <message>
+        <source>Enter adds the results, Esc discards them. Hold %s and draw a box to exclude objects like it.</source>
+        <translation>Enter додає результати, Esc відхиляє їх. Утримуючи %s, намалюйте рамку, щоб виключити схожі об&apos;єкти.</translation>
+    </message>
+    <message>
+        <source>Click point on circumference for circle</source>
+        <translation>Натисніть точку на окружності для кола</translation>
+    </message>
+    <message>
+        <source>Click first corner for rectangle</source>
+        <translation>Натисніть перший кут для прямокутника</translation>
+    </message>
+    <message>
+        <source>Choose the other corner. Hold Shift for a square.</source>
+        <translation>Виберіть інший кут. Утримуйте Shift, щоб намалювати квадрат.</translation>
+    </message>
+    <message>
+        <source>Click to add point</source>
+        <translation>Натисніть, щоб додати точку</translation>
+    </message>
+    <message>
+        <source>Click &amp; drag to move point</source>
+        <translation>Натисніть і перетягніть, щоб перемістити точку</translation>
+    </message>
+    <message>
+        <source>Shape is locked</source>
+        <translation>Фігуру заблоковано</translation>
+    </message>
+    <message>
+        <source>Click &amp; drag to move shape</source>
+        <translation>Натисніть і перетягніть, щоб перемістити фігуру</translation>
+    </message>
+    <message>
+        <source>Click the next point, or hold %s and click to finish the LineStrip</source>
+        <translation>Клацніть наступну точку або утримуйте %s і клацніть, щоб завершити ламану</translation>
+    </message>
+    <message>
+        <source>Click first corner for oriented rectangle</source>
+        <translation>Натисніть перший кут для орієнтованого прямокутника</translation>
+    </message>
+    <message>
+        <source>Click second corner to set orientation</source>
+        <translation>Натисніть другий кут для задання орієнтації</translation>
+    </message>
+    <message>
+        <source>Click third corner to close oriented rectangle</source>
+        <translation>Натисніть третій кут для замикання орієнтованого прямокутника</translation>
+    </message>
+    <message>
+        <source>Hold %s and click to delete the point</source>
+        <translation>Утримуйте %s і клацніть, щоб видалити точку</translation>
+    </message>
+    <message>
+        <source>Click &amp; drag to rotate the shape</source>
+        <translation>Натисніть і перетягніть, щоб обертати фігуру</translation>
+    </message>
+    <message>
+        <source>Click first point on circumference for circle</source>
+        <translation>Натисніть першу точку на окружності для кола</translation>
+    </message>
+    <message>
+        <source>Click second point on circumference for circle</source>
+        <translation>Натисніть другу точку на окружності для кола</translation>
+    </message>
+    <message>
+        <source>Click third point on circumference to finish circle</source>
+        <translation>Натисніть третю точку на окружності для завершення кола</translation>
+    </message>
+</context>
+<context>
+    <name>ConversionDetailDialog</name>
+    <message>
+        <source>Polygon detail</source>
+        <translation>Деталізація полігона</translation>
+    </message>
+    <message>
+        <source>Smoother</source>
+        <translation>Плавніше</translation>
+    </message>
+    <message>
+        <source>More detail</source>
+        <translation>Більше деталей</translation>
+    </message>
+    <message>
+        <source>Convert</source>
+        <translation>Перетворити</translation>
+    </message>
+</context>
+<context>
+    <name>EmptyStateWidget</name>
+    <message>
+        <source>Start annotating</source>
+        <translation>Почати анотування</translation>
+    </message>
+    <message>
+        <source>Open an image or a folder of images to begin.</source>
+        <translation>Щоб почати, відкрийте зображення або папку із зображеннями.</translation>
+    </message>
+    <message>
+        <source>Or drag and drop image files here</source>
+        <translation>Або перетягніть файли зображень сюди</translation>
+    </message>
+</context>
+<context>
+    <name>LabelDialog</name>
+    <message>
+        <source>Shape Label</source>
+        <translation>Мітка фігури</translation>
+    </message>
+    <message>
+        <source>Enter object label</source>
+        <translation>Введіть мітку об’єкта</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Мітка</translation>
+    </message>
+    <message>
+        <source>Group ID</source>
+        <translation>ID групи</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Опис</translation>
+    </message>
+</context>
+<context>
+    <name>MainWindow</name>
+    <message>
+        <source>Save automatically</source>
+        <translation>Зберегти автоматично</translation>
+    </message>
+    <message>
+        <source>Change Annotation &amp;Folder…</source>
+        <translation>З&amp;мінити папку анотацій…</translation>
+    </message>
+    <message>
+        <source>&amp;Close</source>
+        <translation>За&amp;крити</translation>
+    </message>
+    <message>
+        <source>Close current file</source>
+        <translation>Закрити поточний файл</translation>
+    </message>
+    <message>
+        <source>Keep Previous Annotation</source>
+        <translation>Зберегти попередню анотацію</translation>
+    </message>
+    <message>
+        <source>Toggle &quot;keep previous annotation&quot; mode</source>
+        <translation>Увімкнути режим «зберегти попередню анотацію»</translation>
+    </message>
+    <message>
+        <source>Keep Previous Brightness/Contrast</source>
+        <translation>Зберегти попередню яскравість/контраст</translation>
+    </message>
+    <message>
+        <source>Delete Shapes</source>
+        <translation>Видалити фігури</translation>
+    </message>
+    <message>
+        <source>Delete the selected shapes</source>
+        <translation>Видалити вибрані фігури</translation>
+    </message>
+    <message>
+        <source>Modify the label of the selected shape</source>
+        <translation>Змінити мітку вибраної фігури</translation>
+    </message>
+    <message>
+        <source>Copy to Clipboard</source>
+        <translation>Копіювати в буфер обміну</translation>
+    </message>
+    <message>
+        <source>Place the selected shapes on the clipboard</source>
+        <translation>Помістити вибрані фігури в буфер обміну</translation>
+    </message>
+    <message>
+        <source>Paste from Clipboard</source>
+        <translation>Вставити з буфера обміну</translation>
+    </message>
+    <message>
+        <source>Duplicate Shapes</source>
+        <translation>Дублювати фігури</translation>
+    </message>
+    <message>
+        <source>Create a duplicate of the selected shapes</source>
+        <translation>Створити дублікат вибраних фігур</translation>
+    </message>
+    <message>
+        <source>Merge Shapes</source>
+        <translation>Об&apos;єднати фігури</translation>
+    </message>
+    <message>
+        <source>Merge the selected mask shapes into one</source>
+        <translation>Об&apos;єднати вибрані фігури-маски в одну</translation>
+    </message>
+    <message>
+        <source>Replace the selected shapes with their bounding boxes</source>
+        <translation>Замінити вибрані фігури їхніми обмежувальними рамками</translation>
+    </message>
+    <message>
+        <source>Convert the selected shapes to linestrips</source>
+        <translation>Перетворити вибрані фігури на LineStrip</translation>
+    </message>
+    <message>
+        <source>Lock Shapes</source>
+        <translation>Заблокувати фігури</translation>
+    </message>
+    <message>
+        <source>Lock the selected shapes against editing, or unlock them</source>
+        <translation>Заблокувати вибрані фігури від редагування або розблокувати їх</translation>
+    </message>
+    <message>
+        <source>Undo last drawn point</source>
+        <translation>Скасувати останню намальовану точку</translation>
+    </message>
+    <message>
+        <source>Undo last add and edit of shape</source>
+        <translation>Скасувати останнє додавання та редагування фігури</translation>
+    </message>
+    <message>
+        <source>Start drawing polygons</source>
+        <translation>Почніть малювати багатокутники</translation>
+    </message>
+    <message>
+        <source>Edit Shapes</source>
+        <translation>Редагувати фігури</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <comment>toolbar</comment>
+        <translation>Вибрати</translation>
+    </message>
+    <message>
+        <source>Move and edit the selected shapes</source>
+        <translation>Перемістити і відредагувати вибрані фігури</translation>
+    </message>
+    <message>
+        <source>Start drawing rectangles</source>
+        <translation>Почніть малювати прямокутники</translation>
+    </message>
+    <message>
+        <source>Start drawing circles</source>
+        <translation>Почніть малювати кола</translation>
+    </message>
+    <message>
+        <source>Start drawing lines</source>
+        <translation>Почніть малювати лінії</translation>
+    </message>
+    <message>
+        <source>Start drawing points</source>
+        <translation>Почніть малювати точки</translation>
+    </message>
+    <message>
+        <source>AI-Segment</source>
+        <translation>AI-Segment</translation>
+    </message>
+    <message>
+        <source>Click points or drag a box to segment one object; hold %s and click to finish.</source>
+        <translation>Клацайте точки або перетягніть рамку, щоб сегментувати один об&apos;єкт; утримуйте %s і клацніть, щоб завершити.</translation>
+    </message>
+    <message>
+        <source>&amp;Next Image</source>
+        <translation>&amp;Наступне зображення</translation>
+    </message>
+    <message>
+        <source>Zoom to the selected shapes whenever the selection changes</source>
+        <translation>Масштабувати за вибраними фігурами під час кожної зміни виділення</translation>
+    </message>
+    <message>
+        <source>Adjust brightness and contrast</source>
+        <translation>Відрегулювати яскравість і контраст</translation>
+    </message>
+    <message>
+        <source>Zoom &amp;In</source>
+        <translation>&amp;Збільшити</translation>
+    </message>
+    <message>
+        <source>&amp;Zoom Out</source>
+        <translation>З&amp;меншити</translation>
+    </message>
+    <message>
+        <source>Reset Layout</source>
+        <translation>Скинути макет</translation>
+    </message>
+    <message>
+        <source>Fill Drawing Polygon</source>
+        <translation>Заливка багатокутника при малюванні</translation>
+    </message>
+    <message>
+        <source>Fill polygon while drawing</source>
+        <translation>Заповнювати багатокутник під час малювання</translation>
+    </message>
+    <message>
+        <source>Hide all shapes</source>
+        <translation>Приховати всі фігури</translation>
+    </message>
+    <message>
+        <source>Show all shapes</source>
+        <translation>Показати всі фігури</translation>
+    </message>
+    <message>
+        <source>Toggle all shapes</source>
+        <translation>Переключити всі фігури</translation>
+    </message>
+    <message>
+        <source>Select Shape Above</source>
+        <translation>Вибрати фігуру вище</translation>
+    </message>
+    <message>
+        <source>Select the nearest shape above the selection</source>
+        <translation>Вибрати найближчу фігуру над виділенням</translation>
+    </message>
+    <message>
+        <source>Select Shape Below</source>
+        <translation>Вибрати фігуру нижче</translation>
+    </message>
+    <message>
+        <source>Select the nearest shape below the selection</source>
+        <translation>Вибрати найближчу фігуру під виділенням</translation>
+    </message>
+    <message>
+        <source>Select Shape to the Left</source>
+        <translation>Вибрати фігуру ліворуч</translation>
+    </message>
+    <message>
+        <source>Select the nearest shape left of the selection</source>
+        <translation>Вибрати найближчу фігуру ліворуч від виділення</translation>
+    </message>
+    <message>
+        <source>Select Shape to the Right</source>
+        <translation>Вибрати фігуру праворуч</translation>
+    </message>
+    <message>
+        <source>Select the nearest shape right of the selection</source>
+        <translation>Вибрати найближчу фігуру праворуч від виділення</translation>
+    </message>
+    <message>
+        <source>Zoom</source>
+        <translation>Збільшити</translation>
+    </message>
+    <message>
+        <source>Fit to Window</source>
+        <translation>Припасувати вікно</translation>
+    </message>
+    <message>
+        <source>Image Polygonal Annotation with Python</source>
+        <translation>Полігональна анотація зображень на Python</translation>
+    </message>
+    <message>
+        <source>Version: %s</source>
+        <translation>Версія: %s</translation>
+    </message>
+    <message>
+        <source>Author: %s</source>
+        <translation>Автор: %s</translation>
+    </message>
+    <message>
+        <source>Homepage</source>
+        <translation>Сайт</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Документація</translation>
+    </message>
+    <message>
+        <source>Troubleshooting</source>
+        <translation>Усунення несправностей</translation>
+    </message>
+    <message>
+        <source>&amp;About %s</source>
+        <translation>П&amp;ро %s</translation>
+    </message>
+    <message>
+        <source>About %s</source>
+        <translation>Про %s</translation>
+    </message>
+    <message>
+        <source>&amp;Save</source>
+        <translation>&amp;Зберегти</translation>
+    </message>
+    <message>
+        <source>Save the annotation file</source>
+        <translation>Зберегти файл анотацій</translation>
+    </message>
+    <message>
+        <source>Save the annotation file under a new name</source>
+        <translation>Зберегти файл анотацій під новою назвою</translation>
+    </message>
+    <message>
+        <source>Embed Image in Annotation File</source>
+        <translation>Вбудувати зображення у файл анотацій</translation>
+    </message>
+    <message>
+        <source>Store a copy of the image inside the annotation file</source>
+        <translation>Зберігає копію зображення всередині файлу анотацій</translation>
+    </message>
+    <message>
+        <source>Choose where annotation files are read and saved</source>
+        <translation>Вибрати, де читати й зберігати файли анотацій</translation>
+    </message>
+    <message>
+        <source>&amp;Open File…</source>
+        <translation>&amp;Відкрити файл…</translation>
+    </message>
+    <message>
+        <source>Open an image or annotation file</source>
+        <translation>Відкрити зображення або файл анотацій</translation>
+    </message>
+    <message>
+        <source>Open Folder…</source>
+        <translation>Відкрити папку…</translation>
+    </message>
+    <message>
+        <source>Open a folder of images</source>
+        <translation>Відкрити папку із зображеннями</translation>
+    </message>
+    <message>
+        <source>&amp;Delete Annotation File</source>
+        <translation>Видалити &amp;файл анотацій</translation>
+    </message>
+    <message>
+        <source>Delete File</source>
+        <comment>toolbar</comment>
+        <translation>Видалити файл</translation>
+    </message>
+    <message>
+        <source>Delete the current annotation file</source>
+        <translation>Видалити поточний файл анотацій</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <comment>toolbar</comment>
+        <translation>Видалити</translation>
+    </message>
+    <message>
+        <source>&amp;Edit Label…</source>
+        <translation>&amp;Редагувати мітку…</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <comment>toolbar</comment>
+        <translation>Дублювати</translation>
+    </message>
+    <message>
+        <source>Convert the selected shapes to polygons</source>
+        <translation>Перетворити вибрані фігури на багатокутники</translation>
+    </message>
+    <message>
+        <source>Convert the selected shapes to oriented rectangles</source>
+        <translation>Перетворити вибрані фігури на орієнтовані прямокутники</translation>
+    </message>
+    <message>
+        <source>Convert the selected shapes to circles</source>
+        <translation>Перетворити вибрані фігури на кола</translation>
+    </message>
+    <message>
+        <source>Convert the selected shapes to lines</source>
+        <translation>Перетворити вибрані фігури на лінії</translation>
+    </message>
+    <message>
+        <source>Convert the selected shapes to points</source>
+        <translation>Перетворити вибрані фігури на точки</translation>
+    </message>
+    <message>
+        <source>Mask</source>
+        <translation>Маска</translation>
+    </message>
+    <message>
+        <source>Convert the selected shapes to masks</source>
+        <translation>Перетворити вибрані фігури на маски</translation>
+    </message>
+    <message>
+        <source>Convert To</source>
+        <translation>Перетворити на</translation>
+    </message>
+    <message>
+        <source>Undo Last Point</source>
+        <translation>Скасувати останню точку</translation>
+    </message>
+    <message>
+        <source>Undo</source>
+        <translation>Скасувати</translation>
+    </message>
+    <message>
+        <source>Delete Selected Point</source>
+        <translation>Видалити вибрану точку</translation>
+    </message>
+    <message>
+        <source>Delete the selected point from the polygon or LineStrip</source>
+        <translation>Видаляє вибрану точку з багатокутника або ламаної</translation>
+    </message>
+    <message>
+        <source>Click to place LineStrip points; hold %s and click to place the last one.</source>
+        <translation>Клацайте, щоб ставити точки ламаної; утримуйте %s і клацніть, щоб поставити останню.</translation>
+    </message>
+    <message>
+        <source>AI-Find All</source>
+        <translation>AI-Find All</translation>
+    </message>
+    <message>
+        <source>Find every object that matches the text prompt or an example box</source>
+        <translation>Знайти всі об’єкти, що відповідають текстовому запиту або рамці-прикладу</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <comment>toolbar</comment>
+        <translation>Далі</translation>
+    </message>
+    <message>
+        <source>Open the next image (hold %s to copy the current Shapes)</source>
+        <translation>Відкрити наступне зображення (утримуйте %s, щоб скопіювати поточні фігури)</translation>
+    </message>
+    <message>
+        <source>&amp;Previous Image</source>
+        <translation>&amp;Попереднє зображення</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <comment>toolbar</comment>
+        <translation>Назад</translation>
+    </message>
+    <message>
+        <source>Open the previous image (hold %s to copy the current Shapes)</source>
+        <translation>Відкрити попереднє зображення (утримуйте %s, щоб скопіювати поточні фігури)</translation>
+    </message>
+    <message>
+        <source>&amp;Brightness/Contrast…</source>
+        <translation>&amp;Яскравість/Контраст…</translation>
+    </message>
+    <message>
+        <source>&amp;Hide Shapes</source>
+        <translation>&amp;Приховати фігури</translation>
+    </message>
+    <message>
+        <source>&amp;Show Shapes</source>
+        <translation>Показати &amp;фігури</translation>
+    </message>
+    <message>
+        <source>&amp;Toggle Shapes</source>
+        <translation>П&amp;ереключити фігури</translation>
+    </message>
+    <message>
+        <source>&amp;Quit</source>
+        <translation>В&amp;ийти</translation>
+    </message>
+    <message>
+        <source>Quit application</source>
+        <translation>Вийти з програми</translation>
+    </message>
+    <message>
+        <source>AI Models…</source>
+        <translation>Моделі ШІ…</translation>
+    </message>
+    <message>
+        <source>Download or delete AI models</source>
+        <translation>Завантажити або видалити моделі ШІ</translation>
+    </message>
+    <message>
+        <source>&amp;Tutorial</source>
+        <translation>&amp;Посібник</translation>
+    </message>
+    <message>
+        <source>Show tutorial page</source>
+        <translation>Показати сторінку підручника</translation>
+    </message>
+    <message>
+        <source>&amp;File</source>
+        <translation>&amp;Файл</translation>
+    </message>
+    <message>
+        <source>&amp;Edit</source>
+        <translation>&amp;Редагувати</translation>
+    </message>
+    <message>
+        <source>&amp;View</source>
+        <translation>&amp;Переглянути</translation>
+    </message>
+    <message>
+        <source>&amp;Help</source>
+        <translation>&amp;Довідка</translation>
+    </message>
+    <message>
+        <source>Tools</source>
+        <translation>Інструменти</translation>
+    </message>
+    <message>
+        <source>More tools</source>
+        <translation>Інші інструменти</translation>
+    </message>
+    <message>
+        <source>Shape Tools</source>
+        <translation>Інструменти фігур</translation>
+    </message>
+    <message>
+        <source>More shape tools</source>
+        <translation>Інші інструменти фігур</translation>
+    </message>
+    <message>
+        <source>Retry</source>
+        <translation>Повторити</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Прапори</translation>
+    </message>
+    <message>
+        <source>Shape List</source>
+        <translation>Список фігур</translation>
+    </message>
+    <message>
+        <source>Label List</source>
+        <translation>Список міток</translation>
+    </message>
+    <message>
+        <source>Search Filename</source>
+        <translation>Пошук імені файлу</translation>
+    </message>
+    <message>
+        <source>Invalid regular expression. Previous search kept.</source>
+        <translation>Некоректний регулярний вираз. Збережено попередній пошук.</translation>
+    </message>
+    <message>
+        <source>Image List</source>
+        <translation>Список зображень</translation>
+    </message>
+    <message>
+        <source>Command-line settings</source>
+        <translation>Налаштування командного рядка</translation>
+    </message>
+    <message>
+        <source>Continue with Defaults</source>
+        <translation>Продовжити з типовими налаштуваннями</translation>
+    </message>
+    <message>
+        <source>Back Up and Reset</source>
+        <translation>Створити копію та скинути</translation>
+    </message>
+    <message>
+        <source>Saving…</source>
+        <translation>Збереження…</translation>
+    </message>
+    <message>
+        <source>Type what to find</source>
+        <translation>Введіть, що потрібно знайти</translation>
+    </message>
+    <message>
+        <source>Finding matches on CPU…</source>
+        <translation>Пошук збігів на ЦП…</translation>
+    </message>
+    <message>
+        <source>Finding matches…</source>
+        <translation>Пошук збігів…</translation>
+    </message>
+    <message>
+        <source>Mask Output Unavailable</source>
+        <translation>Вивід маски недоступний</translation>
+    </message>
+    <message>
+        <source>The Annotation File belongs to another Image: %s</source>
+        <translation>Файл анотацій належить іншому зображенню: %s</translation>
+    </message>
+    <message>
+        <source>Open Folder</source>
+        <translation>Відкрити папку</translation>
+    </message>
+    <message>
+        <source>Invalid label &apos;{}&apos; with validation type &apos;{}&apos;</source>
+        <translation>Недійсна мітка &quot;{}&quot; з типом перевірки &quot;{}&quot;</translation>
+    </message>
+    <message>
+        <source>Unlock Shapes</source>
+        <translation>Розблокувати фігури</translation>
+    </message>
+    <message>
+        <source>Saved</source>
+        <translation>Збережено</translation>
+    </message>
+    <message>
+        <source>Save failed</source>
+        <translation>Не вдалося зберегти</translation>
+    </message>
+    <message>
+        <source>Error Saving Annotation File</source>
+        <translation>Помилка збереження файлу анотацій</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;%s&lt;/b&gt;</source>
+        <translation>&lt;b&gt;%s&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>AI inference failed: %s</source>
+        <translation>Інференс ШІ не вдався: %s</translation>
+    </message>
+    <message>
+        <source>Fit to Selection</source>
+        <translation>За виділенням</translation>
+    </message>
+    <message>
+        <source>Large image requires more memory</source>
+        <translation>Для великого зображення потрібно більше пам’яті</translation>
+    </message>
+    <message>
+        <source>The image is {width}x{height} pixels and needs at least about {required} MB to decode, above the current {limit} MB safety limit. Opening it may temporarily make Labelme or other applications less responsive.</source>
+        <translation>Розмір зображення — {width}x{height} пікселів, і для декодування потрібно щонайменше близько {required} МБ, що перевищує поточну безпечну межу в {limit} МБ. Під час відкриття Labelme або інші програми можуть тимчасово працювати повільніше.</translation>
+    </message>
+    <message>
+        <source>Open Anyway</source>
+        <translation>Усе одно відкрити</translation>
+    </message>
+    <message>
+        <source>No such file: &lt;b&gt;%s&lt;/b&gt;</source>
+        <translation>Такого файлу немає: &lt;b&gt;%s&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>Loading %s...</source>
+        <translation>Завантаження %s...</translation>
+    </message>
+    <message>
+        <source>Loaded %s</source>
+        <translation>Завантажено %s</translation>
+    </message>
+    <message>
+        <source>Images and annotation files (%s)</source>
+        <translation>Зображення та файли анотацій (%s)</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Видалити</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Скасувати</translation>
+    </message>
+    <message>
+        <source>Unsaved changes</source>
+        <translation>Незбережені зміни</translation>
+    </message>
+    <message>
+        <source>Download {model}</source>
+        <translation>Завантажити {model}</translation>
+    </message>
+    <message>
+        <source>The selected annotation file could not be opened: {path}</source>
+        <translation>Не вдалося відкрити вибраний файл анотацій: {path}</translation>
+    </message>
+    <message>
+        <source>Annotation Folder not found: %s</source>
+        <translation>Папку анотацій не знайдено: %s</translation>
+    </message>
+    <message>
+        <source>The image is too large to open: {width}x{height} pixels exceeds the {max_side} pixel per-side limit of the raster engine. Raising the decode limit will not help. Split the image into tiles (for example with gdal_retile.py) or open a smaller copy.</source>
+        <translation>Зображення завелике, щоб його відкрити: {width}x{height} пікселів перевищує обмеження растрового рушія у {max_side} пікселів на сторону. Збільшення ліміту декодування не допоможе. Розбийте зображення на плитки (наприклад, за допомогою gdal_retile.py) або відкрийте меншу копію.</translation>
+    </message>
+    <message>
+        <source>The image is too large to open: {width}x{height} pixels needs about {required} MB, but the decode limit is {limit} MB. Split the image into tiles (for example with gdal_retile.py) or open a smaller copy.</source>
+        <translation>Зображення завелике, щоб його відкрити: {width}x{height} пікселів потребує близько {required} МБ, але ліміт декодування становить {limit} МБ. Розбийте зображення на плитки (наприклад, за допомогою gdal_retile.py) або відкрийте меншу копію.</translation>
+    </message>
+    <message>
+        <source>Polygon</source>
+        <translation>Багатокутник</translation>
+    </message>
+    <message>
+        <source>Save &amp;As…</source>
+        <translation>Зберегти &amp;як…</translation>
+    </message>
+    <message>
+        <source>Save Au&amp;tomatically</source>
+        <translation>&amp;Автоматично зберегти</translation>
+    </message>
+    <message>
+        <source>Insert the clipboard shapes into this image</source>
+        <translation>Вставити фігури з буфера обміну в це зображення</translation>
+    </message>
+    <message>
+        <source>Rectangle</source>
+        <translation>Прямокутник</translation>
+    </message>
+    <message>
+        <source>Circle</source>
+        <translation>Коло</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Лінія</translation>
+    </message>
+    <message>
+        <source>Point</source>
+        <translation>Точка</translation>
+    </message>
+    <message>
+        <source>LineStrip</source>
+        <translation>LineStrip</translation>
+    </message>
+    <message>
+        <source>Fit to &amp;Window</source>
+        <translation>Припасувати &amp;вікно</translation>
+    </message>
+    <message>
+        <source>Keep the whole image visible when the window is resized</source>
+        <translation>Усе зображення залишається видимим під час зміни розміру вікна</translation>
+    </message>
+    <message>
+        <source>Fit to S&amp;election</source>
+        <translation>З&amp;а виділенням</translation>
+    </message>
+    <message>
+        <source>Make the image appear larger</source>
+        <translation>Показати зображення більшим</translation>
+    </message>
+    <message>
+        <source>Make the image appear smaller</source>
+        <translation>Показати зображення меншим</translation>
+    </message>
+    <message>
+        <source>&amp;Actual Size</source>
+        <translation>&amp;Реальний розмір</translation>
+    </message>
+    <message>
+        <source>Show the image at 100%</source>
+        <translation>Показати зображення в масштабі 100%</translation>
+    </message>
+    <message>
+        <source>Choose a label to start drawing with it. Press &apos;Esc&apos; to clear the selection.</source>
+        <translation>Виберіть мітку, щоб почати малювати нею. Натисніть &apos;Esc&apos;, щоб зняти виділення.</translation>
+    </message>
+    <message>
+        <source>Your settings couldn’t be loaded.</source>
+        <translation>Не вдалося завантажити ваші налаштування.</translation>
+    </message>
+    <message>
+        <source>You can use default settings for now. Resetting saves a backup of your configuration file first.</source>
+        <translation>Поки що можна використовувати типові налаштування. Перед скиданням буде збережено резервну копію вашого файлу конфігурації.</translation>
+    </message>
+    <message>
+        <source>Could not reset the Config File.
+%s</source>
+        <translation>Не вдалося скинути файл конфігурації.
+%s</translation>
+    </message>
+    <message>
+        <source>Configuration backup saved to %s</source>
+        <translation>Резервну копію конфігурації збережено в %s</translation>
+    </message>
+    <message>
+        <source>Finding all &apos;{query}&apos;…</source>
+        <translation>Пошук усіх «{query}»…</translation>
+    </message>
+    <message>
+        <source>Finding all &apos;{query}&apos; on CPU…</source>
+        <translation>Пошук усіх «{query}» на ЦП…</translation>
+    </message>
+    <message>
+        <source>Segmenting on CPU…</source>
+        <translation>Сегментація на ЦП…</translation>
+    </message>
+    <message>
+        <source>Segmenting…</source>
+        <translation>Сегментація…</translation>
+    </message>
+    <message>
+        <source>Found {count} new &apos;{query}&apos;</source>
+        <translation>Знайдено нових «{query}»: {count}</translation>
+    </message>
+    <message>
+        <source>%s only detects bounding boxes and cannot create &apos;%s&apos; Shapes.
+
+Switch the AI-Find All model to &apos;SAM 3&apos;, or set the output format to &apos;Rectangle&apos;.</source>
+        <translation>%s виявляє лише обмежувальні рамки й не може створювати фігури &apos;%s&apos;.
+
+Перемкніть модель AI-Find All на &apos;SAM 3&apos; або встановіть формат виводу &apos;Rectangle&apos;.</translation>
+    </message>
+    <message>
+        <source>Starting AI…</source>
+        <translation>Запуск ШІ…</translation>
+    </message>
+    <message>
+        <source>Loading {model}…</source>
+        <translation>Завантаження {model}…</translation>
+    </message>
+    <message>
+        <source>{status} · {seconds} s</source>
+        <translation>{status} · {seconds} с</translation>
+    </message>
+    <message>
+        <source>No new &apos;{query}&apos; found</source>
+        <translation>Нових «{query}» не знайдено</translation>
+    </message>
+    <message>
+        <source>Select at least two mask shapes to merge</source>
+        <translation>Виберіть щонайменше дві фігури-маски для об&apos;єднання</translation>
+    </message>
+    <message>
+        <source>Only mask shapes can be merged</source>
+        <translation>Об&apos;єднувати можна лише фігури-маски</translation>
+    </message>
+    <message>
+        <source>Unlock the selected shapes to merge them</source>
+        <translation>Розблокуйте вибрані фігури, щоб об&apos;єднати їх</translation>
+    </message>
+    <message>
+        <source>Only shapes with the same label can be merged</source>
+        <translation>Об&apos;єднувати можна лише фігури з однаковою міткою</translation>
+    </message>
+    <message>
+        <source>Select shapes to convert</source>
+        <translation>Виберіть фігури для перетворення</translation>
+    </message>
+    <message>
+        <source>The selected shapes are already this kind</source>
+        <translation>Вибрані фігури вже цього типу</translation>
+    </message>
+    <message>
+        <source>Converting to oriented rectangles isn’t supported</source>
+        <translation>Перетворення на орієнтовані прямокутники не підтримується</translation>
+    </message>
+    <message>
+        <source>Converting to circles isn’t supported</source>
+        <translation>Перетворення на кола не підтримується</translation>
+    </message>
+    <message>
+        <source>Converting to points isn’t supported</source>
+        <translation>Перетворення на точки не підтримується</translation>
+    </message>
+    <message>
+        <source>A linestrip needs at least 3 points to become a polygon</source>
+        <translation>Щоб стати багатокутником, LineStrip потребує щонайменше 3 точок</translation>
+    </message>
+    <message>
+        <source>A linestrip needs exactly 2 points to become a line</source>
+        <translation>Щоб стати лінією, LineStrip потребує рівно 2 точок</translation>
+    </message>
+    <message>
+        <source>A shape with no area has no bounding box</source>
+        <translation>Фігура без площі не має обмежувальної рамки</translation>
+    </message>
+    <message>
+        <source>A shape with no area in the image can’t be converted</source>
+        <translation>Фігуру без площі на зображенні не можна перетворити</translation>
+    </message>
+    <message>
+        <source>Unlock the selected shapes to convert them</source>
+        <translation>Розблокуйте вибрані фігури, щоб перетворити їх</translation>
+    </message>
+    <message>
+        <source>Remove from Label List</source>
+        <translation>Видалити зі списку міток</translation>
+    </message>
+    <message>
+        <source>Clear Unused Labels</source>
+        <translation>Очистити невикористані мітки</translation>
+    </message>
+    <message>
+        <source>The label &apos;{label}&apos; is in use by shapes on the canvas.</source>
+        <translation>Мітка &apos;{label}&apos; використовується фігурами на полотні.</translation>
+    </message>
+    <message>
+        <source>Cannot Remove Label</source>
+        <translation>Неможливо видалити мітку</translation>
+    </message>
+    <message>
+        <source>Invalid Label</source>
+        <translation>Недійсна мітка</translation>
+    </message>
+    <message>
+        <source>Convert to Polygon</source>
+        <translation>Перетворити на багатокутник</translation>
+    </message>
+    <message>
+        <source>%s can&apos;t use an example box. Choose SAM 3.</source>
+        <translation>%s не може використати рамку-приклад. Виберіть SAM 3.</translation>
+    </message>
+    <message>
+        <source>Locating the image updates the annotation file to refer to it.</source>
+        <translation>Після вибору зображення файл анотацій оновлюється й посилається на нього.</translation>
+    </message>
+    <message>
+        <source>Locate Image…</source>
+        <translation>Знайти зображення…</translation>
+    </message>
+    <message>
+        <source>Locate Image</source>
+        <translation>Знайти зображення</translation>
+    </message>
+    <message>
+        <source>Images (%s)</source>
+        <translation>Зображення (%s)</translation>
+    </message>
+    <message>
+        <source>Large Image</source>
+        <translation>Велике зображення</translation>
+    </message>
+    <message>
+        <source>Error Opening File</source>
+        <translation>Помилка відкриття файлу</translation>
+    </message>
+    <message>
+        <source>Open File</source>
+        <translation>Відкрити файл</translation>
+    </message>
+    <message>
+        <source>Choose Annotation Folder</source>
+        <translation>Вибрати папку анотацій</translation>
+    </message>
+    <message>
+        <source>Delete Annotation File</source>
+        <translation>Видалити файл анотацій</translation>
+    </message>
+    <message>
+        <source>Delete the annotation file? You can&apos;t undo this.</source>
+        <translation>Видалити файл анотацій? Цю дію неможливо скасувати.</translation>
+    </message>
+    <message>
+        <source>Delete &quot;{}&quot;? You can&apos;t undo this.</source>
+        <translation>Видалити «{}»? Цю дію неможливо скасувати.</translation>
+    </message>
+    <message>
+        <source>Error Deleting Annotation File</source>
+        <translation>Помилка видалення файлу анотацій</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Завантажити</translation>
+    </message>
+    <message>
+        <source>Save annotation changes to &quot;{}&quot;?</source>
+        <translation>Зберегти зміни анотацій для «{}»?</translation>
+    </message>
+    <message>
+        <source>This annotation refers to &quot;{name}&quot;, but that image could not be found.
+
+Expected location: {path}</source>
+        <translation>Ця анотація посилається на «{name}», але зображення не знайдено.
+
+Очікуване розташування: {path}</translation>
+    </message>
+    <message>
+        <source>Image List is disabled when an annotation file is opened</source>
+        <translation>Список зображень вимкнено, коли відкрито файл анотацій</translation>
+    </message>
+    <message>
+        <source>Add Point to Edge</source>
+        <translation>Додати точку на ребро</translation>
+    </message>
+    <message>
+        <source>Insert a new point at the hovered polygon edge</source>
+        <translation>Вставити нову точку на ребрі полігона під курсором</translation>
+    </message>
+    <message>
+        <source>&amp;Keep Previous Zoom</source>
+        <translation>З&amp;берегти попередній масштаб</translation>
+    </message>
+    <message>
+        <source>Allowed formats: {formats}</source>
+        <translation>Дозволені формати: {formats}</translation>
+    </message>
+    <message>
+        <source>Unsaved Changes</source>
+        <translation>Незбережені зміни</translation>
+    </message>
+    <message>
+        <source>Image Not Found</source>
+        <translation>Зображення не знайдено</translation>
+    </message>
+    <message>
+        <source>The selected image file could not be opened: {path}</source>
+        <translation>Не вдалося відкрити вибраний файл зображення: {path}</translation>
+    </message>
+    <message>
+        <source>Failed to load: {path}</source>
+        <translation>Не вдалося завантажити: {path}</translation>
+    </message>
+    <message>
+        <source>Oriented Rectangle</source>
+        <translation>Орієнтований прямокутник</translation>
+    </message>
+    <message>
+        <source>Start drawing oriented rectangles</source>
+        <translation>Почніть малювати орієнтовані прямокутники</translation>
+    </message>
+    <message>
+        <source>AI inference produced no new annotation.</source>
+        <translation>Інференс ШІ не створив нової анотації.</translation>
+    </message>
+    <message>
+        <source>Shape had no area; nothing created.</source>
+        <translation>Фігура не має площі; нічого не створено.</translation>
+    </message>
+    <message>
+        <source>Settings…</source>
+        <translation>Параметри…</translation>
+    </message>
+    <message>
+        <source>Edit settings</source>
+        <translation>Редагувати параметри</translation>
+    </message>
+    <message>
+        <source>Settings are managed via --config for this session</source>
+        <translation>Параметри керуються через --config для цього сеансу</translation>
+    </message>
+    <message>
+        <source>Lines and points can’t be converted to polygons</source>
+        <translation>Лінії й точки не можна перетворити на багатокутники</translation>
+    </message>
+    <message>
+        <source>Lines and points can’t be converted to rectangles</source>
+        <translation>Лінії й точки не можна перетворити на прямокутники</translation>
+    </message>
+    <message>
+        <source>Only linestrips can be converted to lines</source>
+        <translation>На лінії можна перетворити лише LineStrip</translation>
+    </message>
+    <message>
+        <source>Only polygons and lines can be converted to linestrips</source>
+        <translation>На LineStrip можна перетворити лише багатокутники й лінії</translation>
+    </message>
+    <message>
+        <source>Only polygons can be converted to masks</source>
+        <translation>На маски можна перетворити лише багатокутники</translation>
+    </message>
+    <message>
+        <source>Annotation Folder: %s</source>
+        <translation>Папка анотацій: %s</translation>
+    </message>
+    <message>
+        <source>Save Annotation File</source>
+        <translation>Зберегти файл анотацій</translation>
+    </message>
+    <message>
+        <source>Annotation files (*%s)</source>
+        <translation>Файли анотацій (*%s)</translation>
+    </message>
+    <message>
+        <source>Configuration Error</source>
+        <translation>Помилка конфігурації</translation>
+    </message>
+    <message>
+        <source>Detects boxes only. Switch to Rectangle to use this model.</source>
+        <translation>Розпізнає лише рамки. Перейдіть на «Прямокутник», щоб використати цю модель.</translation>
+    </message>
+    <message>
+        <source>3-Point Circle</source>
+        <translation>Коло (3 точки)</translation>
+    </message>
+    <message>
+        <source>Start drawing circles with 3 points</source>
+        <translation>Почніть малювати кола за 3 точками</translation>
+    </message>
+</context>
+<context>
+    <name>ModelPicker</name>
+    <message>
+        <source>Manage models…</source>
+        <translation>Керування моделями…</translation>
+    </message>
+    <message>
+        <source>Download and use</source>
+        <translation>Завантажити й використати</translation>
+    </message>
+    <message>
+        <source>Choose a model…</source>
+        <translation>Вибрати модель…</translation>
+    </message>
+    <message>
+        <source>Downloading: {model}</source>
+        <translation>Завантаження: {model}</translation>
+    </message>
+    <message>
+        <source>Unavailable: {model}</source>
+        <translation>Недоступно: {model}</translation>
+    </message>
+    <message>
+        <source>More models…</source>
+        <translation>Інші моделі…</translation>
+    </message>
+</context>
+<context>
+    <name>ModelsDialog</name>
+    <message>
+        <source>AI Models</source>
+        <translation>Моделі ШІ</translation>
+    </message>
+</context>
+<context>
+    <name>ModelsWidget</name>
+    <message>
+        <source>Downloading…</source>
+        <translation>Завантаження…</translation>
+    </message>
+    <message>
+        <source>Download models to use AI offline. You can keep annotating while downloads run.</source>
+        <translation>Завантажте моделі для роботи зі ШІ без інтернету. Під час завантаження можна продовжувати розмітку.</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Точки</translation>
+    </message>
+    <message>
+        <source>Boxes</source>
+        <translation>Рамки</translation>
+    </message>
+    <message>
+        <source>Text prompts</source>
+        <translation>Текстові запити</translation>
+    </message>
+    <message>
+        <source>SAM3 use is subject to the SAM License, including trade-control and end-use restrictions. Read the full agreement before downloading or using it.</source>
+        <translation>Використання SAM3 регулюється SAM License, зокрема торговельним контролем та обмеженнями кінцевого використання. Перед завантаженням або використанням прочитайте угоду повністю.</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Видалити</translation>
+    </message>
+    <message>
+        <source>Delete {model}</source>
+        <translation>Видалити {model}</translation>
+    </message>
+    <message>
+        <source>Downloading {filename} · {done} / {total}</source>
+        <translation>Завантаження {filename} · {done} / {total}</translation>
+    </message>
+    <message>
+        <source>Not downloaded</source>
+        <translation>Не завантажено</translation>
+    </message>
+    <message>
+        <source>Best balance of speed and quality for point and box prompts.</source>
+        <translation>Найкращий баланс швидкості та якості для запитів точками й рамками.</translation>
+    </message>
+    <message>
+        <source>Best for text prompts and finding multiple objects.</source>
+        <translation>Найкраще підходить для текстових запитів і пошуку кількох об’єктів.</translation>
+    </message>
+    <message>
+        <source>Recommended</source>
+        <translation>Рекомендовані</translation>
+    </message>
+    <message>
+        <source>All models</source>
+        <translation>Усі моделі</translation>
+    </message>
+    <message>
+        <source>License: {license}</source>
+        <translation>Ліцензія: {license}</translation>
+    </message>
+    <message>
+        <source>Details…</source>
+        <translation>Подробиці…</translation>
+    </message>
+    <message>
+        <source>Downloaded</source>
+        <translation>Завантажено</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Помилка</translation>
+    </message>
+    <message>
+        <source>Deleting…</source>
+        <translation>Видалення…</translation>
+    </message>
+    <message>
+        <source>Queued · position {position}</source>
+        <translation>У черзі · позиція {position}</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Скасувати</translation>
+    </message>
+    <message>
+        <source>Retry</source>
+        <translation>Повторити</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Завантажити</translation>
+    </message>
+    <message>
+        <source>Download Failed</source>
+        <translation>Помилка завантаження</translation>
+    </message>
+    <message>
+        <source>Download failed. Check your connection and retry.</source>
+        <translation>Не вдалося завантажити. Перевірте з’єднання та спробуйте ще раз.</translation>
+    </message>
+    <message>
+        <source>Delete Model</source>
+        <translation>Видалити модель</translation>
+    </message>
+    <message>
+        <source>Delete {model} from this computer? Its selections will be cleared. Your annotations will not change.</source>
+        <translation>Видалити {model} із цього комп’ютера? Вибір цієї моделі буде скинуто. Ваша розмітка не зміниться.</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsDialog</name>
+    <message>
+        <source>Color theme</source>
+        <translation>Кольорова тема</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Системна</translation>
+    </message>
+    <message>
+        <source>Light</source>
+        <translation>Світла</translation>
+    </message>
+    <message>
+        <source>Dark</source>
+        <translation>Темна</translation>
+    </message>
+    <message>
+        <source>Show label popup on new shape</source>
+        <translation>Показувати спливаюче вікно мітки для нової фігури</translation>
+    </message>
+    <message>
+        <source>Show shape labels on canvas</source>
+        <translation>Показувати мітки фігур на полотні</translation>
+    </message>
+    <message>
+        <source>Allow points outside the image boundary</source>
+        <translation>Дозволити точки за межами зображення</translation>
+    </message>
+    <message>
+        <source>Appearance and language</source>
+        <translation>Вигляд і мова</translation>
+    </message>
+    <message>
+        <source>Files and saving</source>
+        <translation>Файли та збереження</translation>
+    </message>
+    <message>
+        <source>Drawing and canvas</source>
+        <translation>Малювання та полотно</translation>
+    </message>
+    <message>
+        <source>Continue between images</source>
+        <translation>Під час зміни зображення</translation>
+    </message>
+    <message>
+        <source>Label sources</source>
+        <translation>Джерела міток</translation>
+    </message>
+    <message>
+        <source>Label behavior</source>
+        <translation>Поведінка міток</translation>
+    </message>
+    <message>
+        <source>AI assist</source>
+        <translation>Допомога ШІ</translation>
+    </message>
+    <message>
+        <source>Save automatically</source>
+        <translation>Зберігати автоматично</translation>
+    </message>
+    <message>
+        <source>autosave auto save</source>
+        <translation>автозбереження автоматичне збереження</translation>
+    </message>
+    <message>
+        <source>Embed image in annotation file</source>
+        <translation>Вбудовувати зображення у файл анотацій</translation>
+    </message>
+    <message>
+        <source>Shape Color Mode</source>
+        <translation>Режим кольору фігур</translation>
+    </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Автоматично</translation>
+    </message>
+    <message>
+        <source>Uniform</source>
+        <translation>Однаковий</translation>
+    </message>
+    <message>
+        <source>By Label</source>
+        <translation>За міткою</translation>
+    </message>
+    <message>
+        <source>Automatic palette shift</source>
+        <translation>Автоматичний зсув палітри</translation>
+    </message>
+    <message>
+        <source>Uniform mode color</source>
+        <translation>Колір режиму «Однаковий»</translation>
+    </message>
+    <message>
+        <source>By Label fallback color</source>
+        <translation>Резервний колір режиму «За міткою»</translation>
+    </message>
+    <message>
+        <source>Individual Label colors remain editable in the Config File.</source>
+        <translation>Кольори окремих міток і надалі можна редагувати у файлі конфігурації.</translation>
+    </message>
+    <message>
+        <source>Keep previous annotation</source>
+        <translation>Зберегти попередню анотацію</translation>
+    </message>
+    <message>
+        <source>Keep previous zoom</source>
+        <translation>Зберегти попередній масштаб</translation>
+    </message>
+    <message>
+        <source>Keep previous brightness/contrast</source>
+        <translation>Зберегти попередню яскравість/контраст</translation>
+    </message>
+    <message>
+        <source>Fill polygon while drawing</source>
+        <translation>Заповнювати багатокутник під час малювання</translation>
+    </message>
+    <message>
+        <source>Let shape points extend beyond the image, e.g. for partially visible objects.</source>
+        <translation>Дозволяє точкам фігур виходити за межі зображення, напр. для частково видимих об&apos;єктів.</translation>
+    </message>
+    <message>
+        <source>Predefined shape flags</source>
+        <translation>Попередньо визначені прапорці фігур</translation>
+    </message>
+    <message>
+        <source>One flag name per line. Patterns: ^car$ matches car exactly, car matches a prefix, .* matches every label.</source>
+        <translation>Одна назва прапорця на рядок. Шаблони: ^car$ точно відповідає car, car — префіксу, .* — будь-якій мітці.</translation>
+    </message>
+    <message>
+        <source>AI-Find All model</source>
+        <translation>Модель AI-Find All</translation>
+    </message>
+    <message>
+        <source>Polygon detail</source>
+        <translation>Деталізація полігона</translation>
+    </message>
+    <message>
+        <source>smooth smoothness simplify outline</source>
+        <translation>згладжування гладкість спрощення контур</translation>
+    </message>
+    <message>
+        <source>Higher values preserve more Mask boundary detail and smaller lands.</source>
+        <translation>Вищі значення зберігають більше деталей межі маски та менші області.</translation>
+    </message>
+    <message>
+        <source>duplicate duplicates avoid duplicates deduplicate</source>
+        <translation>дублікат дублікати уникнення дублікатів видалення дублікатів</translation>
+    </message>
+    <message>
+        <source>Compute device</source>
+        <translation>Обчислювальний пристрій</translation>
+    </message>
+    <message>
+        <source>CPU</source>
+        <translation>ЦП</translation>
+    </message>
+    <message>
+        <source>Automatic uses the GPU and switches to the CPU if the GPU fails.</source>
+        <translation>«Автоматично» використовує ГП і перемикається на ЦП у разі збою ГП.</translation>
+    </message>
+    <message>
+        <source>gpu cuda processor slow crash</source>
+        <translation>gpu cuda гп цп процесор повільно збій</translation>
+    </message>
+    <message>
+        <source>Predefined labels</source>
+        <translation>Попередньо визначені мітки</translation>
+    </message>
+    <message>
+        <source>Embeds the image in the annotation file.</source>
+        <translation>Вбудовує зображення у файл анотацій.</translation>
+    </message>
+    <message>
+        <source>Label validation</source>
+        <translation>Перевірка мітки</translation>
+    </message>
+    <message>
+        <source>Sort labels</source>
+        <translation>Сортувати мітки</translation>
+    </message>
+    <message>
+        <source>Sort the label list alphabetically instead of keeping the provided order.</source>
+        <translation>Сортує список міток за алфавітом замість збереження заданого порядку.</translation>
+    </message>
+    <message>
+        <source>Show label text field</source>
+        <translation>Показувати текстове поле мітки</translation>
+    </message>
+    <message>
+        <source>Label completion</source>
+        <translation>Автодоповнення міток</translation>
+    </message>
+    <message>
+        <source>Starts with</source>
+        <translation>Починається з</translation>
+    </message>
+    <message>
+        <source>Contains</source>
+        <translation>Містить</translation>
+    </message>
+    <message>
+        <source>Default model</source>
+        <translation>Модель за замовчуванням</translation>
+    </message>
+    <message>
+        <source>Suppress existing Shape matches</source>
+        <translation>Придушувати збіги з наявними фігурами</translation>
+    </message>
+    <message>
+        <source>When an AI Assist candidate matches an existing Shape, highlight that Shape instead of creating a new Shape.</source>
+        <translation>Якщо кандидат Допомоги ШІ збігається з наявною фігурою, ця фігура виділяється замість створення нової фігури.</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Параметри</translation>
+    </message>
+    <message>
+        <source>Open config file as text…</source>
+        <translation>Відкрити файл конфігурації як текст…</translation>
+    </message>
+    <message>
+        <source>Edits made in the text file apply after restart</source>
+        <translation>Зміни в текстовому файлі застосуються після перезапуску</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation>Закрити</translation>
+    </message>
+    <message>
+        <source>BETA</source>
+        <translation>BETA</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(немає)</translation>
+    </message>
+    <message>
+        <source>one item per line</source>
+        <translation>по одному елементу на рядок</translation>
+    </message>
+    <message>
+        <source>Configuration Error</source>
+        <translation>Помилка конфігурації</translation>
+    </message>
+    <message>
+        <source>Predefined labels cannot be empty while Label validation is set to exact. Disable exact validation first.</source>
+        <translation>Попередньо визначені мітки не можуть бути порожніми, коли перевірка мітки встановлена на «exact». Спочатку вимкніть перевірку «exact».</translation>
+    </message>
+    <message>
+        <source>Select {mode} in Shape Color Mode to edit this setting.</source>
+        <translation>Щоб змінити це налаштування, виберіть {mode} у режимі кольору фігур.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Мова</translation>
+    </message>
+    <message>
+        <source>Takes effect after restart.</source>
+        <translation>Набуде чинності після перезапуску.</translation>
+    </message>
+    <message>
+        <source>System default</source>
+        <translation>Мова системи</translation>
+    </message>
+    <message>
+        <source>Predefined image flags</source>
+        <translation>Попередньо визначені прапорці зображення</translation>
+    </message>
+</context>
+<context>
+    <name>ToolBar</name>
+    <message>
+        <source>More actions</source>
+        <translation>Інші дії</translation>
+    </message>
+</context>
+<context>
+    <name>UniqueLabelQListWidget</name>
+    <message>
+        <source>Label set</source>
+        <translation>Набір міток</translation>
+    </message>
+    <message>
+        <source>Edit…</source>
+        <translation>Редагувати…</translation>
+    </message>
+    <message>
+        <source>Clear Unused</source>
+        <translation>Очистити невикористані</translation>
+    </message>
+    <message>
+        <source>Found in files</source>
+        <translation>Знайдено у файлах</translation>
+    </message>
+</context>
+<context>
+    <name>ZoomWidget</name>
+    <message>
+        <source>Zoom</source>
+        <translation>Збільшити</translation>
+    </message>
+    <message>
+        <source>Hold %s and scroll to zoom the canvas</source>
+        <translation>Утримуйте %s і прокручуйте, щоб масштабувати полотно</translation>
+    </message>
+</context>
+<context>
+    <name>_ColorSwatchButton</name>
+    <message>
+        <source>RGB: {red}, {green}, {blue}</source>
+        <translation>RGB: {red}, {green}, {blue}</translation>
+    </message>
+</context>
+<context>
+    <name>_LabelFlagsEditor</name>
+    <message>
+        <source>Label pattern</source>
+        <translation>Шаблон мітки</translation>
+    </message>
+    <message>
+        <source>Shape flags</source>
+        <translation>Прапорці фігури</translation>
+    </message>
+    <message>
+        <source>Add rule</source>
+        <translation>Додати правило</translation>
+    </message>
+    <message>
+        <source>One name per line</source>
+        <translation>Одна назва на рядок</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Видалити</translation>
+    </message>
+    <message>
+        <source>Remove rule</source>
+        <translation>Видалити правило</translation>
+    </message>
+    <message>
+        <source>Enter a pattern and at least one flag name.</source>
+        <translation>Введіть шаблон і принаймні одну назву прапорця.</translation>
+    </message>
+    <message>
+        <source>Duplicate label pattern.</source>
+        <translation>Повторюваний шаблон мітки.</translation>
+    </message>
+    <message>
+        <source>Invalid regular expression.</source>
+        <translation>Неприпустимий регулярний вираз.</translation>
+    </message>
+    <message>
+        <source>Row {row}: {error} Changes have not been applied.</source>
+        <translation>Рядок {row}: {error} Зміни не застосовано.</translation>
+    </message>
+</context>
+<context>
+    <name>_ModelMenuButton</name>
+    <message>
+        <source>Model</source>
+        <translation>Модель</translation>
+    </message>
+    <message>
+        <source>{tool}: {model}</source>
+        <translation>{tool}: {model}</translation>
+    </message>
+    <message>
+        <source>Fastest</source>
+        <translation>Найшвидша</translation>
+    </message>
+    <message>
+        <source>Balanced</source>
+        <translation>Збалансована</translation>
+    </message>
+    <message>
+        <source>Most accurate</source>
+        <translation>Найточніша</translation>
+    </message>
+    <message>
+        <source>The original SAM. SAM 2 is faster at every size.</source>
+        <translation>Оригінальна SAM. SAM 2 швидша в будь-якому розмірі.</translation>
+    </message>
+    <message>
+        <source>Fastest, with rough outlines. Runs well on any computer.</source>
+        <translation>Найшвидша, з грубими контурами. Добре працює на будь-якому комп’ютері.</translation>
+    </message>
+    <message>
+        <source>Sharper outlines than Tiny, but slower than SAM 2 Base+.</source>
+        <translation>Чіткіші контури, ніж у Tiny, але повільніша за SAM 2 Base+.</translation>
+    </message>
+    <message>
+        <source>A smaller download than Base+, a little less accurate.</source>
+        <translation>Менший обсяг завантаження, ніж у Base+, трохи менш точна.</translation>
+    </message>
+    <message>
+        <source>Balanced speed and accuracy. Runs well on a CPU.</source>
+        <translation>Баланс швидкості й точності. Добре працює на CPU.</translation>
+    </message>
+    <message>
+        <source>More accurate than Base+, but slower.</source>
+        <translation>Точніша за Base+, але повільніша.</translation>
+    </message>
+    <message>
+        <source>Most accurate, but slower than SAM 2 Base+. Best with a GPU.</source>
+        <translation>Найточніша, але повільніша за SAM 2 Base+. Найкраще з GPU.</translation>
+    </message>
+    <message>
+        <source>Fastest. Finds boxes, without masks.</source>
+        <translation>Найшвидша. Знаходить рамки без масок.</translation>
+    </message>
+    <message>
+        <source>Boxes only</source>
+        <translation>Лише рамки</translation>
+    </message>
+</context>
+<context>
+    <name>_SettingsPage</name>
+    <message>
+        <source>Settings sections</source>
+        <translation>Розділи налаштувань</translation>
+    </message>
+    <message>
+        <source>Search settings</source>
+        <translation>Пошук налаштувань</translation>
+    </message>
+    <message>
+        <source>Matching settings</source>
+        <translation>Відповідні налаштування</translation>
+    </message>
+    <message>
+        <source>{count} matching settings</source>
+        <translation>Знайдено налаштувань: {count}</translation>
+    </message>
+    <message>
+        <source>No matching settings in this dialog. Try another term or clear search.</source>
+        <translation>У цьому вікні немає відповідних налаштувань. Спробуйте інший запит або очистьте пошук.</translation>
+    </message>
+</context>
+<context>
+    <name>main</name>
+    <message>
+        <source>Error</source>
+        <translation>Помилка</translation>
+    </message>
+    <message>
+        <source>An unexpected error occurred. The application will close.&lt;br/&gt;&lt;br/&gt;Please report the issue by following &lt;a href=&apos;https://labelme.io/docs/troubleshoot&apos;&gt;Troubleshooting&lt;/a&gt;.</source>
+        <translation>Сталася неочікувана помилка. Застосунок буде закрито.&lt;br/&gt;&lt;br/&gt;Повідомте про проблему, дотримуючись розділу &lt;a href=&apos;https://labelme.io/docs/troubleshoot&apos;&gt;Усунення несправностей&lt;/a&gt;.</translation>
+    </message>
+</context>
+</TS>

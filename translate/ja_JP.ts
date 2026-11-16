@@ -1,0 +1,1988 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="ja_JP">
+<context>
+    <name>AiAssistedAnnotationWidget</name>
+    <message>
+        <source>Polygon detail</source>
+        <translation>ポリゴンの詳細度</translation>
+    </message>
+    <message>
+        <source>Smoother</source>
+        <translation>より滑らか</translation>
+    </message>
+    <message>
+        <source>More detail</source>
+        <translation>より詳細</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>出力</translation>
+    </message>
+    <message>
+        <source>Polygon</source>
+        <translation>ポリゴン</translation>
+    </message>
+    <message>
+        <source>Mask</source>
+        <translation>マスク</translation>
+    </message>
+    <message>
+        <source>Rectangle</source>
+        <translation>矩形</translation>
+    </message>
+    <message>
+        <source>Oriented Rectangle</source>
+        <translation>向き付き矩形</translation>
+    </message>
+    <message>
+        <source>Circle</source>
+        <translation>円</translation>
+    </message>
+    <message>
+        <source>Output format: {format}</source>
+        <translation>出力形式: {format}</translation>
+    </message>
+    <message>
+        <source>AI-assisted annotation model</source>
+        <translation>AI支援アノテーションモデル</translation>
+    </message>
+    <message>
+        <source>AI-assisted annotation output format</source>
+        <translation>AI支援アノテーションの出力形式</translation>
+    </message>
+    <message>
+        <source>Model</source>
+        <translation>モデル</translation>
+    </message>
+</context>
+<context>
+    <name>AiTextToAnnotationWidget</name>
+    <message>
+        <source>Run</source>
+        <translation>実行</translation>
+    </message>
+    <message>
+        <source>Score</source>
+        <translation>スコア</translation>
+    </message>
+    <message>
+        <source>IoU</source>
+        <translation>IoU</translation>
+    </message>
+    <message>
+        <source>Model</source>
+        <translation>モデル</translation>
+    </message>
+    <message>
+        <source>What to find</source>
+        <translation>探すもの</translation>
+    </message>
+    <message>
+        <source>Prompt</source>
+        <translation>プロンプト</translation>
+    </message>
+    <message>
+        <source>Finding…</source>
+        <translation>検索中…</translation>
+    </message>
+    <message>
+        <source>AI-Find All model</source>
+        <translation>AI-Find All のモデル</translation>
+    </message>
+</context>
+<context>
+    <name>AiToolGroup</name>
+    <message>
+        <source>Options</source>
+        <translation>オプション</translation>
+    </message>
+    <message>
+        <source>AI-Segment</source>
+        <translation>AI-Segment</translation>
+    </message>
+    <message>
+        <source>AI-Find All</source>
+        <translation>AI-Find All</translation>
+    </message>
+</context>
+<context>
+    <name>AnnotationFolderFooter</name>
+    <message>
+        <source>Annotation Folder</source>
+        <translation>アノテーションフォルダー</translation>
+    </message>
+    <message>
+        <source>Next to Images</source>
+        <translation>画像と同じ場所</translation>
+    </message>
+    <message>
+        <source>Change Annotation Folder…</source>
+        <translation>アノテーションフォルダーを変更…</translation>
+    </message>
+    <message>
+        <source>{annotated} of {total} annotated in</source>
+        <translation>{total} 件中 {annotated} 件アノテーション済み:</translation>
+    </message>
+    <message>
+        <source>Not found: %s · next to images</source>
+        <translation>見つかりません: %s · 画像と同じ場所</translation>
+    </message>
+    <message>
+        <source>{annotated} of {total} annotated · next to images</source>
+        <translation>{total} 件中 {annotated} 件アノテーション済み · 画像と同じ場所</translation>
+    </message>
+</context>
+<context>
+    <name>BrightnessContrastDialog</name>
+    <message>
+        <source>Brightness/Contrast</source>
+        <translation>明るさ/コントラスト</translation>
+    </message>
+    <message>
+        <source>Brightness:</source>
+        <translation>明るさ:</translation>
+    </message>
+    <message>
+        <source>Contrast:</source>
+        <translation>コントラスト:</translation>
+    </message>
+</context>
+<context>
+    <name>Canvas</name>
+    <message>
+        <source>Click &amp; drag to move point</source>
+        <translation>クリック &amp; ドラッグで頂点を移動</translation>
+    </message>
+    <message>
+        <source>Hold %s and click to add a point on the edge</source>
+        <translation>%s を押しながらクリックで辺に点を追加</translation>
+    </message>
+    <message>
+        <source>Shape is locked</source>
+        <translation>図形はロックされています</translation>
+    </message>
+    <message>
+        <source>Click &amp; drag to move shape</source>
+        <translation>クリック &amp; ドラッグで図形を移動</translation>
+    </message>
+    <message>
+        <source>ESC to cancel</source>
+        <translation>ESC でキャンセル</translation>
+    </message>
+    <message>
+        <source>Enter or Space to finalize</source>
+        <translation>Enter または Space で確定</translation>
+    </message>
+    <message>
+        <source>Editing shapes</source>
+        <translation>図形を編集中</translation>
+    </message>
+    <message>
+        <source>Click points to include, hold %s and click to exclude, or drag a box. Hold %s and click to finish.</source>
+        <translation>点をクリックで含め、%s を押しながらクリックで除外するか、ドラッグでボックスを描きます。%s を押しながらクリックで完了します。</translation>
+    </message>
+    <message>
+        <source>Type what to find in AI-Find All, or click the first corner of a box around one example</source>
+        <translation>AI-Find All に探したいものを入力するか、例の周りを囲むボックスの最初の角をクリック</translation>
+    </message>
+    <message>
+        <source>Click the opposite corner to exclude objects like this one</source>
+        <translation>対角をクリックすると、これと同じような物体を除外します</translation>
+    </message>
+    <message>
+        <source>Click the opposite corner to find every object like this one</source>
+        <translation>対角をクリックすると、これと同じような物体をすべて探します</translation>
+    </message>
+    <message>
+        <source>Click start point for line</source>
+        <translation>直線の始点をクリック</translation>
+    </message>
+    <message>
+        <source>Click end point for line</source>
+        <translation>直線の終点をクリック</translation>
+    </message>
+    <message>
+        <source>Click start point for linestrip</source>
+        <translation>折れ線の始点をクリック</translation>
+    </message>
+    <message>
+        <source>Click center point for circle</source>
+        <translation>円の中心点をクリック</translation>
+    </message>
+    <message>
+        <source>Click point on circumference for circle</source>
+        <translation>円周上の点をクリック</translation>
+    </message>
+    <message>
+        <source>Click first corner for rectangle</source>
+        <translation>矩形の最初の角をクリック</translation>
+    </message>
+    <message>
+        <source>Click to add point</source>
+        <translation>クリックで頂点を追加</translation>
+    </message>
+    <message>
+        <source>Drag a box</source>
+        <translation>ドラッグで囲む</translation>
+    </message>
+    <message>
+        <source>Drag around one example</source>
+        <translation>例を1つドラッグで囲む</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>破棄</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>追加</translation>
+    </message>
+    <message>
+        <source>Click to include</source>
+        <translation>クリックで含める</translation>
+    </message>
+    <message>
+        <source>Click to exclude</source>
+        <translation>クリックで除外</translation>
+    </message>
+    <message>
+        <source>Add %d</source>
+        <translation>%d 件を追加</translation>
+    </message>
+    <message>
+        <source>Drag to exclude</source>
+        <translation>ドラッグで除外</translation>
+    </message>
+    <message>
+        <source>Choose the other corner. Hold Shift for a square.</source>
+        <translation>もう一方の角を指定してください。Shiftを押しながら操作すると正方形になります。</translation>
+    </message>
+    <message>
+        <source>Enter adds the results, Esc discards them. Hold %s and draw a box to exclude objects like it.</source>
+        <translation>Enter で結果を追加、Esc で破棄します。%s を押しながら囲むと、似たものを除外します。</translation>
+    </message>
+    <message>
+        <source>Click the next point, or hold %s and click to finish the LineStrip</source>
+        <translation>次の点をクリック、または %s を押しながらクリックで折れ線を完了</translation>
+    </message>
+    <message>
+        <source>Click first corner for oriented rectangle</source>
+        <translation>向き付き矩形の最初の角をクリック</translation>
+    </message>
+    <message>
+        <source>Click second corner to set orientation</source>
+        <translation>2番目の角をクリックして向きを設定</translation>
+    </message>
+    <message>
+        <source>Click third corner to close oriented rectangle</source>
+        <translation>3番目の角をクリックして向き付き矩形を閉じる</translation>
+    </message>
+    <message>
+        <source>Hold %s and click to delete the point</source>
+        <translation>%s を押しながらクリックで点を削除</translation>
+    </message>
+    <message>
+        <source>Click &amp; drag to rotate the shape</source>
+        <translation>クリック &amp; ドラッグで図形を回転</translation>
+    </message>
+    <message>
+        <source>Click first point on circumference for circle</source>
+        <translation>円周上の1点目をクリック</translation>
+    </message>
+    <message>
+        <source>Click second point on circumference for circle</source>
+        <translation>円周上の2点目をクリック</translation>
+    </message>
+    <message>
+        <source>Click third point on circumference to finish circle</source>
+        <translation>円周上の3点目をクリックして円を完了</translation>
+    </message>
+</context>
+<context>
+    <name>ConversionDetailDialog</name>
+    <message>
+        <source>Polygon detail</source>
+        <translation>ポリゴンの詳細度</translation>
+    </message>
+    <message>
+        <source>Smoother</source>
+        <translation>より滑らか</translation>
+    </message>
+    <message>
+        <source>More detail</source>
+        <translation>より詳細</translation>
+    </message>
+    <message>
+        <source>Convert</source>
+        <translation>変換</translation>
+    </message>
+</context>
+<context>
+    <name>EmptyStateWidget</name>
+    <message>
+        <source>Start annotating</source>
+        <translation>アノテーションを開始</translation>
+    </message>
+    <message>
+        <source>Open an image or a folder of images to begin.</source>
+        <translation>画像または画像フォルダーを開いて開始します。</translation>
+    </message>
+    <message>
+        <source>Or drag and drop image files here</source>
+        <translation>または、画像ファイルをここにドラッグ＆ドロップします</translation>
+    </message>
+</context>
+<context>
+    <name>LabelDialog</name>
+    <message>
+        <source>Shape Label</source>
+        <translation>図形のラベル</translation>
+    </message>
+    <message>
+        <source>Enter object label</source>
+        <translation>オブジェクトのラベルを入力</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>ラベル</translation>
+    </message>
+    <message>
+        <source>Group ID</source>
+        <translation>グループ ID</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>説明</translation>
+    </message>
+</context>
+<context>
+    <name>MainWindow</name>
+    <message>
+        <source>Flags</source>
+        <translation>フラグ</translation>
+    </message>
+    <message>
+        <source>Shape List</source>
+        <translation>図形一覧</translation>
+    </message>
+    <message>
+        <source>Label List</source>
+        <translation>ラベル一覧</translation>
+    </message>
+    <message>
+        <source>Search Filename</source>
+        <translation>ファイル名で検索</translation>
+    </message>
+    <message>
+        <source>Image List</source>
+        <translation>画像一覧</translation>
+    </message>
+    <message>
+        <source>&amp;Quit</source>
+        <translation>終了(&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Quit application</source>
+        <translation>アプリケーションを終了</translation>
+    </message>
+    <message>
+        <source>&amp;Next Image</source>
+        <translation>次の
+画像(&amp;N)</translation>
+    </message>
+    <message>
+        <source>Save automatically</source>
+        <translation>自動で保存</translation>
+    </message>
+    <message>
+        <source>&amp;Close</source>
+        <translation>閉じる(&amp;C)</translation>
+    </message>
+    <message>
+        <source>Close current file</source>
+        <translation>現在のファイルを閉じる</translation>
+    </message>
+    <message>
+        <source>Keep Previous Annotation</source>
+        <translation>前のアノテーションを保持</translation>
+    </message>
+    <message>
+        <source>Start drawing polygons</source>
+        <translation>ポリゴンの描画を開始</translation>
+    </message>
+    <message>
+        <source>Start drawing rectangles</source>
+        <translation>矩形の描画を開始</translation>
+    </message>
+    <message>
+        <source>Start drawing circles</source>
+        <translation>円の描画を開始</translation>
+    </message>
+    <message>
+        <source>Start drawing lines</source>
+        <translation>直線の描画を開始</translation>
+    </message>
+    <message>
+        <source>Start drawing points</source>
+        <translation>点の描画を開始</translation>
+    </message>
+    <message>
+        <source>Edit Shapes</source>
+        <translation>図形を
+編集</translation>
+    </message>
+    <message>
+        <source>Move and edit the selected shapes</source>
+        <translation>選択した図形を移動・編集</translation>
+    </message>
+    <message>
+        <source>Delete Shapes</source>
+        <translation>図形を
+削除</translation>
+    </message>
+    <message>
+        <source>Save the annotation file</source>
+        <translation>アノテーションファイルを保存</translation>
+    </message>
+    <message>
+        <source>Save &amp;As…</source>
+        <translation>名前を付けて保存(&amp;A)…</translation>
+    </message>
+    <message>
+        <source>Save the annotation file under a new name</source>
+        <translation>アノテーションファイルを別名で保存</translation>
+    </message>
+    <message>
+        <source>Save Au&amp;tomatically</source>
+        <translation>自動保存(&amp;T)</translation>
+    </message>
+    <message>
+        <source>Embed Image in Annotation File</source>
+        <translation>画像をアノテーションファイルに埋め込む</translation>
+    </message>
+    <message>
+        <source>Store a copy of the image inside the annotation file</source>
+        <translation>画像のコピーをアノテーションファイル内に保存します</translation>
+    </message>
+    <message>
+        <source>Change Annotation &amp;Folder…</source>
+        <translation>アノテーションフォルダーを変更(&amp;F)…</translation>
+    </message>
+    <message>
+        <source>Open an image or annotation file</source>
+        <translation>画像またはアノテーションファイルを開く</translation>
+    </message>
+    <message>
+        <source>&amp;Delete Annotation File</source>
+        <translation>アノテーションファイルを
+削除(&amp;D)</translation>
+    </message>
+    <message>
+        <source>Delete the current annotation file</source>
+        <translation>現在のアノテーションファイルを削除</translation>
+    </message>
+    <message>
+        <source>Delete the selected shapes</source>
+        <translation>選択した図形を削除</translation>
+    </message>
+    <message>
+        <source>Duplicate Shapes</source>
+        <translation>図形を
+複製</translation>
+    </message>
+    <message>
+        <source>Create a duplicate of the selected shapes</source>
+        <translation>選択した図形の複製を作成</translation>
+    </message>
+    <message>
+        <source>Replace the selected shapes with their bounding boxes</source>
+        <translation>選択した図形をバウンディングボックスに置き換え</translation>
+    </message>
+    <message>
+        <source>Convert the selected shapes to linestrips</source>
+        <translation>選択した図形を折れ線に変換</translation>
+    </message>
+    <message>
+        <source>Undo last drawn point</source>
+        <translation>最後に描画した頂点を取り消し</translation>
+    </message>
+    <message>
+        <source>Undo last add and edit of shape</source>
+        <translation>最後の図形追加・編集を元に戻す</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <comment>toolbar</comment>
+        <translation>選択</translation>
+    </message>
+    <message>
+        <source>Click to place LineStrip points; hold %s and click to place the last one.</source>
+        <translation>クリックで折れ線の点を配置し、%s を押しながらクリックで最後の点を配置します。</translation>
+    </message>
+    <message>
+        <source>Open the next image (hold %s to copy the current Shapes)</source>
+        <translation>次の画像を開く（%s を押したままにすると現在の図形をコピー）</translation>
+    </message>
+    <message>
+        <source>Hide all shapes</source>
+        <translation>すべての図形を非表示</translation>
+    </message>
+    <message>
+        <source>Show all shapes</source>
+        <translation>すべての図形を表示</translation>
+    </message>
+    <message>
+        <source>Toggle all shapes</source>
+        <translation>すべての図形の表示を切り替え</translation>
+    </message>
+    <message>
+        <source>&amp;Tutorial</source>
+        <translation>チュートリアル(&amp;T)</translation>
+    </message>
+    <message>
+        <source>Show tutorial page</source>
+        <translation>チュートリアルページを表示</translation>
+    </message>
+    <message>
+        <source>Zoom</source>
+        <translation>ズーム</translation>
+    </message>
+    <message>
+        <source>Zoom &amp;In</source>
+        <translation>拡大(&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Zoom Out</source>
+        <translation>縮小(&amp;Z)</translation>
+    </message>
+    <message>
+        <source>Adjust brightness and contrast</source>
+        <translation>明るさとコントラストを調整</translation>
+    </message>
+    <message>
+        <source>Image Polygonal Annotation with Python</source>
+        <translation>Python による画像のポリゴンアノテーション</translation>
+    </message>
+    <message>
+        <source>Version: %s</source>
+        <translation>バージョン: %s</translation>
+    </message>
+    <message>
+        <source>Author: %s</source>
+        <translation>作者: %s</translation>
+    </message>
+    <message>
+        <source>Homepage</source>
+        <translation>ホームページ</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>ドキュメント</translation>
+    </message>
+    <message>
+        <source>Troubleshooting</source>
+        <translation>トラブルシューティング</translation>
+    </message>
+    <message>
+        <source>&amp;About %s</source>
+        <translation>%s について(&amp;A)</translation>
+    </message>
+    <message>
+        <source>About %s</source>
+        <translation>%s について</translation>
+    </message>
+    <message>
+        <source>&amp;Save</source>
+        <translation>保存(&amp;S)</translation>
+    </message>
+    <message>
+        <source>Choose where annotation files are read and saved</source>
+        <translation>アノテーションファイルの読み込みと保存の場所を選択</translation>
+    </message>
+    <message>
+        <source>&amp;Open File…</source>
+        <translation>ファイルを
+開く(&amp;O)…</translation>
+    </message>
+    <message>
+        <source>Open Folder…</source>
+        <translation>フォルダーを
+開く…</translation>
+    </message>
+    <message>
+        <source>Open a folder of images</source>
+        <translation>画像フォルダーを開く</translation>
+    </message>
+    <message>
+        <source>Delete File</source>
+        <comment>toolbar</comment>
+        <translation>ファイルを
+削除</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <comment>toolbar</comment>
+        <translation>削除</translation>
+    </message>
+    <message>
+        <source>Modify the label of the selected shape</source>
+        <translation>選択した図形のラベルを変更</translation>
+    </message>
+    <message>
+        <source>Copy to Clipboard</source>
+        <translation>クリップボードにコピー</translation>
+    </message>
+    <message>
+        <source>Place the selected shapes on the clipboard</source>
+        <translation>選択した図形をクリップボードに置く</translation>
+    </message>
+    <message>
+        <source>Paste from Clipboard</source>
+        <translation>クリップボードから貼り付け</translation>
+    </message>
+    <message>
+        <source>Insert the clipboard shapes into this image</source>
+        <translation>クリップボードの図形をこの画像に挿入</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <comment>toolbar</comment>
+        <translation>複製</translation>
+    </message>
+    <message>
+        <source>Merge Shapes</source>
+        <translation>図形を結合</translation>
+    </message>
+    <message>
+        <source>Merge the selected mask shapes into one</source>
+        <translation>選択したマスク図形を1つに結合</translation>
+    </message>
+    <message>
+        <source>Convert the selected shapes to polygons</source>
+        <translation>選択した図形をポリゴンに変換</translation>
+    </message>
+    <message>
+        <source>Convert the selected shapes to oriented rectangles</source>
+        <translation>選択した図形を向き付き矩形に変換</translation>
+    </message>
+    <message>
+        <source>Convert the selected shapes to circles</source>
+        <translation>選択した図形を円に変換</translation>
+    </message>
+    <message>
+        <source>Convert the selected shapes to lines</source>
+        <translation>選択した図形を直線に変換</translation>
+    </message>
+    <message>
+        <source>Convert the selected shapes to points</source>
+        <translation>選択した図形を点に変換</translation>
+    </message>
+    <message>
+        <source>Mask</source>
+        <translation>マスク</translation>
+    </message>
+    <message>
+        <source>Convert the selected shapes to masks</source>
+        <translation>選択した図形をマスクに変換</translation>
+    </message>
+    <message>
+        <source>Convert To</source>
+        <translation>変換</translation>
+    </message>
+    <message>
+        <source>Lock Shapes</source>
+        <translation>図形をロック</translation>
+    </message>
+    <message>
+        <source>Lock the selected shapes against editing, or unlock them</source>
+        <translation>選択した図形を編集できないようにロック、またはロックを解除</translation>
+    </message>
+    <message>
+        <source>Undo</source>
+        <translation>元に戻す</translation>
+    </message>
+    <message>
+        <source>AI-Segment</source>
+        <translation>AI-Segment</translation>
+    </message>
+    <message>
+        <source>Click points or drag a box to segment one object; hold %s and click to finish.</source>
+        <translation>点をクリックするかボックスをドラッグして物体を1つセグメント化し、%s を押しながらクリックで完了します。</translation>
+    </message>
+    <message>
+        <source>AI-Find All</source>
+        <translation>AI-Find All</translation>
+    </message>
+    <message>
+        <source>Find every object that matches the text prompt or an example box</source>
+        <translation>テキストプロンプトや例のボックスに一致する物体をすべて探す</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <comment>toolbar</comment>
+        <translation>次へ</translation>
+    </message>
+    <message>
+        <source>&amp;Previous Image</source>
+        <translation>前の
+画像(&amp;P)</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <comment>toolbar</comment>
+        <translation>前へ</translation>
+    </message>
+    <message>
+        <source>Open the previous image (hold %s to copy the current Shapes)</source>
+        <translation>前の画像を開く（%s を押したままにすると現在の図形をコピー）</translation>
+    </message>
+    <message>
+        <source>Fit to &amp;Window</source>
+        <translation>ウィンドウに
+合わせる(&amp;W)</translation>
+    </message>
+    <message>
+        <source>Keep the whole image visible when the window is resized</source>
+        <translation>ウィンドウのサイズ変更時も画像全体を表示し続ける</translation>
+    </message>
+    <message>
+        <source>Zoom to the selected shapes whenever the selection changes</source>
+        <translation>選択を変更するたびに選択した図形にズームする</translation>
+    </message>
+    <message>
+        <source>&amp;Brightness/Contrast…</source>
+        <translation>明るさ/コントラスト(&amp;B)…</translation>
+    </message>
+    <message>
+        <source>Make the image appear larger</source>
+        <translation>画像を大きく表示する</translation>
+    </message>
+    <message>
+        <source>Make the image appear smaller</source>
+        <translation>画像を小さく表示する</translation>
+    </message>
+    <message>
+        <source>&amp;Actual Size</source>
+        <translation>実際のサイズ(&amp;A)</translation>
+    </message>
+    <message>
+        <source>Show the image at 100%</source>
+        <translation>画像を100%で表示する</translation>
+    </message>
+    <message>
+        <source>Fill Drawing Polygon</source>
+        <translation>描画中のポリゴンを塗りつぶす</translation>
+    </message>
+    <message>
+        <source>Fill polygon while drawing</source>
+        <translation>描画中にポリゴンを塗りつぶす</translation>
+    </message>
+    <message>
+        <source>&amp;Hide Shapes</source>
+        <translation>図形を非表示(&amp;H)</translation>
+    </message>
+    <message>
+        <source>&amp;Show Shapes</source>
+        <translation>図形を表示(&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;Toggle Shapes</source>
+        <translation>図形を切り替え(&amp;T)</translation>
+    </message>
+    <message>
+        <source>Select Shape Above</source>
+        <translation>上の図形を選択</translation>
+    </message>
+    <message>
+        <source>Select the nearest shape above the selection</source>
+        <translation>選択範囲の上にある最も近い図形を選択</translation>
+    </message>
+    <message>
+        <source>Select Shape Below</source>
+        <translation>下の図形を選択</translation>
+    </message>
+    <message>
+        <source>Select the nearest shape below the selection</source>
+        <translation>選択範囲の下にある最も近い図形を選択</translation>
+    </message>
+    <message>
+        <source>Select Shape to the Left</source>
+        <translation>左の図形を選択</translation>
+    </message>
+    <message>
+        <source>Select the nearest shape left of the selection</source>
+        <translation>選択範囲の左にある最も近い図形を選択</translation>
+    </message>
+    <message>
+        <source>Select Shape to the Right</source>
+        <translation>右の図形を選択</translation>
+    </message>
+    <message>
+        <source>Select the nearest shape right of the selection</source>
+        <translation>選択範囲の右にある最も近い図形を選択</translation>
+    </message>
+    <message>
+        <source>Fit to Window</source>
+        <translation>ウィンドウに合わせる</translation>
+    </message>
+    <message>
+        <source>AI Models…</source>
+        <translation>AIモデル…</translation>
+    </message>
+    <message>
+        <source>Download or delete AI models</source>
+        <translation>AIモデルをダウンロードまたは削除</translation>
+    </message>
+    <message>
+        <source>&amp;File</source>
+        <translation>ファイル(&amp;F)</translation>
+    </message>
+    <message>
+        <source>&amp;Edit</source>
+        <translation>編集(&amp;E)</translation>
+    </message>
+    <message>
+        <source>&amp;View</source>
+        <translation>表示(&amp;V)</translation>
+    </message>
+    <message>
+        <source>&amp;Help</source>
+        <translation>ヘルプ(&amp;H)</translation>
+    </message>
+    <message>
+        <source>Tools</source>
+        <translation>ツール</translation>
+    </message>
+    <message>
+        <source>More tools</source>
+        <translation>その他のツール</translation>
+    </message>
+    <message>
+        <source>Shape Tools</source>
+        <translation>図形ツール</translation>
+    </message>
+    <message>
+        <source>More shape tools</source>
+        <translation>その他の図形ツール</translation>
+    </message>
+    <message>
+        <source>Retry</source>
+        <translation>再試行</translation>
+    </message>
+    <message>
+        <source>Choose a label to start drawing with it. Press &apos;Esc&apos; to clear the selection.</source>
+        <translation>ラベルを選択して描画を開始します。&apos;Esc&apos;キーを押すと選択が解除されます。</translation>
+    </message>
+    <message>
+        <source>Invalid regular expression. Previous search kept.</source>
+        <translation>正規表現が無効です。前の検索条件を維持します。</translation>
+    </message>
+    <message>
+        <source>Your settings couldn’t be loaded.</source>
+        <translation>設定を読み込めませんでした。</translation>
+    </message>
+    <message>
+        <source>You can use default settings for now. Resetting saves a backup of your configuration file first.</source>
+        <translation>今回は初期設定で続行できます。リセットする場合は、先に設定ファイルのバックアップを保存します。</translation>
+    </message>
+    <message>
+        <source>Type what to find</source>
+        <translation>探したいものを入力してください</translation>
+    </message>
+    <message>
+        <source>Finding matches on CPU…</source>
+        <translation>CPU で一致するものを検索中…</translation>
+    </message>
+    <message>
+        <source>Finding matches…</source>
+        <translation>一致するものを検索中…</translation>
+    </message>
+    <message>
+        <source>%s only detects bounding boxes and cannot create &apos;%s&apos; Shapes.
+
+Switch the AI-Find All model to &apos;SAM 3&apos;, or set the output format to &apos;Rectangle&apos;.</source>
+        <translation>%s はバウンディングボックスのみを検出するため、&apos;%s&apos; の図形を作成できません。
+
+AI-Find All のモデルを &apos;SAM 3&apos; に切り替えるか、出力形式を &apos;Rectangle&apos; に設定してください。</translation>
+    </message>
+    <message>
+        <source>The Annotation File belongs to another Image: %s</source>
+        <translation>このアノテーションファイルは別の画像のものです: %s</translation>
+    </message>
+    <message>
+        <source>%s can&apos;t use an example box. Choose SAM 3.</source>
+        <translation>%s は例のボックスを使えません。SAM 3 を選択してください。</translation>
+    </message>
+    <message>
+        <source>Open Folder</source>
+        <translation>フォルダーを開く</translation>
+    </message>
+    <message>
+        <source>Command-line settings</source>
+        <translation>コマンドラインの設定</translation>
+    </message>
+    <message>
+        <source>Fit to S&amp;election</source>
+        <translation>選択範囲に合わせる(&amp;E)</translation>
+    </message>
+    <message>
+        <source>Could not reset the Config File.
+%s</source>
+        <translation>設定ファイルをリセットできませんでした。
+%s</translation>
+    </message>
+    <message>
+        <source>Configuration backup saved to %s</source>
+        <translation>設定ファイルのバックアップを %s に保存しました</translation>
+    </message>
+    <message>
+        <source>Saving…</source>
+        <translation>保存中…</translation>
+    </message>
+    <message>
+        <source>Mask Output Unavailable</source>
+        <translation>マスク出力は利用できません</translation>
+    </message>
+    <message>
+        <source>Invalid label &apos;{}&apos; with validation type &apos;{}&apos;</source>
+        <translation>ラベル &apos;{}&apos; は検証タイプ &apos;{}&apos; では無効です</translation>
+    </message>
+    <message>
+        <source>Unlock Shapes</source>
+        <translation>図形のロックを解除</translation>
+    </message>
+    <message>
+        <source>Saved</source>
+        <translation>保存済み</translation>
+    </message>
+    <message>
+        <source>Save failed</source>
+        <translation>保存に失敗しました</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;%s&lt;/b&gt;</source>
+        <translation>&lt;b&gt;%s&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>AI inference failed: %s</source>
+        <translation>AI推論に失敗しました: %s</translation>
+    </message>
+    <message>
+        <source>Fit to Selection</source>
+        <translation>選択範囲に合わせる</translation>
+    </message>
+    <message>
+        <source>Large image requires more memory</source>
+        <translation>大きな画像には追加のメモリが必要です</translation>
+    </message>
+    <message>
+        <source>The image is {width}x{height} pixels and needs at least about {required} MB to decode, above the current {limit} MB safety limit. Opening it may temporarily make Labelme or other applications less responsive.</source>
+        <translation>この画像は{width}x{height}ピクセルで、デコードには少なくとも約{required} MBが必要です。これは現在の安全上限である{limit} MBを超えています。開くと、Labelmeや他のアプリケーションの応答が一時的に遅くなる場合があります。</translation>
+    </message>
+    <message>
+        <source>Open Anyway</source>
+        <translation>それでも開く</translation>
+    </message>
+    <message>
+        <source>No such file: &lt;b&gt;%s&lt;/b&gt;</source>
+        <translation>ファイルが見つかりません: &lt;b&gt;%s&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>Loading %s...</source>
+        <translation>%s を読み込み中...</translation>
+    </message>
+    <message>
+        <source>Loaded %s</source>
+        <translation>%s を読み込みました</translation>
+    </message>
+    <message>
+        <source>Images and annotation files (%s)</source>
+        <translation>画像とアノテーションファイル (%s)</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>削除</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>キャンセル</translation>
+    </message>
+    <message>
+        <source>Unsaved changes</source>
+        <translation>未保存の変更</translation>
+    </message>
+    <message>
+        <source>Download {model}</source>
+        <translation>{model}をダウンロード</translation>
+    </message>
+    <message>
+        <source>The selected annotation file could not be opened: {path}</source>
+        <translation>選択されたアノテーションファイルを開けませんでした: {path}</translation>
+    </message>
+    <message>
+        <source>Annotation Folder not found: %s</source>
+        <translation>アノテーションフォルダーが見つかりません: %s</translation>
+    </message>
+    <message>
+        <source>The image is too large to open: {width}x{height} pixels exceeds the {max_side} pixel per-side limit of the raster engine. Raising the decode limit will not help. Split the image into tiles (for example with gdal_retile.py) or open a smaller copy.</source>
+        <translation>画像が大きすぎて開けません: {width}x{height} ピクセルはラスターエンジンの1辺あたり {max_side} ピクセルの上限を超えています。デコード上限を上げても解決しません。画像をタイルに分割する(例: gdal_retile.py)か、より小さいコピーを開いてください。</translation>
+    </message>
+    <message>
+        <source>The image is too large to open: {width}x{height} pixels needs about {required} MB, but the decode limit is {limit} MB. Split the image into tiles (for example with gdal_retile.py) or open a smaller copy.</source>
+        <translation>画像が大きすぎて開けません: {width}x{height} ピクセルには約 {required} MB が必要ですが、デコード上限は {limit} MB です。画像をタイルに分割する(例: gdal_retile.py)か、より小さいコピーを開いてください。</translation>
+    </message>
+    <message>
+        <source>Toggle &quot;keep previous annotation&quot; mode</source>
+        <translation>「前のアノテーションを保持」モードを切り替え</translation>
+    </message>
+    <message>
+        <source>Keep Previous Brightness/Contrast</source>
+        <translation>前の明るさ/コントラストを保持</translation>
+    </message>
+    <message>
+        <source>Reset Layout</source>
+        <translation>レイアウトをリセット</translation>
+    </message>
+    <message>
+        <source>Polygon</source>
+        <translation>ポリゴン</translation>
+    </message>
+    <message>
+        <source>&amp;Edit Label…</source>
+        <translation>ラベルを編集(&amp;E)…</translation>
+    </message>
+    <message>
+        <source>Undo Last Point</source>
+        <translation>最後の点を取り消す</translation>
+    </message>
+    <message>
+        <source>Delete Selected Point</source>
+        <translation>選択した点を削除</translation>
+    </message>
+    <message>
+        <source>Delete the selected point from the polygon or LineStrip</source>
+        <translation>選択した点をポリゴンまたは折れ線から削除します</translation>
+    </message>
+    <message>
+        <source>Rectangle</source>
+        <translation>矩形</translation>
+    </message>
+    <message>
+        <source>Circle</source>
+        <translation>円</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>直線</translation>
+    </message>
+    <message>
+        <source>Point</source>
+        <translation>点</translation>
+    </message>
+    <message>
+        <source>LineStrip</source>
+        <translation>折れ線</translation>
+    </message>
+    <message>
+        <source>Continue with Defaults</source>
+        <translation>初期設定で続行</translation>
+    </message>
+    <message>
+        <source>Back Up and Reset</source>
+        <translation>バックアップしてリセット</translation>
+    </message>
+    <message>
+        <source>Finding all &apos;{query}&apos;…</source>
+        <translation>「{query}」をすべて検索中…</translation>
+    </message>
+    <message>
+        <source>Finding all &apos;{query}&apos; on CPU…</source>
+        <translation>CPU で「{query}」をすべて検索中…</translation>
+    </message>
+    <message>
+        <source>Segmenting on CPU…</source>
+        <translation>CPU でセグメンテーション中…</translation>
+    </message>
+    <message>
+        <source>Segmenting…</source>
+        <translation>セグメンテーション中…</translation>
+    </message>
+    <message>
+        <source>Starting AI…</source>
+        <translation>AIを起動中…</translation>
+    </message>
+    <message>
+        <source>Loading {model}…</source>
+        <translation>{model}を読み込み中…</translation>
+    </message>
+    <message>
+        <source>{status} · {seconds} s</source>
+        <translation>{status} · {seconds}秒</translation>
+    </message>
+    <message>
+        <source>Found {count} new &apos;{query}&apos;</source>
+        <translation>新しい「{query}」が {count} 件見つかりました</translation>
+    </message>
+    <message>
+        <source>No new &apos;{query}&apos; found</source>
+        <translation>新しい「{query}」は見つかりませんでした</translation>
+    </message>
+    <message>
+        <source>Select at least two mask shapes to merge</source>
+        <translation>結合するマスク図形を2つ以上選択してください</translation>
+    </message>
+    <message>
+        <source>Only mask shapes can be merged</source>
+        <translation>結合できるのはマスク図形のみです</translation>
+    </message>
+    <message>
+        <source>Unlock the selected shapes to merge them</source>
+        <translation>結合するには、選択した図形のロックを解除してください</translation>
+    </message>
+    <message>
+        <source>Only shapes with the same label can be merged</source>
+        <translation>結合できるのは同じラベルの図形のみです</translation>
+    </message>
+    <message>
+        <source>Select shapes to convert</source>
+        <translation>変換する図形を選択してください</translation>
+    </message>
+    <message>
+        <source>The selected shapes are already this kind</source>
+        <translation>選択した図形はすでにこの種類です</translation>
+    </message>
+    <message>
+        <source>Converting to oriented rectangles isn’t supported</source>
+        <translation>向き付き矩形への変換には対応していません</translation>
+    </message>
+    <message>
+        <source>Converting to circles isn’t supported</source>
+        <translation>円への変換には対応していません</translation>
+    </message>
+    <message>
+        <source>Converting to points isn’t supported</source>
+        <translation>点への変換には対応していません</translation>
+    </message>
+    <message>
+        <source>A linestrip needs at least 3 points to become a polygon</source>
+        <translation>ポリゴンにするには、折れ線に3つ以上の点が必要です</translation>
+    </message>
+    <message>
+        <source>A linestrip needs exactly 2 points to become a line</source>
+        <translation>直線にするには、折れ線の点がちょうど2つである必要があります</translation>
+    </message>
+    <message>
+        <source>A shape with no area has no bounding box</source>
+        <translation>面積のない図形にはバウンディングボックスがありません</translation>
+    </message>
+    <message>
+        <source>A shape with no area in the image can’t be converted</source>
+        <translation>画像内に面積のない図形は変換できません</translation>
+    </message>
+    <message>
+        <source>Unlock the selected shapes to convert them</source>
+        <translation>変換するには、選択した図形のロックを解除してください</translation>
+    </message>
+    <message>
+        <source>Remove from Label List</source>
+        <translation>ラベル一覧から削除</translation>
+    </message>
+    <message>
+        <source>Clear Unused Labels</source>
+        <translation>未使用のラベルをクリア</translation>
+    </message>
+    <message>
+        <source>The label &apos;{label}&apos; is in use by shapes on the canvas.</source>
+        <translation>ラベル &apos;{label}&apos; はキャンバス上の図形で使用中です。</translation>
+    </message>
+    <message>
+        <source>Cannot Remove Label</source>
+        <translation>ラベルを削除できません</translation>
+    </message>
+    <message>
+        <source>Invalid Label</source>
+        <translation>無効なラベル</translation>
+    </message>
+    <message>
+        <source>Error Saving Annotation File</source>
+        <translation>アノテーションファイルの保存エラー</translation>
+    </message>
+    <message>
+        <source>Convert to Polygon</source>
+        <translation>ポリゴンに変換</translation>
+    </message>
+    <message>
+        <source>Locating the image updates the annotation file to refer to it.</source>
+        <translation>画像の場所を指定すると、アノテーションファイルの参照先がその画像に更新されます。</translation>
+    </message>
+    <message>
+        <source>Locate Image…</source>
+        <translation>画像の場所を指定…</translation>
+    </message>
+    <message>
+        <source>Locate Image</source>
+        <translation>画像の場所を指定</translation>
+    </message>
+    <message>
+        <source>Images (%s)</source>
+        <translation>画像 (%s)</translation>
+    </message>
+    <message>
+        <source>Annotation Folder: %s</source>
+        <translation>アノテーションフォルダー: %s</translation>
+    </message>
+    <message>
+        <source>Delete the annotation file? You can&apos;t undo this.</source>
+        <translation>アノテーションファイルを削除しますか？この操作は取り消せません。</translation>
+    </message>
+    <message>
+        <source>Delete &quot;{}&quot;? You can&apos;t undo this.</source>
+        <translation>「{}」を削除しますか？この操作は取り消せません。</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>ダウンロード</translation>
+    </message>
+    <message>
+        <source>Save annotation changes to &quot;{}&quot;?</source>
+        <translation>「{}」のアノテーションの変更を保存しますか？</translation>
+    </message>
+    <message>
+        <source>This annotation refers to &quot;{name}&quot;, but that image could not be found.
+
+Expected location: {path}</source>
+        <translation>このアノテーションは「{name}」を参照していますが、画像が見つかりません。
+
+画像の参照先: {path}</translation>
+    </message>
+    <message>
+        <source>Image List is disabled when an annotation file is opened</source>
+        <translation>アノテーションファイルを開いている場合、画像一覧は無効です</translation>
+    </message>
+    <message>
+        <source>Add Point to Edge</source>
+        <translation>辺に頂点を追加</translation>
+    </message>
+    <message>
+        <source>Insert a new point at the hovered polygon edge</source>
+        <translation>カーソル位置のポリゴンの辺に新しい頂点を挿入</translation>
+    </message>
+    <message>
+        <source>&amp;Keep Previous Zoom</source>
+        <translation>前のズームを保持(&amp;K)</translation>
+    </message>
+    <message>
+        <source>Allowed formats: {formats}</source>
+        <translation>対応形式: {formats}</translation>
+    </message>
+    <message>
+        <source>Error Deleting Annotation File</source>
+        <translation>アノテーションファイルの削除エラー</translation>
+    </message>
+    <message>
+        <source>Unsaved Changes</source>
+        <translation>未保存の変更</translation>
+    </message>
+    <message>
+        <source>Image Not Found</source>
+        <translation>画像が見つかりません</translation>
+    </message>
+    <message>
+        <source>The selected image file could not be opened: {path}</source>
+        <translation>選択された画像ファイルを開けませんでした: {path}</translation>
+    </message>
+    <message>
+        <source>Failed to load: {path}</source>
+        <translation>読み込みに失敗しました: {path}</translation>
+    </message>
+    <message>
+        <source>Oriented Rectangle</source>
+        <translation>向き付き矩形</translation>
+    </message>
+    <message>
+        <source>Start drawing oriented rectangles</source>
+        <translation>向き付き矩形の描画を開始</translation>
+    </message>
+    <message>
+        <source>AI inference produced no new annotation.</source>
+        <translation>AI推論で新しいアノテーションは生成されませんでした。</translation>
+    </message>
+    <message>
+        <source>Shape had no area; nothing created.</source>
+        <translation>図形に面積がないため、作成されませんでした。</translation>
+    </message>
+    <message>
+        <source>Settings…</source>
+        <translation>設定…</translation>
+    </message>
+    <message>
+        <source>Edit settings</source>
+        <translation>設定を編集</translation>
+    </message>
+    <message>
+        <source>Settings are managed via --config for this session</source>
+        <translation>このセッションの設定は --config で管理されています</translation>
+    </message>
+    <message>
+        <source>Lines and points can’t be converted to polygons</source>
+        <translation>直線と点はポリゴンに変換できません</translation>
+    </message>
+    <message>
+        <source>Lines and points can’t be converted to rectangles</source>
+        <translation>直線と点は矩形に変換できません</translation>
+    </message>
+    <message>
+        <source>Only linestrips can be converted to lines</source>
+        <translation>直線に変換できるのは折れ線のみです</translation>
+    </message>
+    <message>
+        <source>Only polygons and lines can be converted to linestrips</source>
+        <translation>折れ線に変換できるのはポリゴンと直線のみです</translation>
+    </message>
+    <message>
+        <source>Only polygons can be converted to masks</source>
+        <translation>マスクに変換できるのはポリゴンのみです</translation>
+    </message>
+    <message>
+        <source>Large Image</source>
+        <translation>大きな画像</translation>
+    </message>
+    <message>
+        <source>Error Opening File</source>
+        <translation>ファイルを開けませんでした</translation>
+    </message>
+    <message>
+        <source>Open File</source>
+        <translation>ファイルを開く</translation>
+    </message>
+    <message>
+        <source>Choose Annotation Folder</source>
+        <translation>アノテーションフォルダーを選択</translation>
+    </message>
+    <message>
+        <source>Save Annotation File</source>
+        <translation>アノテーションファイルを保存</translation>
+    </message>
+    <message>
+        <source>Annotation files (*%s)</source>
+        <translation>アノテーションファイル (*%s)</translation>
+    </message>
+    <message>
+        <source>Delete Annotation File</source>
+        <translation>アノテーションファイルを削除</translation>
+    </message>
+    <message>
+        <source>Configuration Error</source>
+        <translation>設定エラー</translation>
+    </message>
+    <message>
+        <source>Detects boxes only. Switch to Rectangle to use this model.</source>
+        <translation>バウンディングボックスのみを検出します。このモデルを使うには「矩形」に切り替えてください。</translation>
+    </message>
+    <message>
+        <source>3-Point Circle</source>
+        <translation>円（3点指定）</translation>
+    </message>
+    <message>
+        <source>Start drawing circles with 3 points</source>
+        <translation>3点で円の描画を開始</translation>
+    </message>
+</context>
+<context>
+    <name>ModelPicker</name>
+    <message>
+        <source>Manage models…</source>
+        <translation>モデルを管理…</translation>
+    </message>
+    <message>
+        <source>Download and use</source>
+        <translation>ダウンロードして使用</translation>
+    </message>
+    <message>
+        <source>Choose a model…</source>
+        <translation>モデルを選択…</translation>
+    </message>
+    <message>
+        <source>Downloading: {model}</source>
+        <translation>ダウンロード中: {model}</translation>
+    </message>
+    <message>
+        <source>Unavailable: {model}</source>
+        <translation>利用不可: {model}</translation>
+    </message>
+    <message>
+        <source>More models…</source>
+        <translation>その他のモデル…</translation>
+    </message>
+</context>
+<context>
+    <name>ModelsDialog</name>
+    <message>
+        <source>AI Models</source>
+        <translation>AIモデル</translation>
+    </message>
+</context>
+<context>
+    <name>ModelsWidget</name>
+    <message>
+        <source>Downloading…</source>
+        <translation>ダウンロード中…</translation>
+    </message>
+    <message>
+        <source>Download models to use AI offline. You can keep annotating while downloads run.</source>
+        <translation>モデルをダウンロードすると、オフラインでAIを利用できます。ダウンロード中もアノテーションを続けられます。</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>点</translation>
+    </message>
+    <message>
+        <source>Boxes</source>
+        <translation>ボックス</translation>
+    </message>
+    <message>
+        <source>Text prompts</source>
+        <translation>テキストプロンプト</translation>
+    </message>
+    <message>
+        <source>SAM3 use is subject to the SAM License, including trade-control and end-use restrictions. Read the full agreement before downloading or using it.</source>
+        <translation>SAM3の利用には、貿易管理および最終用途の制限を含むSAM Licenseが適用されます。ダウンロードまたは利用する前に、契約全文をお読みください。</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>削除</translation>
+    </message>
+    <message>
+        <source>Delete {model}</source>
+        <translation>{model} を削除</translation>
+    </message>
+    <message>
+        <source>Downloading {filename} · {done} / {total}</source>
+        <translation>{filename} をダウンロード中 · {done} / {total}</translation>
+    </message>
+    <message>
+        <source>Not downloaded</source>
+        <translation>未ダウンロード</translation>
+    </message>
+    <message>
+        <source>Best balance of speed and quality for point and box prompts.</source>
+        <translation>点およびボックスプロンプトで速度と品質のバランスに優れています。</translation>
+    </message>
+    <message>
+        <source>Best for text prompts and finding multiple objects.</source>
+        <translation>テキストプロンプトや複数オブジェクトの検出に最適です。</translation>
+    </message>
+    <message>
+        <source>Recommended</source>
+        <translation>おすすめ</translation>
+    </message>
+    <message>
+        <source>All models</source>
+        <translation>すべてのモデル</translation>
+    </message>
+    <message>
+        <source>License: {license}</source>
+        <translation>ライセンス: {license}</translation>
+    </message>
+    <message>
+        <source>Details…</source>
+        <translation>詳細…</translation>
+    </message>
+    <message>
+        <source>Downloaded</source>
+        <translation>ダウンロード済み</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>失敗</translation>
+    </message>
+    <message>
+        <source>Deleting…</source>
+        <translation>削除中…</translation>
+    </message>
+    <message>
+        <source>Queued · position {position}</source>
+        <translation>待機中 · {position} 番目</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>キャンセル</translation>
+    </message>
+    <message>
+        <source>Retry</source>
+        <translation>再試行</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>ダウンロード</translation>
+    </message>
+    <message>
+        <source>Download Failed</source>
+        <translation>ダウンロードに失敗しました</translation>
+    </message>
+    <message>
+        <source>Download failed. Check your connection and retry.</source>
+        <translation>ダウンロードに失敗しました。接続を確認して再試行してください。</translation>
+    </message>
+    <message>
+        <source>Delete Model</source>
+        <translation>モデルを削除</translation>
+    </message>
+    <message>
+        <source>Delete {model} from this computer? Its selections will be cleared. Your annotations will not change.</source>
+        <translation>このコンピューターから {model} を削除しますか？このモデルの選択が解除されます。アノテーションは変更されません。</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsDialog</name>
+    <message>
+        <source>Color theme</source>
+        <translation>カラーテーマ</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>システム</translation>
+    </message>
+    <message>
+        <source>Light</source>
+        <translation>ライト</translation>
+    </message>
+    <message>
+        <source>Dark</source>
+        <translation>ダーク</translation>
+    </message>
+    <message>
+        <source>Show label popup on new shape</source>
+        <translation>新しい図形の作成時にラベルポップアップを表示</translation>
+    </message>
+    <message>
+        <source>Show shape labels on canvas</source>
+        <translation>図形のラベルをキャンバスに表示</translation>
+    </message>
+    <message>
+        <source>Allow points outside the image boundary</source>
+        <translation>画像の境界外への点の配置を許可する</translation>
+    </message>
+    <message>
+        <source>Appearance and language</source>
+        <translation>外観と言語</translation>
+    </message>
+    <message>
+        <source>Files and saving</source>
+        <translation>ファイルと保存</translation>
+    </message>
+    <message>
+        <source>Drawing and canvas</source>
+        <translation>描画とキャンバス</translation>
+    </message>
+    <message>
+        <source>Continue between images</source>
+        <translation>画像間で引き継ぐ</translation>
+    </message>
+    <message>
+        <source>Label sources</source>
+        <translation>ラベルのソース</translation>
+    </message>
+    <message>
+        <source>Label behavior</source>
+        <translation>ラベルの動作</translation>
+    </message>
+    <message>
+        <source>AI assist</source>
+        <translation>AI アシスト</translation>
+    </message>
+    <message>
+        <source>Save automatically</source>
+        <translation>自動で保存</translation>
+    </message>
+    <message>
+        <source>autosave auto save</source>
+        <translation>自動保存 オートセーブ</translation>
+    </message>
+    <message>
+        <source>Embed image in annotation file</source>
+        <translation>画像をアノテーションファイルに埋め込む</translation>
+    </message>
+    <message>
+        <source>Shape Color Mode</source>
+        <translation>図形のカラーモード</translation>
+    </message>
+    <message>
+        <source>Automatic</source>
+        <translation>自動</translation>
+    </message>
+    <message>
+        <source>Uniform</source>
+        <translation>均一</translation>
+    </message>
+    <message>
+        <source>By Label</source>
+        <translation>ラベル別</translation>
+    </message>
+    <message>
+        <source>Automatic palette shift</source>
+        <translation>自動パレットシフト</translation>
+    </message>
+    <message>
+        <source>Uniform mode color</source>
+        <translation>「均一」モードの色</translation>
+    </message>
+    <message>
+        <source>By Label fallback color</source>
+        <translation>「ラベル別」モードのフォールバック色</translation>
+    </message>
+    <message>
+        <source>Individual Label colors remain editable in the Config File.</source>
+        <translation>ラベルごとの色は引き続き設定ファイルで編集できます。</translation>
+    </message>
+    <message>
+        <source>Keep previous annotation</source>
+        <translation>前回のアノテーションを維持</translation>
+    </message>
+    <message>
+        <source>Keep previous zoom</source>
+        <translation>前回のズームを維持</translation>
+    </message>
+    <message>
+        <source>Keep previous brightness/contrast</source>
+        <translation>前回の明るさ/コントラストを維持</translation>
+    </message>
+    <message>
+        <source>Fill polygon while drawing</source>
+        <translation>描画中にポリゴンを塗りつぶす</translation>
+    </message>
+    <message>
+        <source>Let shape points extend beyond the image, e.g. for partially visible objects.</source>
+        <translation>図形の点が画像の外まで広がることを許可します（例: 部分的にしか見えない物体）。</translation>
+    </message>
+    <message>
+        <source>Predefined shape flags</source>
+        <translation>定義済みの図形フラグ</translation>
+    </message>
+    <message>
+        <source>One flag name per line. Patterns: ^car$ matches car exactly, car matches a prefix, .* matches every label.</source>
+        <translation>フラグ名は1行に1つ入力します。パターン: ^car$ は car と完全一致、car は前方一致、.* はすべてのラベルに一致します。</translation>
+    </message>
+    <message>
+        <source>AI-Find All model</source>
+        <translation>AI-Find All のモデル</translation>
+    </message>
+    <message>
+        <source>Polygon detail</source>
+        <translation>ポリゴンの詳細度</translation>
+    </message>
+    <message>
+        <source>smooth smoothness simplify outline</source>
+        <translation>滑らか なめらか 平滑化 簡略化 輪郭</translation>
+    </message>
+    <message>
+        <source>Higher values preserve more Mask boundary detail and smaller lands.</source>
+        <translation>値を高くすると、マスク境界の詳細と小さな領域がより多く保持されます。</translation>
+    </message>
+    <message>
+        <source>duplicate duplicates avoid duplicates deduplicate</source>
+        <translation>重複 重複回避 重複を避ける 重複削除</translation>
+    </message>
+    <message>
+        <source>Compute device</source>
+        <translation>計算デバイス</translation>
+    </message>
+    <message>
+        <source>CPU</source>
+        <translation>CPU</translation>
+    </message>
+    <message>
+        <source>Automatic uses the GPU and switches to the CPU if the GPU fails.</source>
+        <translation>「自動」は GPU を使い、GPU でエラーが起きると CPU に切り替えます。</translation>
+    </message>
+    <message>
+        <source>gpu cuda processor slow crash</source>
+        <translation>GPU CUDA プロセッサ 遅い クラッシュ</translation>
+    </message>
+    <message>
+        <source>Predefined labels</source>
+        <translation>定義済みラベル</translation>
+    </message>
+    <message>
+        <source>Embeds the image in the annotation file.</source>
+        <translation>画像をアノテーションファイルに埋め込みます。</translation>
+    </message>
+    <message>
+        <source>Label validation</source>
+        <translation>ラベルの検証</translation>
+    </message>
+    <message>
+        <source>Sort labels</source>
+        <translation>ラベルを並べ替える</translation>
+    </message>
+    <message>
+        <source>Sort the label list alphabetically instead of keeping the provided order.</source>
+        <translation>指定された順序を維持する代わりに、ラベル一覧をアルファベット順に並べ替えます。</translation>
+    </message>
+    <message>
+        <source>Show label text field</source>
+        <translation>ラベルのテキスト入力欄を表示</translation>
+    </message>
+    <message>
+        <source>Label completion</source>
+        <translation>ラベル補完</translation>
+    </message>
+    <message>
+        <source>Starts with</source>
+        <translation>先頭一致</translation>
+    </message>
+    <message>
+        <source>Contains</source>
+        <translation>含む</translation>
+    </message>
+    <message>
+        <source>Default model</source>
+        <translation>デフォルトモデル</translation>
+    </message>
+    <message>
+        <source>Suppress existing Shape matches</source>
+        <translation>既存の図形と一致する候補を抑制</translation>
+    </message>
+    <message>
+        <source>When an AI Assist candidate matches an existing Shape, highlight that Shape instead of creating a new Shape.</source>
+        <translation>AI アシストの候補が既存の図形と一致する場合、新しい図形を作成せずにその図形を強調表示します。</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>設定</translation>
+    </message>
+    <message>
+        <source>Open config file as text…</source>
+        <translation>設定ファイルをテキストとして開く…</translation>
+    </message>
+    <message>
+        <source>Edits made in the text file apply after restart</source>
+        <translation>テキストファイルでの変更は再起動後に反映されます</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation>閉じる</translation>
+    </message>
+    <message>
+        <source>BETA</source>
+        <translation>BETA</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>（なし）</translation>
+    </message>
+    <message>
+        <source>one item per line</source>
+        <translation>1行に1項目</translation>
+    </message>
+    <message>
+        <source>Configuration Error</source>
+        <translation>設定エラー</translation>
+    </message>
+    <message>
+        <source>Predefined labels cannot be empty while Label validation is set to exact. Disable exact validation first.</source>
+        <translation>ラベルの検証が「exact」に設定されている間は、定義済みラベルを空にできません。先に「exact」検証を無効にしてください。</translation>
+    </message>
+    <message>
+        <source>Select {mode} in Shape Color Mode to edit this setting.</source>
+        <translation>この設定を編集するには、形状の色モードで「{mode}」を選択してください。</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>言語</translation>
+    </message>
+    <message>
+        <source>Takes effect after restart.</source>
+        <translation>再起動後に反映されます。</translation>
+    </message>
+    <message>
+        <source>System default</source>
+        <translation>システム言語</translation>
+    </message>
+    <message>
+        <source>Predefined image flags</source>
+        <translation>定義済み画像フラグ</translation>
+    </message>
+</context>
+<context>
+    <name>ToolBar</name>
+    <message>
+        <source>More actions</source>
+        <translation>その他の操作</translation>
+    </message>
+</context>
+<context>
+    <name>UniqueLabelQListWidget</name>
+    <message>
+        <source>Label set</source>
+        <translation>ラベルセット</translation>
+    </message>
+    <message>
+        <source>Edit…</source>
+        <translation>編集…</translation>
+    </message>
+    <message>
+        <source>Clear Unused</source>
+        <translation>未使用をクリア</translation>
+    </message>
+    <message>
+        <source>Found in files</source>
+        <translation>ファイルで検出</translation>
+    </message>
+</context>
+<context>
+    <name>ZoomWidget</name>
+    <message>
+        <source>Zoom</source>
+        <translation>ズーム</translation>
+    </message>
+    <message>
+        <source>Hold %s and scroll to zoom the canvas</source>
+        <translation>%s を押しながらスクロールでキャンバスをズーム</translation>
+    </message>
+</context>
+<context>
+    <name>_ColorSwatchButton</name>
+    <message>
+        <source>RGB: {red}, {green}, {blue}</source>
+        <translation>RGB: {red}, {green}, {blue}</translation>
+    </message>
+</context>
+<context>
+    <name>_LabelFlagsEditor</name>
+    <message>
+        <source>Label pattern</source>
+        <translation>ラベルのパターン</translation>
+    </message>
+    <message>
+        <source>Shape flags</source>
+        <translation>図形フラグ</translation>
+    </message>
+    <message>
+        <source>Add rule</source>
+        <translation>ルールを追加</translation>
+    </message>
+    <message>
+        <source>One name per line</source>
+        <translation>1行に1つの名前</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>削除</translation>
+    </message>
+    <message>
+        <source>Remove rule</source>
+        <translation>ルールを削除</translation>
+    </message>
+    <message>
+        <source>Enter a pattern and at least one flag name.</source>
+        <translation>パターンと少なくとも1つのフラグ名を入力してください。</translation>
+    </message>
+    <message>
+        <source>Duplicate label pattern.</source>
+        <translation>ラベルのパターンが重複しています。</translation>
+    </message>
+    <message>
+        <source>Invalid regular expression.</source>
+        <translation>正規表現が無効です。</translation>
+    </message>
+    <message>
+        <source>Row {row}: {error} Changes have not been applied.</source>
+        <translation>行 {row}: {error} 変更は適用されていません。</translation>
+    </message>
+</context>
+<context>
+    <name>_ModelMenuButton</name>
+    <message>
+        <source>Model</source>
+        <translation>モデル</translation>
+    </message>
+    <message>
+        <source>{tool}: {model}</source>
+        <translation>{tool}：{model}</translation>
+    </message>
+    <message>
+        <source>Fastest</source>
+        <translation>最速</translation>
+    </message>
+    <message>
+        <source>Balanced</source>
+        <translation>バランス</translation>
+    </message>
+    <message>
+        <source>Most accurate</source>
+        <translation>最高精度</translation>
+    </message>
+    <message>
+        <source>The original SAM. SAM 2 is faster at every size.</source>
+        <translation>初代SAM。どのサイズでもSAM 2の方が高速です。</translation>
+    </message>
+    <message>
+        <source>Fastest, with rough outlines. Runs well on any computer.</source>
+        <translation>最速で、輪郭は大まか。どのコンピュータでも快適に動作します。</translation>
+    </message>
+    <message>
+        <source>Sharper outlines than Tiny, but slower than SAM 2 Base+.</source>
+        <translation>Tinyより輪郭が鮮明ですが、SAM 2 Base+より低速です。</translation>
+    </message>
+    <message>
+        <source>A smaller download than Base+, a little less accurate.</source>
+        <translation>Base+よりダウンロードが小さく、精度はやや下がります。</translation>
+    </message>
+    <message>
+        <source>Balanced speed and accuracy. Runs well on a CPU.</source>
+        <translation>速度と精度のバランス型。CPUでも快適に動作します。</translation>
+    </message>
+    <message>
+        <source>More accurate than Base+, but slower.</source>
+        <translation>Base+より高精度ですが、低速です。</translation>
+    </message>
+    <message>
+        <source>Most accurate, but slower than SAM 2 Base+. Best with a GPU.</source>
+        <translation>最も高精度ですが、SAM 2 Base+より低速です。GPUがあると最適です。</translation>
+    </message>
+    <message>
+        <source>Fastest. Finds boxes, without masks.</source>
+        <translation>最速。マスクなしでボックスを検出します。</translation>
+    </message>
+    <message>
+        <source>Boxes only</source>
+        <translation>ボックスのみ</translation>
+    </message>
+</context>
+<context>
+    <name>_SettingsPage</name>
+    <message>
+        <source>Settings sections</source>
+        <translation>設定セクション</translation>
+    </message>
+    <message>
+        <source>Search settings</source>
+        <translation>設定を検索</translation>
+    </message>
+    <message>
+        <source>Matching settings</source>
+        <translation>一致する設定</translation>
+    </message>
+    <message>
+        <source>{count} matching settings</source>
+        <translation>{count} 件の設定が一致</translation>
+    </message>
+    <message>
+        <source>No matching settings in this dialog. Try another term or clear search.</source>
+        <translation>このダイアログに一致する設定はありません。別の語句を試すか、検索をクリアしてください。</translation>
+    </message>
+</context>
+<context>
+    <name>main</name>
+    <message>
+        <source>Error</source>
+        <translation>エラー</translation>
+    </message>
+    <message>
+        <source>An unexpected error occurred. The application will close.&lt;br/&gt;&lt;br/&gt;Please report the issue by following &lt;a href=&apos;https://labelme.io/docs/troubleshoot&apos;&gt;Troubleshooting&lt;/a&gt;.</source>
+        <translation>予期しないエラーが発生しました。アプリケーションを終了します。&lt;br/&gt;&lt;br/&gt;&lt;a href=&apos;https://labelme.io/docs/troubleshoot&apos;&gt;トラブルシューティング&lt;/a&gt;の手順に従って問題を報告してください。</translation>
+    </message>
+</context>
+</TS>

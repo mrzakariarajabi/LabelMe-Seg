@@ -1,0 +1,687 @@
+from __future__ import annotations
+
+import base64
+import contextlib
+import io
+import json
+import math
+import os
+import re
+import stat
+import time
+import typing
+import uuid
+from dataclasses import dataclass
+from pathlib import Path
+from pathlib import PureWindowsPath
+from typing import Any
+from typing import Final
+from typing import cast
+
+import numpy as np
+import PIL.Image
+import tifffile
+from loguru import logger
+from numpy.typing import NDArray
+
+from labelme import __version__
+
+from . import _image_codec
+from ._shape import ShapeDict
+from ._shape import ShapeType
+
+PIL.Image.MAX_IMAGE_PIXELS = None
+
+
+_SINGLE_CHANNEL_NDIM: Final = 2
+
+_TEMPORARY_NAME_PATTERN: Final = re.compile(r"\.[0-9a-f]{32}\.tmp")
+# Listing a large or remote Annotation Folder on every save is too slow.
+_SWEPT_DIRECTORIES: Final[set[str]] = set()
+
+
+def _validate_flags(*, flags: object) -> dict[str, bool]:
+    if flags is None:
+        return {}
+    if not isinstance(flags, dict):
+        raise TypeError(f"flags must be dict: {flags}")
+    if not all(isinstance(k, str) and isinstance(v, bool) for k, v in flags.items()):
+        raise TypeError(f"flags must be dict of str to bool: {flags}")
+    return cast(dict[str, bool], flags)
+
+
+def _validate_shape_semantics(
+    *,
+    shape_type: str,
+    points: list[list[float]],
+    mask: NDArray[np.bool_] | None,
+) -> None:
+    # Only invariants the GUI needs before Shape construction are checked.
+    # Degenerate geometry (zero-extent rectangle, coincident points, 2-point
+    # polygons) and mask/bbox extent drift can be produced by vertex edits and
+    # fractional drags in released versions, so rejecting them would make
+    # legitimately saved files unopenable.
+    if shape_type not in typing.get_args(ShapeType):
+        raise ValueError(f"shape_type is unsupported: {shape_type!r}")
+    try:
+        coordinates_are_finite = all(
+            math.isfinite(coordinate) for point in points for coordinate in point
+        )
+    except OverflowError:
+        coordinates_are_finite = False
+    if not coordinates_are_finite:
+        raise ValueError(f"points must contain finite coordinates: {points}")
+
+    EXACT_POINT_COUNT_BY_SHAPE_TYPE: Final[dict[str, int]] = {
+        "point": 1,
+        "rectangle": 2,
+        "line": 2,
+        "circle": 2,
+        "mask": 2,
+        "oriented_rectangle": 4,
+    }
+    expected_point_count = EXACT_POINT_COUNT_BY_SHAPE_TYPE.get(shape_type)
+    if expected_point_count is not None and len(points) != expected_point_count:
+        noun = "point" if expected_point_count == 1 else "points"
+        raise ValueError(
+            f"points must contain exactly {expected_point_count} {noun} for "
+            f"shape_type={shape_type!r}: {points}"
+        )
+
+    if shape_type != "mask":
+        if mask is not None:
+            raise ValueError(
+                f"mask is only supported for shape_type='mask', got {shape_type!r}"
+            )
+        return
+    if mask is None:
+        raise ValueError("mask is required for shape_type='mask'")
+    if mask.ndim != _SINGLE_CHANNEL_NDIM:
+        raise ValueError(f"mask must decode to a 2D image, got shape {mask.shape}")
+
+
+def _load_shape_json_obj(
+    *, shape_json_obj: dict, image_size: tuple[int, int] | None
+) -> ShapeDict:
+    POINT_COORDINATE_COUNT: Final = 2
+    MASK_PIXEL_BUDGET_FACTOR: Final = 16
+    MASK_PIXEL_BUDGET_FLOOR: Final = 4096 * 4096
+    SHAPE_KEYS: Final[set[str]] = {
+        "label",
+        "points",
+        "group_id",
+        "shape_type",
+        "flags",
+        "description",
+        "mask",
+        "locked",
+    }
+
+    if "label" not in shape_json_obj:
+        raise ValueError(f"label is required: {shape_json_obj}")
+    if not isinstance(shape_json_obj["label"], str):
+        raise TypeError(f"label must be str: {shape_json_obj['label']}")
+    label: str = shape_json_obj["label"]
+
+    if "points" not in shape_json_obj:
+        raise ValueError(f"points is required: {shape_json_obj}")
+    if not isinstance(shape_json_obj["points"], list):
+        raise TypeError(f"points must be list: {shape_json_obj['points']}")
+    if not shape_json_obj["points"]:
+        raise ValueError(f"points must be non-empty: {shape_json_obj}")
+    if not all(
+        isinstance(point, list)
+        and len(point) == POINT_COORDINATE_COUNT
+        and all(
+            isinstance(xy, int | float) and not isinstance(xy, bool) for xy in point
+        )
+        for point in shape_json_obj["points"]
+    ):
+        raise ValueError(f"points must be list of [x, y]: {shape_json_obj['points']}")
+    points: list[list[float]] = shape_json_obj["points"]
+
+    if "shape_type" not in shape_json_obj:
+        raise ValueError(f"shape_type is required: {shape_json_obj}")
+    if not isinstance(shape_json_obj["shape_type"], str):
+        raise TypeError(f"shape_type must be str: {shape_json_obj['shape_type']}")
+    shape_type: str = shape_json_obj["shape_type"]
+
+    flags = _validate_flags(flags=shape_json_obj.get("flags"))
+
+    description: str = ""
+    if shape_json_obj.get("description") is not None:
+        if not isinstance(shape_json_obj["description"], str):
+            raise TypeError(f"description must be str: {shape_json_obj['description']}")
+        description = shape_json_obj["description"]
+
+    group_id: int | None = None
+    if shape_json_obj.get("group_id") is not None:
+        if isinstance(shape_json_obj["group_id"], bool) or not isinstance(
+            shape_json_obj["group_id"], int
+        ):
+            raise TypeError(f"group_id must be int: {shape_json_obj['group_id']}")
+        group_id = shape_json_obj["group_id"]
+
+    mask: NDArray[np.bool_] | None = None
+    if shape_json_obj.get("mask") is not None:
+        if not isinstance(shape_json_obj["mask"], str):
+            raise TypeError(
+                f"mask must be base64-encoded PNG: {shape_json_obj['mask']}"
+            )
+        try:
+            if image_size is not None:
+                # A decoded mask costs about a byte per pixel, so this bounds memory.
+                # The floor (about 16 MB) lets small Images keep masks that merges and
+                # out-of-bounds edits grew far past them; the factor lets large Images
+                # keep masks somewhat larger than themselves. The header gives the size.
+                with PIL.Image.open(
+                    io.BytesIO(base64.b64decode(shape_json_obj["mask"]))
+                ) as mask_image:
+                    mask_width, mask_height = mask_image.size
+                budget_pixels = max(
+                    MASK_PIXEL_BUDGET_FACTOR * image_size[0] * image_size[1],
+                    MASK_PIXEL_BUDGET_FLOOR,
+                )
+                if mask_width * mask_height > budget_pixels:
+                    raise ValueError(
+                        f"mask is too large for the image: {mask_width}x{mask_height}"
+                    )
+            mask = _image_codec.img_b64_to_arr(img_b64=shape_json_obj["mask"]).astype(
+                bool
+            )
+        except (OSError, ValueError) as e:
+            raise ValueError(f"mask must be base64-encoded PNG: {e}") from e
+
+    # Only a missing key means unlocked; a null would unlock a shape silently.
+    locked: bool = False
+    if "locked" in shape_json_obj:
+        if not isinstance(shape_json_obj["locked"], bool):
+            raise TypeError(f"locked must be bool: {shape_json_obj['locked']}")
+        locked = shape_json_obj["locked"]
+
+    _validate_shape_semantics(shape_type=shape_type, points=points, mask=mask)
+
+    other_data = {k: v for k, v in shape_json_obj.items() if k not in SHAPE_KEYS}
+
+    loaded: ShapeDict = ShapeDict(
+        label=label,
+        points=points,
+        shape_type=shape_type,
+        flags=flags,
+        description=description,
+        group_id=group_id,
+        mask=mask,
+        locked=locked,
+        other_data=other_data,
+    )
+    if set(loaded.keys()) != SHAPE_KEYS | {"other_data"}:
+        raise RuntimeError(
+            f"unexpected keys: {set(loaded.keys())} != {SHAPE_KEYS | {'other_data'}}"
+        )
+    return loaded
+
+
+def _dump_shape_to_json_obj(*, shape: ShapeDict) -> dict[str, Any]:
+    json_obj: dict[str, Any] = dict(shape["other_data"])
+    json_obj.update(
+        label=shape["label"],
+        points=[list(point) for point in shape["points"]],
+        group_id=shape["group_id"],
+        description=shape["description"],
+        shape_type=shape["shape_type"],
+        flags=shape["flags"],
+        mask=None
+        if shape["mask"] is None
+        else _image_codec.img_arr_to_b64(img_arr=shape["mask"].astype(np.uint8)),
+    )
+    # Written only when set, so files without locked shapes stay unchanged.
+    if shape["locked"]:
+        json_obj["locked"] = True
+    return json_obj
+
+
+class LabelFileError(Exception):
+    """Base for read/write failures of labelme JSON annotation files."""
+
+
+class LabelFileReadError(LabelFileError):
+    """Wraps an underlying parse or image-decode failure during load."""
+
+
+class ImageNotFoundError(LabelFileReadError):
+    image_path: str
+
+    def __init__(self, *, image_path: str) -> None:
+        super().__init__(f"Image not found: {image_path}")
+        self.image_path = image_path
+
+
+# Qt's raster paint engine cannot handle an image whose width or height
+# exceeds this, regardless of how high the allocation limit is raised.
+RASTER_MAX_SIDE: Final = 32767
+
+
+class ImageTooLargeError(OSError):
+    """Raised when an image's dimensions exceed Qt raster engine display limits."""
+
+    width: int
+    height: int
+    max_side: int
+
+    def __init__(self, *, width: int, height: int, max_side: int) -> None:
+        super().__init__(
+            f"image is {width}x{height} pixels, exceeding the {max_side} pixel "
+            "per-side limit"
+        )
+        self.width = width
+        self.height = height
+        self.max_side = max_side
+
+
+class ImageDecodeLimitError(OSError):
+    # The image fits Qt's per-side limit but needs more memory than the
+    # decode limit allows. The caller may ask the user and read again
+    # without a limit.
+
+    width: int
+    height: int
+    required_mb: int
+
+    def __init__(self, *, width: int, height: int, required_mb: int) -> None:
+        super().__init__(
+            f"image is {width}x{height} pixels and needs about {required_mb} MB "
+            "to decode, above the decode limit"
+        )
+        self.width = width
+        self.height = height
+        self.required_mb = required_mb
+
+
+class LabelFileWriteError(LabelFileError):
+    """Wraps an underlying I/O failure during save."""
+
+
+@dataclass(frozen=True)
+class Annotation:
+    image_path: str
+    image_data: bytes
+    shapes: list[ShapeDict]
+    flags: dict[str, bool]
+    other_data: dict[str, Any]
+
+
+LABEL_FILE_SUFFIX: Final[str] = ".json"
+
+_RESERVED_TOP_LEVEL_KEYS: Final[tuple[str, ...]] = (
+    "version",
+    "imageData",
+    "imagePath",
+    "shapes",
+    "flags",
+    "imageHeight",
+    "imageWidth",
+)
+
+
+def is_label_file_path(*, filename: str) -> bool:
+    return Path(filename).suffix.lower() == LABEL_FILE_SUFFIX
+
+
+def read_image_file(*, filename: str, max_decode_mb: int | None = None) -> bytes:
+    try:
+        return _read_image_file(filename=filename, max_decode_mb=max_decode_mb)
+    except OSError:
+        raise
+    except Exception as e:
+        raise OSError(f"failed to read image {filename!r}: {e}") from e
+
+
+def _read_image_file(*, filename: str, max_decode_mb: int | None) -> bytes:
+    t_start = time.time()
+    with _imread(filename=filename, max_decode_mb=max_decode_mb) as image_pil:
+        oriented: PIL.Image.Image = _image_codec.apply_exif_orientation(image=image_pil)
+        is_jpeg2000 = image_pil.format == "JPEG2000"
+
+        ext = Path(filename).suffix.lower()
+        if (
+            oriented is image_pil
+            and ext in (".jpg", ".jpeg", ".png")
+            and not is_jpeg2000
+        ):
+            with open(filename, "rb") as f:
+                image_data = f.read()
+        else:
+            with io.BytesIO() as f:
+                has_transparency = "A" in oriented.mode or (
+                    oriented.mode == "P" and "transparency" in oriented.info
+                )
+                if oriented.mode == "F":
+                    # No format Qt reads holds float pixels; scale them as a
+                    # float TIFF is scaled.
+                    oriented = PIL.Image.fromarray(
+                        _normalize_to_uint8(arr=np.asarray(oriented))
+                    )
+                elif oriented.mode == "I":
+                    # A 16-bit PGM decodes to 32-bit integers, which PNG
+                    # cannot hold.
+                    oriented = oriented.convert("I;16")
+                # JPEG holds 8 bits per channel; PNG keeps 16-bit integers.
+                is_high_depth = oriented.mode.startswith("I")
+                fmt = (
+                    "PNG"
+                    if has_transparency or is_jpeg2000 or is_high_depth
+                    else "JPEG"
+                )
+                if fmt == "JPEG" and oriented.mode == "P":
+                    oriented = oriented.convert("RGB")
+                elif fmt == "PNG" and oriented.mode == "PA":
+                    oriented = oriented.convert("RGBA")
+                oriented.save(fp=f, format=fmt, quality=95)
+                f.seek(0)
+                image_data = f.read()
+
+    logger.debug(
+        "Loaded image file: {!r} in {:.0f}ms", filename, (time.time() - t_start) * 1000
+    )
+    return image_data
+
+
+def _check_image_dimensions(
+    *,
+    image_data: bytes,
+    expected_height: int | None,
+    expected_width: int | None,
+) -> None:
+    if expected_height is None and expected_width is None:
+        return
+    if expected_height is not None and (
+        isinstance(expected_height, bool) or not isinstance(expected_height, int)
+    ):
+        raise TypeError(f"imageHeight must be int: {expected_height}")
+    if expected_width is not None and (
+        isinstance(expected_width, bool) or not isinstance(expected_width, int)
+    ):
+        raise TypeError(f"imageWidth must be int: {expected_width}")
+    actual_w, actual_h = _image_codec.img_data_to_pil(img_data=image_data).size
+    if expected_height is not None and expected_height != actual_h:
+        raise ValueError(
+            f"imageHeight mismatch: declared={expected_height}, actual={actual_h}"
+        )
+    if expected_width is not None and expected_width != actual_w:
+        raise ValueError(
+            f"imageWidth mismatch: declared={expected_width}, actual={actual_w}"
+        )
+
+
+def read_label_file_image_path(*, filename: str) -> str:
+    # The recorded Image path is relative to the Annotation File.
+    try:
+        with open(filename, encoding="utf-8") as f:
+            return _image_path_from_raw(raw=json.load(f))
+    # RuntimeError covers RecursionError from deeply nested JSON.
+    except (OSError, KeyError, TypeError, ValueError, RuntimeError) as e:
+        raise LabelFileReadError(f"failed to load {filename!r}: {e}") from e
+
+
+def _image_path_from_raw(*, raw: dict[str, Any]) -> str:
+    # Annotation Files saved on Windows carry backslashes.
+    return PureWindowsPath(raw["imagePath"]).as_posix()
+
+
+def read_label_file(
+    *,
+    filename: str,
+    image_path_override: str | None = None,
+    max_decode_mb: int | None = None,
+) -> Annotation:
+    try:
+        with open(filename, encoding="utf-8") as f:
+            raw: dict[str, Any] = json.load(f)
+        if image_path_override is not None:
+            # The caller knows where the Image is; the recorded path is stale.
+            raw["imagePath"] = image_path_override
+        image_path = _image_path_from_raw(raw=raw)
+        if raw["imageData"] is None:
+            resolved_image_path = str(Path(filename).parent / image_path)
+            try:
+                image_data = read_image_file(
+                    filename=resolved_image_path, max_decode_mb=max_decode_mb
+                )
+            except FileNotFoundError as e:
+                raise ImageNotFoundError(image_path=resolved_image_path) from e
+        else:
+            image_data = base64.b64decode(raw["imageData"])
+        _check_image_dimensions(
+            image_data=image_data,
+            expected_height=raw.get("imageHeight"),
+            expected_width=raw.get("imageWidth"),
+        )
+        image_size = _image_codec.img_data_to_pil(img_data=image_data).size
+        shapes: list[ShapeDict] = []
+        for shape_index, shape_json_obj in enumerate(raw["shapes"]):
+            if not isinstance(shape_json_obj, dict):
+                raise TypeError(f"shapes[{shape_index}] must be dict: {shape_json_obj}")
+            try:
+                shape = _load_shape_json_obj(
+                    shape_json_obj=shape_json_obj, image_size=image_size
+                )
+            except (TypeError, ValueError, RuntimeError) as e:
+                raise ValueError(f"shapes[{shape_index}]: {e}") from e
+            shapes.append(shape)
+        flags = _validate_flags(flags=raw.get("flags"))
+    except (
+        OSError,
+        json.JSONDecodeError,
+        KeyError,
+        TypeError,
+        ValueError,
+        RuntimeError,
+    ) as e:
+        raise LabelFileReadError(f"failed to load {filename!r}: {e}") from e
+    other_data = {k: v for k, v in raw.items() if k not in _RESERVED_TOP_LEVEL_KEYS}
+    return Annotation(
+        image_path=image_path,
+        image_data=image_data,
+        shapes=shapes,
+        flags=flags,
+        other_data=other_data,
+    )
+
+
+def write_label_file(
+    *,
+    filename: str,
+    annotation: Annotation,
+    image_height: int | None,
+    image_width: int | None,
+    save_image_data: bool,
+) -> None:
+    try:
+        image_data_b64: str | None = None
+        if save_image_data:
+            _check_image_dimensions(
+                image_data=annotation.image_data,
+                expected_height=image_height,
+                expected_width=image_width,
+            )
+            image_data_b64 = base64.b64encode(annotation.image_data).decode("utf-8")
+        # JSON keys stay camelCase: changing them would break existing .json files.
+        payload: dict[str, Any] = {
+            "version": __version__,
+            "flags": dict(annotation.flags) if annotation.flags else {},
+            "shapes": [
+                _dump_shape_to_json_obj(shape=shape) for shape in annotation.shapes
+            ],
+            "imagePath": annotation.image_path,
+            "imageData": image_data_b64,
+            "imageHeight": image_height,
+            "imageWidth": image_width,
+        }
+        for key, value in annotation.other_data.items():
+            if key in _RESERVED_TOP_LEVEL_KEYS:
+                raise ValueError(f"reserved key in other_data: {key!r}")
+            payload[key] = value
+
+        _replace_json_file(filename=filename, payload=payload)
+    except (OSError, TypeError, ValueError) as e:
+        raise LabelFileWriteError(f"failed to write {filename!r}: {e}") from e
+
+
+def relink_label_file(*, filename: str, image_path: str) -> None:
+    # Point the Annotation File at a located Image and change nothing else.
+    try:
+        with open(filename, encoding="utf-8") as f:
+            raw: dict[str, Any] = json.load(f)
+        raw["imagePath"] = image_path
+        _replace_json_file(filename=filename, payload=raw)
+    except (OSError, TypeError, ValueError) as e:
+        raise LabelFileWriteError(f"failed to write {filename!r}: {e}") from e
+
+
+def _replace_json_file(*, filename: str, payload: dict[str, Any]) -> None:
+    # A failed save must leave the previous file intact, so write next to
+    # it and rename over it only once the temporary file closed cleanly.
+    # Windows cannot represent POSIX modes, so preservation is POSIX-only.
+    try:
+        existing_mode = (
+            None if os.name == "nt" else stat.S_IMODE(os.stat(filename).st_mode)
+        )
+    except FileNotFoundError:
+        existing_mode = None
+    # Unique per write: another process saving this file must not share it.
+    # Not derived from the file's name, which may already be at the length limit.
+    temporary_path = Path(filename).with_name(f".{uuid.uuid4().hex}.tmp")
+    try:
+        with open(temporary_path, "x", encoding="utf-8") as f:
+            json.dump(payload, f, ensure_ascii=False, indent=2)
+        if existing_mode is not None:
+            os.chmod(temporary_path, existing_mode)
+        os.replace(temporary_path, filename)
+    finally:
+        temporary_path.unlink(missing_ok=True)
+    _sweep_stale_temporary_files(directory=Path(filename).absolute().parent)
+
+
+def _sweep_stale_temporary_files(*, directory: Path) -> None:
+    # A killed save leaves its uniquely named temporary file behind, and no
+    # later save reuses the name. Best effort: it must never fail a save.
+    key = str(directory)
+    if key in _SWEPT_DIRECTORIES:
+        return
+    _SWEPT_DIRECTORIES.add(key)
+    # Far longer than any save, so a file another process is writing stays.
+    STALE_AGE_SECONDS: Final = 60 * 60
+    cutoff = time.time() - STALE_AGE_SECONDS
+    with contextlib.suppress(OSError), os.scandir(directory) as entries:
+        for entry in entries:
+            if not _TEMPORARY_NAME_PATTERN.fullmatch(entry.name):
+                continue
+            with contextlib.suppress(OSError):
+                if (
+                    entry.is_file(follow_symlinks=False)
+                    and entry.stat(follow_symlinks=False).st_mtime < cutoff
+                ):
+                    os.unlink(entry.path)
+
+
+def _check_decodable(*, width: int, height: int, max_decode_mb: int | None) -> None:
+    QT_MIN_BYTES_PER_PIXEL: Final = 4
+
+    # Qt counts at least 4 bytes per pixel for every image, so neither check
+    # below rejects or asks about an image Qt would have decoded silently.
+    # Past the per-side limit Qt refuses to decode and cannot be told to
+    # raise it, so such an image is rejected when it also exceeds the byte
+    # budget. Within the side limit the caller may ask the user and read
+    # again without a limit.
+    if max_decode_mb is None:
+        return
+    if max(width, height) > RASTER_MAX_SIDE:
+        if width * height * QT_MIN_BYTES_PER_PIXEL > max_decode_mb * 2**20:
+            raise ImageTooLargeError(
+                width=width, height=height, max_side=RASTER_MAX_SIDE
+            )
+        return
+    required_mb = math.ceil(width * height * QT_MIN_BYTES_PER_PIXEL / 2**20)
+    if required_mb > max_decode_mb:
+        raise ImageDecodeLimitError(width=width, height=height, required_mb=required_mb)
+
+
+def _imread(*, filename: str, max_decode_mb: int | None) -> PIL.Image.Image:
+    DISPLAYABLE_MODES: Final = {"1", "L", "P", "RGB", "RGBA", "LA", "PA"}
+
+    ext: str = Path(filename).suffix.lower()
+    image_pil: PIL.Image.Image | None = None
+    try:
+        image_pil = PIL.Image.open(filename)
+        width, height = image_pil.size
+        try:
+            _check_decodable(
+                width=width,
+                height=height,
+                max_decode_mb=max_decode_mb,
+            )
+        except (ImageTooLargeError, ImageDecodeLimitError):
+            image_pil.close()
+            raise
+        # Only TIFFs have another reader to fall back to. Qt decodes the other
+        # formats itself, modes Pillow lists here or not.
+        if ext in (".tif", ".tiff") and image_pil.mode not in DISPLAYABLE_MODES:
+            raise PIL.UnidentifiedImageError
+        return image_pil
+    except PIL.UnidentifiedImageError:
+        if image_pil is not None:
+            image_pil.close()
+        if ext in (".tif", ".tiff"):
+            return _imread_tiff(filename=filename, max_decode_mb=max_decode_mb)
+        raise
+
+
+def _imread_tiff(*, filename: str, max_decode_mb: int | None) -> PIL.Image.Image:
+    MULTI_CHANNEL_NDIM: Final = 3
+    RGB_CHANNEL_COUNT: Final = 3
+
+    with tifffile.TiffFile(filename) as tif:
+        page = tif.pages.first
+        # page.shape leads with the band axis for planar-separate TIFFs.
+        _check_decodable(
+            width=page.imagewidth,
+            height=page.imagelength,
+            max_decode_mb=max_decode_mb,
+        )
+        series = tif.series[0]
+        img_arr: NDArray = series.asarray()
+    # Planar-separate TIFFs put the band axis first.
+    if img_arr.ndim == MULTI_CHANNEL_NDIM and series.axes.startswith("S"):
+        img_arr = np.moveaxis(img_arr, 0, -1)
+
+    if img_arr.ndim == _SINGLE_CHANNEL_NDIM:
+        img_arr_normalized = _normalize_to_uint8(arr=img_arr)
+    elif img_arr.ndim == MULTI_CHANNEL_NDIM:
+        if img_arr.shape[2] >= RGB_CHANNEL_COUNT:
+            img_arr_normalized = np.stack(
+                [
+                    _normalize_to_uint8(arr=img_arr[:, :, i])
+                    for i in range(RGB_CHANNEL_COUNT)
+                ],
+                axis=2,
+            )
+        else:
+            img_arr_normalized = _normalize_to_uint8(arr=img_arr[:, :, 0])
+    else:
+        raise OSError(f"Unsupported image shape: {img_arr.shape}")
+
+    return PIL.Image.fromarray(img_arr_normalized)
+
+
+def _normalize_to_uint8(*, arr: NDArray) -> NDArray[np.uint8]:
+    arr = arr.astype(np.float64)
+    finite = arr[np.isfinite(arr)]
+    if finite.size == 0:
+        return np.zeros(arr.shape, dtype=np.uint8)
+    min_val = finite.min()
+    max_val = finite.max()
+    if max_val - min_val == 0:
+        return np.zeros(arr.shape, dtype=np.uint8)
+    normalized = (arr - min_val) / (max_val - min_val) * 255
+    bounded = np.nan_to_num(np.clip(normalized, 0, 255), nan=0.0)
+    return bounded.astype(np.uint8)

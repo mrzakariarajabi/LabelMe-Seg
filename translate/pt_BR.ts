@@ -1,0 +1,1978 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="pt_BR">
+<context>
+    <name>AiAssistedAnnotationWidget</name>
+    <message>
+        <source>Polygon detail</source>
+        <translation>Detalhe do polígono</translation>
+    </message>
+    <message>
+        <source>Smoother</source>
+        <translation>Mais suave</translation>
+    </message>
+    <message>
+        <source>More detail</source>
+        <translation>Mais detalhes</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>Saída</translation>
+    </message>
+    <message>
+        <source>Polygon</source>
+        <translation>Polígono</translation>
+    </message>
+    <message>
+        <source>Mask</source>
+        <translation>Máscara</translation>
+    </message>
+    <message>
+        <source>Rectangle</source>
+        <translation>Retângulo</translation>
+    </message>
+    <message>
+        <source>Oriented Rectangle</source>
+        <translation>Retângulo Orientado</translation>
+    </message>
+    <message>
+        <source>Circle</source>
+        <translation>Círculo</translation>
+    </message>
+    <message>
+        <source>Output format: {format}</source>
+        <translation>Formato de saída: {format}</translation>
+    </message>
+    <message>
+        <source>AI-assisted annotation model</source>
+        <translation>Modelo de anotação assistida por AI</translation>
+    </message>
+    <message>
+        <source>AI-assisted annotation output format</source>
+        <translation>Formato de saída de anotação assistida por AI</translation>
+    </message>
+    <message>
+        <source>Model</source>
+        <translation>Modelo</translation>
+    </message>
+</context>
+<context>
+    <name>AiTextToAnnotationWidget</name>
+    <message>
+        <source>Run</source>
+        <translation>Executar</translation>
+    </message>
+    <message>
+        <source>Score</source>
+        <translation>Pontuação</translation>
+    </message>
+    <message>
+        <source>IoU</source>
+        <translation>IoU</translation>
+    </message>
+    <message>
+        <source>Model</source>
+        <translation>Modelo</translation>
+    </message>
+    <message>
+        <source>What to find</source>
+        <translation>O que encontrar</translation>
+    </message>
+    <message>
+        <source>Prompt</source>
+        <translation>Prompt</translation>
+    </message>
+    <message>
+        <source>Finding…</source>
+        <translation>Procurando…</translation>
+    </message>
+    <message>
+        <source>AI-Find All model</source>
+        <translation>Modelo do AI-Find All</translation>
+    </message>
+</context>
+<context>
+    <name>AiToolGroup</name>
+    <message>
+        <source>Options</source>
+        <translation>Opções</translation>
+    </message>
+    <message>
+        <source>AI-Segment</source>
+        <translation>AI-Segment</translation>
+    </message>
+    <message>
+        <source>AI-Find All</source>
+        <translation>AI-Find All</translation>
+    </message>
+</context>
+<context>
+    <name>AnnotationFolderFooter</name>
+    <message>
+        <source>Annotation Folder</source>
+        <translation>Pasta de anotações</translation>
+    </message>
+    <message>
+        <source>Next to Images</source>
+        <translation>Junto às imagens</translation>
+    </message>
+    <message>
+        <source>Change Annotation Folder…</source>
+        <translation>Alterar pasta de anotações…</translation>
+    </message>
+    <message>
+        <source>{annotated} of {total} annotated in</source>
+        <translation>{annotated} de {total} anotadas em</translation>
+    </message>
+    <message>
+        <source>Not found: %s · next to images</source>
+        <translation>Não encontrada: %s · junto às imagens</translation>
+    </message>
+    <message>
+        <source>{annotated} of {total} annotated · next to images</source>
+        <translation>{annotated} de {total} anotadas · junto às imagens</translation>
+    </message>
+</context>
+<context>
+    <name>BrightnessContrastDialog</name>
+    <message>
+        <source>Brightness/Contrast</source>
+        <translation>Brilho/Contraste</translation>
+    </message>
+    <message>
+        <source>Brightness:</source>
+        <translation>Brilho:</translation>
+    </message>
+    <message>
+        <source>Contrast:</source>
+        <translation>Contraste:</translation>
+    </message>
+</context>
+<context>
+    <name>Canvas</name>
+    <message>
+        <source>Click &amp; drag to move point</source>
+        <translation>Clique e arraste para mover o ponto</translation>
+    </message>
+    <message>
+        <source>Hold %s and click to add a point on the edge</source>
+        <translation>Segure %s e clique para adicionar um ponto na aresta</translation>
+    </message>
+    <message>
+        <source>Shape is locked</source>
+        <translation>A forma está bloqueada</translation>
+    </message>
+    <message>
+        <source>Click &amp; drag to move shape</source>
+        <translation>Clique e arraste para mover a forma</translation>
+    </message>
+    <message>
+        <source>ESC to cancel</source>
+        <translation>ESC para cancelar</translation>
+    </message>
+    <message>
+        <source>Enter or Space to finalize</source>
+        <translation>Enter ou Espaço para finalizar</translation>
+    </message>
+    <message>
+        <source>Editing shapes</source>
+        <translation>Editando formas</translation>
+    </message>
+    <message>
+        <source>Click points to include, hold %s and click to exclude, or drag a box. Hold %s and click to finish.</source>
+        <translation>Clique em pontos para incluir, segure %s e clique para excluir, ou arraste uma caixa. Segure %s e clique para concluir.</translation>
+    </message>
+    <message>
+        <source>Type what to find in AI-Find All, or click the first corner of a box around one example</source>
+        <translation>Digite o que encontrar no AI-Find All ou clique no primeiro canto de uma caixa ao redor de um exemplo</translation>
+    </message>
+    <message>
+        <source>Click the opposite corner to exclude objects like this one</source>
+        <translation>Clique no canto oposto para excluir objetos como este</translation>
+    </message>
+    <message>
+        <source>Click the opposite corner to find every object like this one</source>
+        <translation>Clique no canto oposto para encontrar todos os objetos como este</translation>
+    </message>
+    <message>
+        <source>Click start point for line</source>
+        <translation>Clique no ponto inicial da linha</translation>
+    </message>
+    <message>
+        <source>Click end point for line</source>
+        <translation>Clique no ponto final da linha</translation>
+    </message>
+    <message>
+        <source>Click start point for linestrip</source>
+        <translation>Clique no ponto inicial da linha contínua</translation>
+    </message>
+    <message>
+        <source>Click center point for circle</source>
+        <translation>Clique no ponto central do círculo</translation>
+    </message>
+    <message>
+        <source>Click point on circumference for circle</source>
+        <translation>Clique em um ponto da circunferência do círculo</translation>
+    </message>
+    <message>
+        <source>Click first corner for rectangle</source>
+        <translation>Clique na primeira esquina do retângulo</translation>
+    </message>
+    <message>
+        <source>Click to add point</source>
+        <translation>Clique para adicionar um ponto</translation>
+    </message>
+    <message>
+        <source>Drag a box</source>
+        <translation>Arraste uma caixa</translation>
+    </message>
+    <message>
+        <source>Drag around one example</source>
+        <translation>Arraste ao redor de um exemplo</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Descartar</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Adicionar</translation>
+    </message>
+    <message>
+        <source>Click to include</source>
+        <translation>Clique para incluir</translation>
+    </message>
+    <message>
+        <source>Click to exclude</source>
+        <translation>Clique para excluir</translation>
+    </message>
+    <message>
+        <source>Add %d</source>
+        <translation>Adicionar %d</translation>
+    </message>
+    <message>
+        <source>Drag to exclude</source>
+        <translation>Arraste para excluir</translation>
+    </message>
+    <message>
+        <source>Choose the other corner. Hold Shift for a square.</source>
+        <translation>Escolha o outro canto. Segure Shift para desenhar um quadrado.</translation>
+    </message>
+    <message>
+        <source>Enter adds the results, Esc discards them. Hold %s and draw a box to exclude objects like it.</source>
+        <translation>Enter adiciona os resultados e Esc os descarta. Mantenha %s pressionado e desenhe uma caixa para excluir objetos parecidos.</translation>
+    </message>
+    <message>
+        <source>Click the next point, or hold %s and click to finish the LineStrip</source>
+        <translation>Clique no próximo ponto, ou segure %s e clique para concluir a polilinha</translation>
+    </message>
+    <message>
+        <source>Click first corner for oriented rectangle</source>
+        <translation>Clique na primeira esquina do retângulo orientado</translation>
+    </message>
+    <message>
+        <source>Click second corner to set orientation</source>
+        <translation>Clique na segunda esquina para definir a orientação</translation>
+    </message>
+    <message>
+        <source>Click third corner to close oriented rectangle</source>
+        <translation>Clique na terceira esquina para fechar o retângulo orientado</translation>
+    </message>
+    <message>
+        <source>Hold %s and click to delete the point</source>
+        <translation>Segure %s e clique para excluir o ponto</translation>
+    </message>
+    <message>
+        <source>Click &amp; drag to rotate the shape</source>
+        <translation>Clique e arraste para girar a forma</translation>
+    </message>
+    <message>
+        <source>Click first point on circumference for circle</source>
+        <translation>Clique no primeiro ponto da circunferência do círculo</translation>
+    </message>
+    <message>
+        <source>Click second point on circumference for circle</source>
+        <translation>Clique no segundo ponto da circunferência do círculo</translation>
+    </message>
+    <message>
+        <source>Click third point on circumference to finish circle</source>
+        <translation>Clique no terceiro ponto da circunferência para concluir o círculo</translation>
+    </message>
+</context>
+<context>
+    <name>ConversionDetailDialog</name>
+    <message>
+        <source>Polygon detail</source>
+        <translation>Detalhe do polígono</translation>
+    </message>
+    <message>
+        <source>Smoother</source>
+        <translation>Mais suave</translation>
+    </message>
+    <message>
+        <source>More detail</source>
+        <translation>Mais detalhes</translation>
+    </message>
+    <message>
+        <source>Convert</source>
+        <translation>Converter</translation>
+    </message>
+</context>
+<context>
+    <name>EmptyStateWidget</name>
+    <message>
+        <source>Start annotating</source>
+        <translation>Começar a anotar</translation>
+    </message>
+    <message>
+        <source>Open an image or a folder of images to begin.</source>
+        <translation>Abra uma imagem ou uma pasta de imagens para começar.</translation>
+    </message>
+    <message>
+        <source>Or drag and drop image files here</source>
+        <translation>Ou arraste e solte arquivos de imagem aqui</translation>
+    </message>
+</context>
+<context>
+    <name>LabelDialog</name>
+    <message>
+        <source>Shape Label</source>
+        <translation>Rótulo da forma</translation>
+    </message>
+    <message>
+        <source>Enter object label</source>
+        <translation>Digite o rótulo do objeto</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Rótulo</translation>
+    </message>
+    <message>
+        <source>Group ID</source>
+        <translation>ID do grupo</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Descrição</translation>
+    </message>
+</context>
+<context>
+    <name>MainWindow</name>
+    <message>
+        <source>Flags</source>
+        <translation>Marcadores</translation>
+    </message>
+    <message>
+        <source>Shape List</source>
+        <translation>Lista de Formas</translation>
+    </message>
+    <message>
+        <source>Label List</source>
+        <translation>Lista de Rótulos</translation>
+    </message>
+    <message>
+        <source>Search Filename</source>
+        <translation>Buscar Nome do Arquivo</translation>
+    </message>
+    <message>
+        <source>Image List</source>
+        <translation>Lista de Imagens</translation>
+    </message>
+    <message>
+        <source>&amp;Quit</source>
+        <translation>Sai&amp;r</translation>
+    </message>
+    <message>
+        <source>Quit application</source>
+        <translation>Sair do aplicativo</translation>
+    </message>
+    <message>
+        <source>&amp;Next Image</source>
+        <translation>Imagem &amp;Seguinte</translation>
+    </message>
+    <message>
+        <source>Save automatically</source>
+        <translation>Salvar automaticamente</translation>
+    </message>
+    <message>
+        <source>&amp;Close</source>
+        <translation>&amp;Fechar</translation>
+    </message>
+    <message>
+        <source>Close current file</source>
+        <translation>Fechar arquivo atual</translation>
+    </message>
+    <message>
+        <source>Keep Previous Annotation</source>
+        <translation>Manter Anotação Anterior</translation>
+    </message>
+    <message>
+        <source>Start drawing polygons</source>
+        <translation>Começar a desenhar polígonos</translation>
+    </message>
+    <message>
+        <source>Start drawing rectangles</source>
+        <translation>Começar a desenhar retângulos</translation>
+    </message>
+    <message>
+        <source>Start drawing circles</source>
+        <translation>Começar a desenhar círculos</translation>
+    </message>
+    <message>
+        <source>Start drawing lines</source>
+        <translation>Começar a desenhar linhas</translation>
+    </message>
+    <message>
+        <source>Start drawing points</source>
+        <translation>Começar a desenhar pontos</translation>
+    </message>
+    <message>
+        <source>Edit Shapes</source>
+        <translation>Editar Formas</translation>
+    </message>
+    <message>
+        <source>Move and edit the selected shapes</source>
+        <translation>Mover e editar as formas selecionadas</translation>
+    </message>
+    <message>
+        <source>Delete Shapes</source>
+        <translation>Excluir Formas</translation>
+    </message>
+    <message>
+        <source>Save the annotation file</source>
+        <translation>Salvar o arquivo de anotações</translation>
+    </message>
+    <message>
+        <source>Save &amp;As…</source>
+        <translation>Salvar &amp;Como…</translation>
+    </message>
+    <message>
+        <source>Save the annotation file under a new name</source>
+        <translation>Salvar o arquivo de anotações com um novo nome</translation>
+    </message>
+    <message>
+        <source>Save Au&amp;tomatically</source>
+        <translation>Sal&amp;var Automaticamente</translation>
+    </message>
+    <message>
+        <source>Embed Image in Annotation File</source>
+        <translation>Incorporar Imagem no Arquivo de Anotações</translation>
+    </message>
+    <message>
+        <source>Store a copy of the image inside the annotation file</source>
+        <translation>Salva uma cópia da imagem dentro do arquivo de anotações</translation>
+    </message>
+    <message>
+        <source>Change Annotation &amp;Folder…</source>
+        <translation>Alterar &amp;pasta de anotações…</translation>
+    </message>
+    <message>
+        <source>Open an image or annotation file</source>
+        <translation>Abrir uma imagem ou um arquivo de anotações</translation>
+    </message>
+    <message>
+        <source>&amp;Delete Annotation File</source>
+        <translation>&amp;Excluir Arquivo de Anotações</translation>
+    </message>
+    <message>
+        <source>Delete the current annotation file</source>
+        <translation>Excluir o arquivo de anotações atual</translation>
+    </message>
+    <message>
+        <source>Delete the selected shapes</source>
+        <translation>Excluir as formas selecionadas</translation>
+    </message>
+    <message>
+        <source>Duplicate Shapes</source>
+        <translation>Duplicar Formas</translation>
+    </message>
+    <message>
+        <source>Create a duplicate of the selected shapes</source>
+        <translation>Criar uma cópia das formas selecionadas</translation>
+    </message>
+    <message>
+        <source>Replace the selected shapes with their bounding boxes</source>
+        <translation>Substituir as formas selecionadas por suas caixas delimitadoras</translation>
+    </message>
+    <message>
+        <source>Convert the selected shapes to linestrips</source>
+        <translation>Converter as formas selecionadas em linhas contínuas</translation>
+    </message>
+    <message>
+        <source>Undo last drawn point</source>
+        <translation>Desfazer último ponto desenhado</translation>
+    </message>
+    <message>
+        <source>Undo last add and edit of shape</source>
+        <translation>Desfazer última adição e edição de forma</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <comment>toolbar</comment>
+        <translation>Selecionar</translation>
+    </message>
+    <message>
+        <source>Click to place LineStrip points; hold %s and click to place the last one.</source>
+        <translation>Clique para posicionar pontos da polilinha; segure %s e clique para posicionar o último.</translation>
+    </message>
+    <message>
+        <source>Open the next image (hold %s to copy the current Shapes)</source>
+        <translation>Abrir a próxima imagem (segure %s para copiar as formas atuais)</translation>
+    </message>
+    <message>
+        <source>Hide all shapes</source>
+        <translation>Ocultar todas as formas</translation>
+    </message>
+    <message>
+        <source>Show all shapes</source>
+        <translation>Mostrar todas as formas</translation>
+    </message>
+    <message>
+        <source>Toggle all shapes</source>
+        <translation>Alternar todas as formas</translation>
+    </message>
+    <message>
+        <source>&amp;Tutorial</source>
+        <translation>&amp;Tutorial</translation>
+    </message>
+    <message>
+        <source>Show tutorial page</source>
+        <translation>Mostrar página do tutorial</translation>
+    </message>
+    <message>
+        <source>Zoom</source>
+        <translation>Zoom</translation>
+    </message>
+    <message>
+        <source>Zoom &amp;In</source>
+        <translation>A&amp;proximar</translation>
+    </message>
+    <message>
+        <source>&amp;Zoom Out</source>
+        <translation>Afa&amp;star</translation>
+    </message>
+    <message>
+        <source>Adjust brightness and contrast</source>
+        <translation>Ajustar brilho e contraste</translation>
+    </message>
+    <message>
+        <source>Image Polygonal Annotation with Python</source>
+        <translation>Anotação poligonal de imagens com Python</translation>
+    </message>
+    <message>
+        <source>Version: %s</source>
+        <translation>Versão: %s</translation>
+    </message>
+    <message>
+        <source>Author: %s</source>
+        <translation>Autor: %s</translation>
+    </message>
+    <message>
+        <source>Homepage</source>
+        <translation>Site</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Documentação</translation>
+    </message>
+    <message>
+        <source>Troubleshooting</source>
+        <translation>Solução de problemas</translation>
+    </message>
+    <message>
+        <source>&amp;About %s</source>
+        <translation>&amp;Sobre o %s</translation>
+    </message>
+    <message>
+        <source>About %s</source>
+        <translation>Sobre o %s</translation>
+    </message>
+    <message>
+        <source>&amp;Save</source>
+        <translation>Sa&amp;lvar</translation>
+    </message>
+    <message>
+        <source>Choose where annotation files are read and saved</source>
+        <translation>Escolher onde os arquivos de anotações são lidos e salvos</translation>
+    </message>
+    <message>
+        <source>&amp;Open File…</source>
+        <translation>&amp;Abrir arquivo…</translation>
+    </message>
+    <message>
+        <source>Open Folder…</source>
+        <translation>Abrir pasta…</translation>
+    </message>
+    <message>
+        <source>Open a folder of images</source>
+        <translation>Abrir uma pasta de imagens</translation>
+    </message>
+    <message>
+        <source>Delete File</source>
+        <comment>toolbar</comment>
+        <translation>Excluir Arquivo</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <comment>toolbar</comment>
+        <translation>Excluir</translation>
+    </message>
+    <message>
+        <source>Modify the label of the selected shape</source>
+        <translation>Modificar o rótulo da forma selecionada</translation>
+    </message>
+    <message>
+        <source>Copy to Clipboard</source>
+        <translation>Copiar para a Área de Transferência</translation>
+    </message>
+    <message>
+        <source>Place the selected shapes on the clipboard</source>
+        <translation>Colocar as formas selecionadas na área de transferência</translation>
+    </message>
+    <message>
+        <source>Paste from Clipboard</source>
+        <translation>Colar da Área de Transferência</translation>
+    </message>
+    <message>
+        <source>Insert the clipboard shapes into this image</source>
+        <translation>Inserir nesta imagem as formas da área de transferência</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <comment>toolbar</comment>
+        <translation>Duplicar</translation>
+    </message>
+    <message>
+        <source>Merge Shapes</source>
+        <translation>Mesclar Formas</translation>
+    </message>
+    <message>
+        <source>Merge the selected mask shapes into one</source>
+        <translation>Mesclar as formas de máscara selecionadas em uma</translation>
+    </message>
+    <message>
+        <source>Convert the selected shapes to polygons</source>
+        <translation>Converter as formas selecionadas em polígonos</translation>
+    </message>
+    <message>
+        <source>Convert the selected shapes to oriented rectangles</source>
+        <translation>Converter as formas selecionadas em retângulos orientados</translation>
+    </message>
+    <message>
+        <source>Convert the selected shapes to circles</source>
+        <translation>Converter as formas selecionadas em círculos</translation>
+    </message>
+    <message>
+        <source>Convert the selected shapes to lines</source>
+        <translation>Converter as formas selecionadas em linhas</translation>
+    </message>
+    <message>
+        <source>Convert the selected shapes to points</source>
+        <translation>Converter as formas selecionadas em pontos</translation>
+    </message>
+    <message>
+        <source>Mask</source>
+        <translation>Máscara</translation>
+    </message>
+    <message>
+        <source>Convert the selected shapes to masks</source>
+        <translation>Converter as formas selecionadas em máscaras</translation>
+    </message>
+    <message>
+        <source>Convert To</source>
+        <translation>Converter em</translation>
+    </message>
+    <message>
+        <source>Lock Shapes</source>
+        <translation>Bloquear Formas</translation>
+    </message>
+    <message>
+        <source>Lock the selected shapes against editing, or unlock them</source>
+        <translation>Bloquear as formas selecionadas contra edição, ou desbloqueá-las</translation>
+    </message>
+    <message>
+        <source>Undo</source>
+        <translation>Desfazer</translation>
+    </message>
+    <message>
+        <source>AI-Segment</source>
+        <translation>AI-Segment</translation>
+    </message>
+    <message>
+        <source>Click points or drag a box to segment one object; hold %s and click to finish.</source>
+        <translation>Clique em pontos ou arraste uma caixa para segmentar um objeto; segure %s e clique para concluir.</translation>
+    </message>
+    <message>
+        <source>AI-Find All</source>
+        <translation>AI-Find All</translation>
+    </message>
+    <message>
+        <source>Find every object that matches the text prompt or an example box</source>
+        <translation>Encontrar todos os objetos que correspondem ao prompt de texto ou a uma caixa de exemplo</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <comment>toolbar</comment>
+        <translation>Seguinte</translation>
+    </message>
+    <message>
+        <source>&amp;Previous Image</source>
+        <translation>&amp;Imagem Anterior</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <comment>toolbar</comment>
+        <translation>Anterior</translation>
+    </message>
+    <message>
+        <source>Open the previous image (hold %s to copy the current Shapes)</source>
+        <translation>Abrir a imagem anterior (segure %s para copiar as formas atuais)</translation>
+    </message>
+    <message>
+        <source>Fit to &amp;Window</source>
+        <translation>Ajustar à &amp;Janela</translation>
+    </message>
+    <message>
+        <source>Keep the whole image visible when the window is resized</source>
+        <translation>Manter a imagem inteira visível quando a janela for redimensionada</translation>
+    </message>
+    <message>
+        <source>Zoom to the selected shapes whenever the selection changes</source>
+        <translation>Ajustar o zoom às formas selecionadas sempre que a seleção mudar</translation>
+    </message>
+    <message>
+        <source>&amp;Brightness/Contrast…</source>
+        <translation>Brilho/&amp;Contraste…</translation>
+    </message>
+    <message>
+        <source>Make the image appear larger</source>
+        <translation>Mostrar a imagem maior</translation>
+    </message>
+    <message>
+        <source>Make the image appear smaller</source>
+        <translation>Mostrar a imagem menor</translation>
+    </message>
+    <message>
+        <source>&amp;Actual Size</source>
+        <translation>Tamanho &amp;real</translation>
+    </message>
+    <message>
+        <source>Show the image at 100%</source>
+        <translation>Mostrar a imagem em 100%</translation>
+    </message>
+    <message>
+        <source>Fill Drawing Polygon</source>
+        <translation>Preencher Polígono ao Desenhar</translation>
+    </message>
+    <message>
+        <source>Fill polygon while drawing</source>
+        <translation>Preencher polígono enquanto desenha</translation>
+    </message>
+    <message>
+        <source>&amp;Hide Shapes</source>
+        <translation>Ocultar &amp;formas</translation>
+    </message>
+    <message>
+        <source>&amp;Show Shapes</source>
+        <translation>&amp;Mostrar formas</translation>
+    </message>
+    <message>
+        <source>&amp;Toggle Shapes</source>
+        <translation>&amp;Alternar formas</translation>
+    </message>
+    <message>
+        <source>Select Shape Above</source>
+        <translation>Selecionar forma acima</translation>
+    </message>
+    <message>
+        <source>Select the nearest shape above the selection</source>
+        <translation>Selecionar a forma mais próxima acima da seleção</translation>
+    </message>
+    <message>
+        <source>Select Shape Below</source>
+        <translation>Selecionar forma abaixo</translation>
+    </message>
+    <message>
+        <source>Select the nearest shape below the selection</source>
+        <translation>Selecionar a forma mais próxima abaixo da seleção</translation>
+    </message>
+    <message>
+        <source>Select Shape to the Left</source>
+        <translation>Selecionar forma à esquerda</translation>
+    </message>
+    <message>
+        <source>Select the nearest shape left of the selection</source>
+        <translation>Selecionar a forma mais próxima à esquerda da seleção</translation>
+    </message>
+    <message>
+        <source>Select Shape to the Right</source>
+        <translation>Selecionar forma à direita</translation>
+    </message>
+    <message>
+        <source>Select the nearest shape right of the selection</source>
+        <translation>Selecionar a forma mais próxima à direita da seleção</translation>
+    </message>
+    <message>
+        <source>Fit to Window</source>
+        <translation>Ajustar à Janela</translation>
+    </message>
+    <message>
+        <source>AI Models…</source>
+        <translation>Modelos de IA…</translation>
+    </message>
+    <message>
+        <source>Download or delete AI models</source>
+        <translation>Baixar ou excluir modelos de IA</translation>
+    </message>
+    <message>
+        <source>&amp;File</source>
+        <translation>&amp;Arquivo</translation>
+    </message>
+    <message>
+        <source>&amp;Edit</source>
+        <translation>&amp;Editar</translation>
+    </message>
+    <message>
+        <source>&amp;View</source>
+        <translation>&amp;Visualizar</translation>
+    </message>
+    <message>
+        <source>&amp;Help</source>
+        <translation>A&amp;juda</translation>
+    </message>
+    <message>
+        <source>Tools</source>
+        <translation>Ferramentas</translation>
+    </message>
+    <message>
+        <source>More tools</source>
+        <translation>Mais ferramentas</translation>
+    </message>
+    <message>
+        <source>Shape Tools</source>
+        <translation>Ferramentas de forma</translation>
+    </message>
+    <message>
+        <source>More shape tools</source>
+        <translation>Mais ferramentas de formas</translation>
+    </message>
+    <message>
+        <source>Retry</source>
+        <translation>Tentar novamente</translation>
+    </message>
+    <message>
+        <source>Choose a label to start drawing with it. Press &apos;Esc&apos; to clear the selection.</source>
+        <translation>Escolha um rótulo para começar a desenhar com ele. Pressione &apos;Esc&apos; para limpar a seleção.</translation>
+    </message>
+    <message>
+        <source>Invalid regular expression. Previous search kept.</source>
+        <translation>Expressão regular inválida. A pesquisa anterior foi mantida.</translation>
+    </message>
+    <message>
+        <source>Your settings couldn’t be loaded.</source>
+        <translation>Não foi possível carregar suas configurações.</translation>
+    </message>
+    <message>
+        <source>You can use default settings for now. Resetting saves a backup of your configuration file first.</source>
+        <translation>Você pode usar as configurações padrão por enquanto. Antes de redefinir, será salva uma cópia de segurança do seu arquivo de configuração.</translation>
+    </message>
+    <message>
+        <source>Type what to find</source>
+        <translation>Digite o que encontrar</translation>
+    </message>
+    <message>
+        <source>Finding matches on CPU…</source>
+        <translation>Procurando correspondências na CPU…</translation>
+    </message>
+    <message>
+        <source>Finding matches…</source>
+        <translation>Procurando correspondências…</translation>
+    </message>
+    <message>
+        <source>%s only detects bounding boxes and cannot create &apos;%s&apos; Shapes.
+
+Switch the AI-Find All model to &apos;SAM 3&apos;, or set the output format to &apos;Rectangle&apos;.</source>
+        <translation>%s detecta apenas caixas delimitadoras e não pode criar formas &apos;%s&apos;.
+
+Mude o modelo do AI-Find All para &apos;SAM 3&apos; ou defina o formato de saída como &apos;Rectangle&apos;.</translation>
+    </message>
+    <message>
+        <source>The Annotation File belongs to another Image: %s</source>
+        <translation>O arquivo de anotações pertence a outra imagem: %s</translation>
+    </message>
+    <message>
+        <source>%s can&apos;t use an example box. Choose SAM 3.</source>
+        <translation>%s não pode usar uma caixa de exemplo. Escolha SAM 3.</translation>
+    </message>
+    <message>
+        <source>Open Folder</source>
+        <translation>Abrir pasta</translation>
+    </message>
+    <message>
+        <source>Command-line settings</source>
+        <translation>Configurações da linha de comando</translation>
+    </message>
+    <message>
+        <source>Fit to S&amp;election</source>
+        <translation>Aj&amp;ustar à Seleção</translation>
+    </message>
+    <message>
+        <source>Could not reset the Config File.
+%s</source>
+        <translation>Não foi possível redefinir o arquivo de configuração.
+%s</translation>
+    </message>
+    <message>
+        <source>Configuration backup saved to %s</source>
+        <translation>Backup da configuração salvo em %s</translation>
+    </message>
+    <message>
+        <source>Saving…</source>
+        <translation>Salvando…</translation>
+    </message>
+    <message>
+        <source>Mask Output Unavailable</source>
+        <translation>Saída de máscara indisponível</translation>
+    </message>
+    <message>
+        <source>Invalid label &apos;{}&apos; with validation type &apos;{}&apos;</source>
+        <translation>Rótulo inválido &apos;{}&apos; com tipo de validação &apos;{}&apos;</translation>
+    </message>
+    <message>
+        <source>Unlock Shapes</source>
+        <translation>Desbloquear Formas</translation>
+    </message>
+    <message>
+        <source>Saved</source>
+        <translation>Salvo</translation>
+    </message>
+    <message>
+        <source>Save failed</source>
+        <translation>Falha ao salvar</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;%s&lt;/b&gt;</source>
+        <translation>&lt;b&gt;%s&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>AI inference failed: %s</source>
+        <translation>Falha na inferência de IA: %s</translation>
+    </message>
+    <message>
+        <source>Fit to Selection</source>
+        <translation>Ajustar à Seleção</translation>
+    </message>
+    <message>
+        <source>Large image requires more memory</source>
+        <translation>A imagem grande requer mais memória</translation>
+    </message>
+    <message>
+        <source>The image is {width}x{height} pixels and needs at least about {required} MB to decode, above the current {limit} MB safety limit. Opening it may temporarily make Labelme or other applications less responsive.</source>
+        <translation>A imagem tem {width}x{height} pixels e precisa de pelo menos cerca de {required} MB para ser decodificada, acima do limite de segurança atual de {limit} MB. Abri-la pode deixar o Labelme ou outros aplicativos temporariamente mais lentos.</translation>
+    </message>
+    <message>
+        <source>Open Anyway</source>
+        <translation>Abrir mesmo assim</translation>
+    </message>
+    <message>
+        <source>No such file: &lt;b&gt;%s&lt;/b&gt;</source>
+        <translation>Arquivo não encontrado: &lt;b&gt;%s&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>Loading %s...</source>
+        <translation>Carregando %s...</translation>
+    </message>
+    <message>
+        <source>Loaded %s</source>
+        <translation>Carregado %s</translation>
+    </message>
+    <message>
+        <source>Images and annotation files (%s)</source>
+        <translation>Imagens e arquivos de anotações (%s)</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Excluir</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancelar</translation>
+    </message>
+    <message>
+        <source>Unsaved changes</source>
+        <translation>Alterações não salvas</translation>
+    </message>
+    <message>
+        <source>Download {model}</source>
+        <translation>Baixar {model}</translation>
+    </message>
+    <message>
+        <source>The selected annotation file could not be opened: {path}</source>
+        <translation>Não foi possível abrir o arquivo de anotações selecionado: {path}</translation>
+    </message>
+    <message>
+        <source>Annotation Folder not found: %s</source>
+        <translation>Pasta de anotações não encontrada: %s</translation>
+    </message>
+    <message>
+        <source>The image is too large to open: {width}x{height} pixels exceeds the {max_side} pixel per-side limit of the raster engine. Raising the decode limit will not help. Split the image into tiles (for example with gdal_retile.py) or open a smaller copy.</source>
+        <translation>A imagem é grande demais para ser aberta: {width}x{height} pixels excede o limite de {max_side} pixels por lado do mecanismo raster. Aumentar o limite de decodificação não vai ajudar. Divida a imagem em blocos (por exemplo com gdal_retile.py) ou abra uma cópia menor.</translation>
+    </message>
+    <message>
+        <source>The image is too large to open: {width}x{height} pixels needs about {required} MB, but the decode limit is {limit} MB. Split the image into tiles (for example with gdal_retile.py) or open a smaller copy.</source>
+        <translation>A imagem é grande demais para ser aberta: {width}x{height} pixels precisa de cerca de {required} MB, mas o limite de decodificação é {limit} MB. Divida a imagem em blocos (por exemplo com gdal_retile.py) ou abra uma cópia menor.</translation>
+    </message>
+    <message>
+        <source>Toggle &quot;keep previous annotation&quot; mode</source>
+        <translation>Alternar modo &quot;manter anotação anterior&quot;</translation>
+    </message>
+    <message>
+        <source>Keep Previous Brightness/Contrast</source>
+        <translation>Manter Brilho/Contraste Anterior</translation>
+    </message>
+    <message>
+        <source>Reset Layout</source>
+        <translation>Redefinir layout</translation>
+    </message>
+    <message>
+        <source>Polygon</source>
+        <translation>Polígono</translation>
+    </message>
+    <message>
+        <source>&amp;Edit Label…</source>
+        <translation>&amp;Editar Rótulo…</translation>
+    </message>
+    <message>
+        <source>Undo Last Point</source>
+        <translation>Desfazer Último Ponto</translation>
+    </message>
+    <message>
+        <source>Delete Selected Point</source>
+        <translation>Excluir Ponto Selecionado</translation>
+    </message>
+    <message>
+        <source>Delete the selected point from the polygon or LineStrip</source>
+        <translation>Exclui o ponto selecionado do polígono ou da polilinha</translation>
+    </message>
+    <message>
+        <source>Rectangle</source>
+        <translation>Retângulo</translation>
+    </message>
+    <message>
+        <source>Circle</source>
+        <translation>Círculo</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Linha</translation>
+    </message>
+    <message>
+        <source>Point</source>
+        <translation>Ponto</translation>
+    </message>
+    <message>
+        <source>LineStrip</source>
+        <translation>Linha Contínua</translation>
+    </message>
+    <message>
+        <source>Continue with Defaults</source>
+        <translation>Continuar com os padrões</translation>
+    </message>
+    <message>
+        <source>Back Up and Reset</source>
+        <translation>Fazer backup e redefinir</translation>
+    </message>
+    <message>
+        <source>Finding all &apos;{query}&apos;…</source>
+        <translation>Procurando todos os &quot;{query}&quot;…</translation>
+    </message>
+    <message>
+        <source>Finding all &apos;{query}&apos; on CPU…</source>
+        <translation>Procurando todos os &quot;{query}&quot; na CPU…</translation>
+    </message>
+    <message>
+        <source>Segmenting on CPU…</source>
+        <translation>Segmentando na CPU…</translation>
+    </message>
+    <message>
+        <source>Segmenting…</source>
+        <translation>Segmentando…</translation>
+    </message>
+    <message>
+        <source>Starting AI…</source>
+        <translation>Iniciando IA…</translation>
+    </message>
+    <message>
+        <source>Loading {model}…</source>
+        <translation>Carregando {model}…</translation>
+    </message>
+    <message>
+        <source>{status} · {seconds} s</source>
+        <translation>{status} · {seconds} s</translation>
+    </message>
+    <message>
+        <source>Found {count} new &apos;{query}&apos;</source>
+        <translation>{count} novos &quot;{query}&quot; encontrados</translation>
+    </message>
+    <message>
+        <source>No new &apos;{query}&apos; found</source>
+        <translation>Nenhum &quot;{query}&quot; novo encontrado</translation>
+    </message>
+    <message>
+        <source>Select at least two mask shapes to merge</source>
+        <translation>Selecione pelo menos duas formas de máscara para mesclar</translation>
+    </message>
+    <message>
+        <source>Only mask shapes can be merged</source>
+        <translation>Só é possível mesclar formas de máscara</translation>
+    </message>
+    <message>
+        <source>Unlock the selected shapes to merge them</source>
+        <translation>Desbloqueie as formas selecionadas para mesclá-las</translation>
+    </message>
+    <message>
+        <source>Only shapes with the same label can be merged</source>
+        <translation>Só é possível mesclar formas com o mesmo rótulo</translation>
+    </message>
+    <message>
+        <source>Select shapes to convert</source>
+        <translation>Selecione formas para converter</translation>
+    </message>
+    <message>
+        <source>The selected shapes are already this kind</source>
+        <translation>As formas selecionadas já são deste tipo</translation>
+    </message>
+    <message>
+        <source>Converting to oriented rectangles isn’t supported</source>
+        <translation>Não há suporte para conversão em retângulos orientados</translation>
+    </message>
+    <message>
+        <source>Converting to circles isn’t supported</source>
+        <translation>Não há suporte para conversão em círculos</translation>
+    </message>
+    <message>
+        <source>Converting to points isn’t supported</source>
+        <translation>Não há suporte para conversão em pontos</translation>
+    </message>
+    <message>
+        <source>A linestrip needs at least 3 points to become a polygon</source>
+        <translation>Uma linha contínua precisa de pelo menos 3 pontos para virar um polígono</translation>
+    </message>
+    <message>
+        <source>A linestrip needs exactly 2 points to become a line</source>
+        <translation>Uma linha contínua precisa de exatamente 2 pontos para virar uma linha</translation>
+    </message>
+    <message>
+        <source>A shape with no area has no bounding box</source>
+        <translation>Uma forma sem área não tem caixa delimitadora</translation>
+    </message>
+    <message>
+        <source>A shape with no area in the image can’t be converted</source>
+        <translation>Não é possível converter uma forma sem área dentro da imagem</translation>
+    </message>
+    <message>
+        <source>Unlock the selected shapes to convert them</source>
+        <translation>Desbloqueie as formas selecionadas para convertê-las</translation>
+    </message>
+    <message>
+        <source>Remove from Label List</source>
+        <translation>Remover da lista de rótulos</translation>
+    </message>
+    <message>
+        <source>Clear Unused Labels</source>
+        <translation>Limpar rótulos não utilizados</translation>
+    </message>
+    <message>
+        <source>The label &apos;{label}&apos; is in use by shapes on the canvas.</source>
+        <translation>O rótulo &apos;{label}&apos; está em uso por formas na tela.</translation>
+    </message>
+    <message>
+        <source>Cannot Remove Label</source>
+        <translation>Não é possível remover o rótulo</translation>
+    </message>
+    <message>
+        <source>Invalid Label</source>
+        <translation>Rótulo inválido</translation>
+    </message>
+    <message>
+        <source>Error Saving Annotation File</source>
+        <translation>Erro ao salvar o arquivo de anotações</translation>
+    </message>
+    <message>
+        <source>Convert to Polygon</source>
+        <translation>Converter em polígono</translation>
+    </message>
+    <message>
+        <source>Locating the image updates the annotation file to refer to it.</source>
+        <translation>Ao localizar a imagem, o arquivo de anotações é atualizado para fazer referência a ela.</translation>
+    </message>
+    <message>
+        <source>Locate Image…</source>
+        <translation>Localizar imagem…</translation>
+    </message>
+    <message>
+        <source>Locate Image</source>
+        <translation>Localizar imagem</translation>
+    </message>
+    <message>
+        <source>Images (%s)</source>
+        <translation>Imagens (%s)</translation>
+    </message>
+    <message>
+        <source>Annotation Folder: %s</source>
+        <translation>Pasta de anotações: %s</translation>
+    </message>
+    <message>
+        <source>Delete the annotation file? You can&apos;t undo this.</source>
+        <translation>Apagar o arquivo de anotações? Não é possível desfazer esta ação.</translation>
+    </message>
+    <message>
+        <source>Delete &quot;{}&quot;? You can&apos;t undo this.</source>
+        <translation>Apagar &quot;{}&quot;? Não é possível desfazer esta ação.</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Baixar</translation>
+    </message>
+    <message>
+        <source>Save annotation changes to &quot;{}&quot;?</source>
+        <translation>Salvar as alterações nas anotações de &quot;{}&quot;?</translation>
+    </message>
+    <message>
+        <source>This annotation refers to &quot;{name}&quot;, but that image could not be found.
+
+Expected location: {path}</source>
+        <translation>Esta anotação faz referência a &quot;{name}&quot;, mas essa imagem não foi encontrada.
+
+Local esperado: {path}</translation>
+    </message>
+    <message>
+        <source>Image List is disabled when an annotation file is opened</source>
+        <translation>A lista de imagens está desativada quando um arquivo de anotações é aberto</translation>
+    </message>
+    <message>
+        <source>Add Point to Edge</source>
+        <translation>Adicionar ponto à aresta</translation>
+    </message>
+    <message>
+        <source>Insert a new point at the hovered polygon edge</source>
+        <translation>Inserir um novo ponto na aresta do polígono em foco</translation>
+    </message>
+    <message>
+        <source>&amp;Keep Previous Zoom</source>
+        <translation>Manter &amp;Zoom Anterior</translation>
+    </message>
+    <message>
+        <source>Allowed formats: {formats}</source>
+        <translation>Formatos permitidos: {formats}</translation>
+    </message>
+    <message>
+        <source>Error Deleting Annotation File</source>
+        <translation>Erro ao excluir o arquivo de anotações</translation>
+    </message>
+    <message>
+        <source>Unsaved Changes</source>
+        <translation>Alterações não salvas</translation>
+    </message>
+    <message>
+        <source>Image Not Found</source>
+        <translation>Imagem não encontrada</translation>
+    </message>
+    <message>
+        <source>The selected image file could not be opened: {path}</source>
+        <translation>Não foi possível abrir o arquivo de imagem selecionado: {path}</translation>
+    </message>
+    <message>
+        <source>Failed to load: {path}</source>
+        <translation>Falha ao carregar: {path}</translation>
+    </message>
+    <message>
+        <source>Oriented Rectangle</source>
+        <translation>Retângulo Orientado</translation>
+    </message>
+    <message>
+        <source>Start drawing oriented rectangles</source>
+        <translation>Começar a desenhar retângulos orientados</translation>
+    </message>
+    <message>
+        <source>AI inference produced no new annotation.</source>
+        <translation>A inferência de IA não produziu nenhuma nova anotação.</translation>
+    </message>
+    <message>
+        <source>Shape had no area; nothing created.</source>
+        <translation>A forma não tinha área; nenhum objeto criado.</translation>
+    </message>
+    <message>
+        <source>Settings…</source>
+        <translation>Configurações…</translation>
+    </message>
+    <message>
+        <source>Edit settings</source>
+        <translation>Editar configurações</translation>
+    </message>
+    <message>
+        <source>Settings are managed via --config for this session</source>
+        <translation>As configurações desta sessão são gerenciadas via --config</translation>
+    </message>
+    <message>
+        <source>Lines and points can’t be converted to polygons</source>
+        <translation>Não é possível converter linhas e pontos em polígonos</translation>
+    </message>
+    <message>
+        <source>Lines and points can’t be converted to rectangles</source>
+        <translation>Não é possível converter linhas e pontos em retângulos</translation>
+    </message>
+    <message>
+        <source>Only linestrips can be converted to lines</source>
+        <translation>Só é possível converter linhas contínuas em linhas</translation>
+    </message>
+    <message>
+        <source>Only polygons and lines can be converted to linestrips</source>
+        <translation>Só é possível converter polígonos e linhas em linhas contínuas</translation>
+    </message>
+    <message>
+        <source>Only polygons can be converted to masks</source>
+        <translation>Só é possível converter polígonos em máscaras</translation>
+    </message>
+    <message>
+        <source>Large Image</source>
+        <translation>Imagem grande</translation>
+    </message>
+    <message>
+        <source>Error Opening File</source>
+        <translation>Erro ao abrir arquivo</translation>
+    </message>
+    <message>
+        <source>Open File</source>
+        <translation>Abrir arquivo</translation>
+    </message>
+    <message>
+        <source>Choose Annotation Folder</source>
+        <translation>Escolher pasta de anotações</translation>
+    </message>
+    <message>
+        <source>Save Annotation File</source>
+        <translation>Salvar Arquivo de Anotações</translation>
+    </message>
+    <message>
+        <source>Annotation files (*%s)</source>
+        <translation>Arquivos de anotações (*%s)</translation>
+    </message>
+    <message>
+        <source>Delete Annotation File</source>
+        <translation>Excluir Arquivo de Anotações</translation>
+    </message>
+    <message>
+        <source>Configuration Error</source>
+        <translation>Erro de Configuração</translation>
+    </message>
+    <message>
+        <source>Detects boxes only. Switch to Rectangle to use this model.</source>
+        <translation>Detecta apenas caixas. Mude para Retângulo para usar este modelo.</translation>
+    </message>
+    <message>
+        <source>3-Point Circle</source>
+        <translation>Círculo (3 pontos)</translation>
+    </message>
+    <message>
+        <source>Start drawing circles with 3 points</source>
+        <translation>Começar a desenhar círculos com 3 pontos</translation>
+    </message>
+</context>
+<context>
+    <name>ModelPicker</name>
+    <message>
+        <source>Manage models…</source>
+        <translation>Gerenciar modelos…</translation>
+    </message>
+    <message>
+        <source>Download and use</source>
+        <translation>Baixar e usar</translation>
+    </message>
+    <message>
+        <source>Choose a model…</source>
+        <translation>Escolher um modelo…</translation>
+    </message>
+    <message>
+        <source>Downloading: {model}</source>
+        <translation>Baixando: {model}</translation>
+    </message>
+    <message>
+        <source>Unavailable: {model}</source>
+        <translation>Indisponível: {model}</translation>
+    </message>
+    <message>
+        <source>More models…</source>
+        <translation>Mais modelos…</translation>
+    </message>
+</context>
+<context>
+    <name>ModelsDialog</name>
+    <message>
+        <source>AI Models</source>
+        <translation>Modelos de IA</translation>
+    </message>
+</context>
+<context>
+    <name>ModelsWidget</name>
+    <message>
+        <source>Downloading…</source>
+        <translation>Baixando…</translation>
+    </message>
+    <message>
+        <source>Download models to use AI offline. You can keep annotating while downloads run.</source>
+        <translation>Baixe modelos para usar a IA offline. Você pode continuar anotando durante os downloads.</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Pontos</translation>
+    </message>
+    <message>
+        <source>Boxes</source>
+        <translation>Caixas</translation>
+    </message>
+    <message>
+        <source>Text prompts</source>
+        <translation>Comandos de texto</translation>
+    </message>
+    <message>
+        <source>SAM3 use is subject to the SAM License, including trade-control and end-use restrictions. Read the full agreement before downloading or using it.</source>
+        <translation>O uso do SAM3 está sujeito à SAM License, incluindo controles comerciais e restrições de uso final. Leia o contrato completo antes de baixar ou usar.</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Excluir</translation>
+    </message>
+    <message>
+        <source>Delete {model}</source>
+        <translation>Excluir {model}</translation>
+    </message>
+    <message>
+        <source>Downloading {filename} · {done} / {total}</source>
+        <translation>Baixando {filename} · {done} / {total}</translation>
+    </message>
+    <message>
+        <source>Not downloaded</source>
+        <translation>Não baixado</translation>
+    </message>
+    <message>
+        <source>Best balance of speed and quality for point and box prompts.</source>
+        <translation>Melhor equilíbrio entre velocidade e qualidade para prompts de pontos e caixas.</translation>
+    </message>
+    <message>
+        <source>Best for text prompts and finding multiple objects.</source>
+        <translation>Ideal para prompts de texto e para encontrar vários objetos.</translation>
+    </message>
+    <message>
+        <source>Recommended</source>
+        <translation>Recomendados</translation>
+    </message>
+    <message>
+        <source>All models</source>
+        <translation>Todos os modelos</translation>
+    </message>
+    <message>
+        <source>License: {license}</source>
+        <translation>Licença: {license}</translation>
+    </message>
+    <message>
+        <source>Details…</source>
+        <translation>Detalhes…</translation>
+    </message>
+    <message>
+        <source>Downloaded</source>
+        <translation>Baixado</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Falhou</translation>
+    </message>
+    <message>
+        <source>Deleting…</source>
+        <translation>Excluindo…</translation>
+    </message>
+    <message>
+        <source>Queued · position {position}</source>
+        <translation>Na fila · posição {position}</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancelar</translation>
+    </message>
+    <message>
+        <source>Retry</source>
+        <translation>Tentar novamente</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Baixar</translation>
+    </message>
+    <message>
+        <source>Download Failed</source>
+        <translation>Falha no Download</translation>
+    </message>
+    <message>
+        <source>Download failed. Check your connection and retry.</source>
+        <translation>Falha no download. Verifique sua conexão e tente novamente.</translation>
+    </message>
+    <message>
+        <source>Delete Model</source>
+        <translation>Excluir modelo</translation>
+    </message>
+    <message>
+        <source>Delete {model} from this computer? Its selections will be cleared. Your annotations will not change.</source>
+        <translation>Excluir {model} deste computador? As seleções deste modelo serão apagadas. Suas anotações não serão alteradas.</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsDialog</name>
+    <message>
+        <source>Color theme</source>
+        <translation>Tema de cores</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Sistema</translation>
+    </message>
+    <message>
+        <source>Light</source>
+        <translation>Claro</translation>
+    </message>
+    <message>
+        <source>Dark</source>
+        <translation>Escuro</translation>
+    </message>
+    <message>
+        <source>Show label popup on new shape</source>
+        <translation>Mostrar popup de rótulo ao criar nova forma</translation>
+    </message>
+    <message>
+        <source>Show shape labels on canvas</source>
+        <translation>Mostrar rótulos das formas na tela</translation>
+    </message>
+    <message>
+        <source>Allow points outside the image boundary</source>
+        <translation>Permitir pontos fora dos limites da imagem</translation>
+    </message>
+    <message>
+        <source>Appearance and language</source>
+        <translation>Aparência e idioma</translation>
+    </message>
+    <message>
+        <source>Files and saving</source>
+        <translation>Arquivos e salvamento</translation>
+    </message>
+    <message>
+        <source>Drawing and canvas</source>
+        <translation>Desenho e tela</translation>
+    </message>
+    <message>
+        <source>Continue between images</source>
+        <translation>Continuar entre imagens</translation>
+    </message>
+    <message>
+        <source>Label sources</source>
+        <translation>Fontes de rótulos</translation>
+    </message>
+    <message>
+        <source>Label behavior</source>
+        <translation>Comportamento dos rótulos</translation>
+    </message>
+    <message>
+        <source>AI assist</source>
+        <translation>Assistência de IA</translation>
+    </message>
+    <message>
+        <source>Save automatically</source>
+        <translation>Salvar automaticamente</translation>
+    </message>
+    <message>
+        <source>autosave auto save</source>
+        <translation>salvamento automático salvar automaticamente</translation>
+    </message>
+    <message>
+        <source>Embed image in annotation file</source>
+        <translation>Incorporar imagem no arquivo de anotações</translation>
+    </message>
+    <message>
+        <source>Shape Color Mode</source>
+        <translation>Modo de cor da forma</translation>
+    </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Automático</translation>
+    </message>
+    <message>
+        <source>Uniform</source>
+        <translation>Uniforme</translation>
+    </message>
+    <message>
+        <source>By Label</source>
+        <translation>Por rótulo</translation>
+    </message>
+    <message>
+        <source>Automatic palette shift</source>
+        <translation>Deslocamento automático da paleta</translation>
+    </message>
+    <message>
+        <source>Uniform mode color</source>
+        <translation>Cor do modo Uniforme</translation>
+    </message>
+    <message>
+        <source>By Label fallback color</source>
+        <translation>Cor alternativa do modo Por rótulo</translation>
+    </message>
+    <message>
+        <source>Individual Label colors remain editable in the Config File.</source>
+        <translation>As cores individuais dos rótulos continuam editáveis no arquivo de configuração.</translation>
+    </message>
+    <message>
+        <source>Keep previous annotation</source>
+        <translation>Manter anotação anterior</translation>
+    </message>
+    <message>
+        <source>Keep previous zoom</source>
+        <translation>Manter zoom anterior</translation>
+    </message>
+    <message>
+        <source>Keep previous brightness/contrast</source>
+        <translation>Manter brilho/contraste anteriores</translation>
+    </message>
+    <message>
+        <source>Fill polygon while drawing</source>
+        <translation>Preencher polígono enquanto desenha</translation>
+    </message>
+    <message>
+        <source>Let shape points extend beyond the image, e.g. for partially visible objects.</source>
+        <translation>Permite que os pontos das formas se estendam além da imagem, por ex. para objetos parcialmente visíveis.</translation>
+    </message>
+    <message>
+        <source>Predefined shape flags</source>
+        <translation>Sinalizadores de forma predefinidos</translation>
+    </message>
+    <message>
+        <source>One flag name per line. Patterns: ^car$ matches car exactly, car matches a prefix, .* matches every label.</source>
+        <translation>Um nome de sinalizador por linha. Padrões: ^car$ corresponde exatamente a car, car a um prefixo, .* a qualquer rótulo.</translation>
+    </message>
+    <message>
+        <source>AI-Find All model</source>
+        <translation>Modelo do AI-Find All</translation>
+    </message>
+    <message>
+        <source>Polygon detail</source>
+        <translation>Detalhe do polígono</translation>
+    </message>
+    <message>
+        <source>smooth smoothness simplify outline</source>
+        <translation>suavizar suavidade simplificar contorno</translation>
+    </message>
+    <message>
+        <source>Higher values preserve more Mask boundary detail and smaller lands.</source>
+        <translation>Valores mais altos preservam mais detalhes da borda da máscara e regiões menores.</translation>
+    </message>
+    <message>
+        <source>duplicate duplicates avoid duplicates deduplicate</source>
+        <translation>duplicado duplicados evitar duplicados remover duplicados</translation>
+    </message>
+    <message>
+        <source>Compute device</source>
+        <translation>Dispositivo de processamento</translation>
+    </message>
+    <message>
+        <source>CPU</source>
+        <translation>CPU</translation>
+    </message>
+    <message>
+        <source>Automatic uses the GPU and switches to the CPU if the GPU fails.</source>
+        <translation>Automático usa a GPU e muda para a CPU se a GPU falhar.</translation>
+    </message>
+    <message>
+        <source>gpu cuda processor slow crash</source>
+        <translation>gpu cuda processador lento falha</translation>
+    </message>
+    <message>
+        <source>Predefined labels</source>
+        <translation>Rótulos predefinidos</translation>
+    </message>
+    <message>
+        <source>Embeds the image in the annotation file.</source>
+        <translation>Incorpora a imagem no arquivo de anotações.</translation>
+    </message>
+    <message>
+        <source>Label validation</source>
+        <translation>Validação de rótulo</translation>
+    </message>
+    <message>
+        <source>Sort labels</source>
+        <translation>Ordenar rótulos</translation>
+    </message>
+    <message>
+        <source>Sort the label list alphabetically instead of keeping the provided order.</source>
+        <translation>Ordena a lista de rótulos alfabeticamente em vez de manter a ordem fornecida.</translation>
+    </message>
+    <message>
+        <source>Show label text field</source>
+        <translation>Mostrar campo de texto do rótulo</translation>
+    </message>
+    <message>
+        <source>Label completion</source>
+        <translation>Autocompletar rótulos</translation>
+    </message>
+    <message>
+        <source>Starts with</source>
+        <translation>Começa com</translation>
+    </message>
+    <message>
+        <source>Contains</source>
+        <translation>Contém</translation>
+    </message>
+    <message>
+        <source>Default model</source>
+        <translation>Modelo padrão</translation>
+    </message>
+    <message>
+        <source>Suppress existing Shape matches</source>
+        <translation>Suprimir correspondências com formas existentes</translation>
+    </message>
+    <message>
+        <source>When an AI Assist candidate matches an existing Shape, highlight that Shape instead of creating a new Shape.</source>
+        <translation>Quando um candidato da Assistência de IA corresponde a uma forma existente, essa forma é destacada em vez de criar uma nova forma.</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Configurações</translation>
+    </message>
+    <message>
+        <source>Open config file as text…</source>
+        <translation>Abrir arquivo de configuração como texto…</translation>
+    </message>
+    <message>
+        <source>Edits made in the text file apply after restart</source>
+        <translation>Edições no arquivo de texto são aplicadas após reiniciar</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation>Fechar</translation>
+    </message>
+    <message>
+        <source>BETA</source>
+        <translation>BETA</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(nenhum)</translation>
+    </message>
+    <message>
+        <source>one item per line</source>
+        <translation>um item por linha</translation>
+    </message>
+    <message>
+        <source>Configuration Error</source>
+        <translation>Erro de Configuração</translation>
+    </message>
+    <message>
+        <source>Predefined labels cannot be empty while Label validation is set to exact. Disable exact validation first.</source>
+        <translation>Os rótulos predefinidos não podem ficar vazios enquanto a validação de rótulo estiver definida como «exact». Desative primeiro a validação «exact».</translation>
+    </message>
+    <message>
+        <source>Select {mode} in Shape Color Mode to edit this setting.</source>
+        <translation>Selecione {mode} no modo de cor das formas para editar esta configuração.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Idioma</translation>
+    </message>
+    <message>
+        <source>Takes effect after restart.</source>
+        <translation>Aplicado após reiniciar o aplicativo.</translation>
+    </message>
+    <message>
+        <source>System default</source>
+        <translation>Padrão do sistema</translation>
+    </message>
+    <message>
+        <source>Predefined image flags</source>
+        <translation>Sinalizadores de imagem predefinidos</translation>
+    </message>
+</context>
+<context>
+    <name>ToolBar</name>
+    <message>
+        <source>More actions</source>
+        <translation>Mais ações</translation>
+    </message>
+</context>
+<context>
+    <name>UniqueLabelQListWidget</name>
+    <message>
+        <source>Label set</source>
+        <translation>Conjunto de rótulos</translation>
+    </message>
+    <message>
+        <source>Edit…</source>
+        <translation>Editar…</translation>
+    </message>
+    <message>
+        <source>Clear Unused</source>
+        <translation>Limpar não usados</translation>
+    </message>
+    <message>
+        <source>Found in files</source>
+        <translation>Encontrados nos arquivos</translation>
+    </message>
+</context>
+<context>
+    <name>ZoomWidget</name>
+    <message>
+        <source>Zoom</source>
+        <translation>Zoom</translation>
+    </message>
+    <message>
+        <source>Hold %s and scroll to zoom the canvas</source>
+        <translation>Segure %s e role para ampliar a tela</translation>
+    </message>
+</context>
+<context>
+    <name>_ColorSwatchButton</name>
+    <message>
+        <source>RGB: {red}, {green}, {blue}</source>
+        <translation>RGB: {red}, {green}, {blue}</translation>
+    </message>
+</context>
+<context>
+    <name>_LabelFlagsEditor</name>
+    <message>
+        <source>Label pattern</source>
+        <translation>Padrão de rótulo</translation>
+    </message>
+    <message>
+        <source>Shape flags</source>
+        <translation>Sinalizadores de forma</translation>
+    </message>
+    <message>
+        <source>Add rule</source>
+        <translation>Adicionar regra</translation>
+    </message>
+    <message>
+        <source>One name per line</source>
+        <translation>Um nome por linha</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Remover</translation>
+    </message>
+    <message>
+        <source>Remove rule</source>
+        <translation>Remover regra</translation>
+    </message>
+    <message>
+        <source>Enter a pattern and at least one flag name.</source>
+        <translation>Insira um padrão e pelo menos um nome de sinalizador.</translation>
+    </message>
+    <message>
+        <source>Duplicate label pattern.</source>
+        <translation>Padrão de rótulo duplicado.</translation>
+    </message>
+    <message>
+        <source>Invalid regular expression.</source>
+        <translation>Expressão regular inválida.</translation>
+    </message>
+    <message>
+        <source>Row {row}: {error} Changes have not been applied.</source>
+        <translation>Linha {row}: {error} As alterações não foram aplicadas.</translation>
+    </message>
+</context>
+<context>
+    <name>_ModelMenuButton</name>
+    <message>
+        <source>Model</source>
+        <translation>Modelo</translation>
+    </message>
+    <message>
+        <source>{tool}: {model}</source>
+        <translation>{tool}: {model}</translation>
+    </message>
+    <message>
+        <source>Fastest</source>
+        <translation>Mais rápido</translation>
+    </message>
+    <message>
+        <source>Balanced</source>
+        <translation>Equilibrado</translation>
+    </message>
+    <message>
+        <source>Most accurate</source>
+        <translation>Mais preciso</translation>
+    </message>
+    <message>
+        <source>The original SAM. SAM 2 is faster at every size.</source>
+        <translation>O SAM original. O SAM 2 é mais rápido em todos os tamanhos.</translation>
+    </message>
+    <message>
+        <source>Fastest, with rough outlines. Runs well on any computer.</source>
+        <translation>O mais rápido, com contornos aproximados. Funciona bem em qualquer computador.</translation>
+    </message>
+    <message>
+        <source>Sharper outlines than Tiny, but slower than SAM 2 Base+.</source>
+        <translation>Contornos mais nítidos que o Tiny, mas mais lento que o SAM 2 Base+.</translation>
+    </message>
+    <message>
+        <source>A smaller download than Base+, a little less accurate.</source>
+        <translation>Download menor que o Base+, um pouco menos preciso.</translation>
+    </message>
+    <message>
+        <source>Balanced speed and accuracy. Runs well on a CPU.</source>
+        <translation>Equilíbrio entre velocidade e precisão. Funciona bem em CPU.</translation>
+    </message>
+    <message>
+        <source>More accurate than Base+, but slower.</source>
+        <translation>Mais preciso que o Base+, mas mais lento.</translation>
+    </message>
+    <message>
+        <source>Most accurate, but slower than SAM 2 Base+. Best with a GPU.</source>
+        <translation>O mais preciso, mas mais lento que o SAM 2 Base+. Melhor com GPU.</translation>
+    </message>
+    <message>
+        <source>Fastest. Finds boxes, without masks.</source>
+        <translation>O mais rápido. Encontra caixas, sem máscaras.</translation>
+    </message>
+    <message>
+        <source>Boxes only</source>
+        <translation>Somente caixas</translation>
+    </message>
+</context>
+<context>
+    <name>_SettingsPage</name>
+    <message>
+        <source>Settings sections</source>
+        <translation>Seções de configurações</translation>
+    </message>
+    <message>
+        <source>Search settings</source>
+        <translation>Pesquisar configurações</translation>
+    </message>
+    <message>
+        <source>Matching settings</source>
+        <translation>Configurações correspondentes</translation>
+    </message>
+    <message>
+        <source>{count} matching settings</source>
+        <translation>{count} configurações correspondentes</translation>
+    </message>
+    <message>
+        <source>No matching settings in this dialog. Try another term or clear search.</source>
+        <translation>Nenhuma configuração correspondente nesta janela. Tente outro termo ou limpe a pesquisa.</translation>
+    </message>
+</context>
+<context>
+    <name>main</name>
+    <message>
+        <source>Error</source>
+        <translation>Erro</translation>
+    </message>
+    <message>
+        <source>An unexpected error occurred. The application will close.&lt;br/&gt;&lt;br/&gt;Please report the issue by following &lt;a href=&apos;https://labelme.io/docs/troubleshoot&apos;&gt;Troubleshooting&lt;/a&gt;.</source>
+        <translation>Ocorreu um erro inesperado. O aplicativo será fechado.&lt;br/&gt;&lt;br/&gt;Relate o problema seguindo &lt;a href=&apos;https://labelme.io/docs/troubleshoot&apos;&gt;Solução de problemas&lt;/a&gt;.</translation>
+    </message>
+</context>
+</TS>

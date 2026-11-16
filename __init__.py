@@ -1,0 +1,20 @@
+import importlib.metadata
+import sys
+
+__appname__ = "Labelme"
+
+# Semantic Versioning 2.0.0: https://semver.org/
+# 1. MAJOR version when you make incompatible API changes;
+# 2. MINOR version when you add functionality in a backwards-compatible manner;
+# 3. PATCH version when you make backwards-compatible bug fixes.
+# e.g., 1.0.0a0, 1.0.0a1, 1.0.0b0, 1.0.0rc0, 1.0.0, 1.0.0.post0
+__version__ = importlib.metadata.version("labelme")
+
+# XXX: has to be imported before PySide6 to load dlls in order on Windows
+# https://github.com/wkentaro/labelme/issues/1564
+# Elsewhere osam imports it later, when the window checks which AI models
+# are downloaded.
+if sys.platform == "win32":
+    import onnxruntime  # noqa: F401
+
+__all__: list[str] = []

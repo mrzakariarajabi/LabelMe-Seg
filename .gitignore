@@ -12,3 +12,8 @@
 # OS / IDE
 .DS_Store
 .idea/
+.cache/
+.codex/
+.claude/
+.venv/
+__pycache__/

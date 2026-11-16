@@ -1,0 +1,1978 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="nl_NL">
+<context>
+    <name>AiAssistedAnnotationWidget</name>
+    <message>
+        <source>Polygon detail</source>
+        <translation>Polygoondetail</translation>
+    </message>
+    <message>
+        <source>Smoother</source>
+        <translation>Gladder</translation>
+    </message>
+    <message>
+        <source>More detail</source>
+        <translation>Meer detail</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>Uitvoer</translation>
+    </message>
+    <message>
+        <source>Polygon</source>
+        <translation>Polygoon</translation>
+    </message>
+    <message>
+        <source>Mask</source>
+        <translation>Masker</translation>
+    </message>
+    <message>
+        <source>Rectangle</source>
+        <translation>Rechthoek</translation>
+    </message>
+    <message>
+        <source>Oriented Rectangle</source>
+        <translation>Georiënteerde Rechthoek</translation>
+    </message>
+    <message>
+        <source>Circle</source>
+        <translation>Cirkel</translation>
+    </message>
+    <message>
+        <source>Output format: {format}</source>
+        <translation>Uitvoerformaat: {format}</translation>
+    </message>
+    <message>
+        <source>AI-assisted annotation model</source>
+        <translation>Model voor annotatie met AI</translation>
+    </message>
+    <message>
+        <source>AI-assisted annotation output format</source>
+        <translation>Uitvoerformaat voor annotatie met AI</translation>
+    </message>
+    <message>
+        <source>Model</source>
+        <translation>Model</translation>
+    </message>
+</context>
+<context>
+    <name>AiTextToAnnotationWidget</name>
+    <message>
+        <source>Run</source>
+        <translation>Uitvoeren</translation>
+    </message>
+    <message>
+        <source>Score</source>
+        <translation>Score</translation>
+    </message>
+    <message>
+        <source>IoU</source>
+        <translation>IoU</translation>
+    </message>
+    <message>
+        <source>Model</source>
+        <translation>Model</translation>
+    </message>
+    <message>
+        <source>What to find</source>
+        <translation>Wat zoeken</translation>
+    </message>
+    <message>
+        <source>Prompt</source>
+        <translation>Prompt</translation>
+    </message>
+    <message>
+        <source>Finding…</source>
+        <translation>Zoeken…</translation>
+    </message>
+    <message>
+        <source>AI-Find All model</source>
+        <translation>AI-Find All-model</translation>
+    </message>
+</context>
+<context>
+    <name>AiToolGroup</name>
+    <message>
+        <source>Options</source>
+        <translation>Opties</translation>
+    </message>
+    <message>
+        <source>AI-Segment</source>
+        <translation>AI-Segment</translation>
+    </message>
+    <message>
+        <source>AI-Find All</source>
+        <translation>AI-Find All</translation>
+    </message>
+</context>
+<context>
+    <name>AnnotationFolderFooter</name>
+    <message>
+        <source>Annotation Folder</source>
+        <translation>Annotatiemap</translation>
+    </message>
+    <message>
+        <source>Next to Images</source>
+        <translation>Naast afbeeldingen</translation>
+    </message>
+    <message>
+        <source>Change Annotation Folder…</source>
+        <translation>Annotatiemap wijzigen…</translation>
+    </message>
+    <message>
+        <source>{annotated} of {total} annotated in</source>
+        <translation>{annotated} van {total} geannoteerd in</translation>
+    </message>
+    <message>
+        <source>Not found: %s · next to images</source>
+        <translation>Niet gevonden: %s · naast afbeeldingen</translation>
+    </message>
+    <message>
+        <source>{annotated} of {total} annotated · next to images</source>
+        <translation>{annotated} van {total} geannoteerd · naast afbeeldingen</translation>
+    </message>
+</context>
+<context>
+    <name>BrightnessContrastDialog</name>
+    <message>
+        <source>Brightness/Contrast</source>
+        <translation>Helderheid/Contrast</translation>
+    </message>
+    <message>
+        <source>Brightness:</source>
+        <translation>Helderheid:</translation>
+    </message>
+    <message>
+        <source>Contrast:</source>
+        <translation>Contrast:</translation>
+    </message>
+</context>
+<context>
+    <name>Canvas</name>
+    <message>
+        <source>Click &amp; drag to move point</source>
+        <translation>Klik en sleep om punt te verplaatsen</translation>
+    </message>
+    <message>
+        <source>Hold %s and click to add a point on the edge</source>
+        <translation>Houd %s ingedrukt en klik om een punt op de rand toe te voegen</translation>
+    </message>
+    <message>
+        <source>Shape is locked</source>
+        <translation>Vorm is vergrendeld</translation>
+    </message>
+    <message>
+        <source>Click &amp; drag to move shape</source>
+        <translation>Klik en sleep om vorm te verplaatsen</translation>
+    </message>
+    <message>
+        <source>ESC to cancel</source>
+        <translation>ESC om te annuleren</translation>
+    </message>
+    <message>
+        <source>Enter or Space to finalize</source>
+        <translation>Enter of Spatie om te voltooien</translation>
+    </message>
+    <message>
+        <source>Editing shapes</source>
+        <translation>Vormen bewerken</translation>
+    </message>
+    <message>
+        <source>Click points to include, hold %s and click to exclude, or drag a box. Hold %s and click to finish.</source>
+        <translation>Klik op punten om op te nemen, houd %s ingedrukt en klik om uit te sluiten, of sleep een kader. Houd %s ingedrukt en klik om te voltooien.</translation>
+    </message>
+    <message>
+        <source>Type what to find in AI-Find All, or click the first corner of a box around one example</source>
+        <translation>Typ in AI-Find All wat je wilt zoeken, of klik op de eerste hoek van een kader rond één voorbeeld</translation>
+    </message>
+    <message>
+        <source>Click the opposite corner to exclude objects like this one</source>
+        <translation>Klik op de tegenoverliggende hoek om objecten zoals dit uit te sluiten</translation>
+    </message>
+    <message>
+        <source>Click the opposite corner to find every object like this one</source>
+        <translation>Klik op de tegenoverliggende hoek om elk object zoals dit te zoeken</translation>
+    </message>
+    <message>
+        <source>Click start point for line</source>
+        <translation>Klik op startpunt voor lijn</translation>
+    </message>
+    <message>
+        <source>Click end point for line</source>
+        <translation>Klik op eindpunt voor lijn</translation>
+    </message>
+    <message>
+        <source>Click start point for linestrip</source>
+        <translation>Klik op startpunt voor lijnstrook</translation>
+    </message>
+    <message>
+        <source>Click center point for circle</source>
+        <translation>Klik op middelpunt voor cirkel</translation>
+    </message>
+    <message>
+        <source>Click point on circumference for circle</source>
+        <translation>Klik op punt op omtrek voor cirkel</translation>
+    </message>
+    <message>
+        <source>Click first corner for rectangle</source>
+        <translation>Klik op eerste hoek voor rechthoek</translation>
+    </message>
+    <message>
+        <source>Click to add point</source>
+        <translation>Klik om punt toe te voegen</translation>
+    </message>
+    <message>
+        <source>Drag a box</source>
+        <translation>Sleep een kader</translation>
+    </message>
+    <message>
+        <source>Drag around one example</source>
+        <translation>Sleep een kader om één voorbeeld</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Verwijder</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Voeg toe</translation>
+    </message>
+    <message>
+        <source>Click to include</source>
+        <translation>Klik om op te nemen</translation>
+    </message>
+    <message>
+        <source>Click to exclude</source>
+        <translation>Klik om uit te sluiten</translation>
+    </message>
+    <message>
+        <source>Add %d</source>
+        <translation>Voeg %d toe</translation>
+    </message>
+    <message>
+        <source>Drag to exclude</source>
+        <translation>Sleep om uit te sluiten</translation>
+    </message>
+    <message>
+        <source>Choose the other corner. Hold Shift for a square.</source>
+        <translation>Kies de andere hoek. Houd Shift ingedrukt voor een vierkant.</translation>
+    </message>
+    <message>
+        <source>Enter adds the results, Esc discards them. Hold %s and draw a box to exclude objects like it.</source>
+        <translation>Enter voegt de resultaten toe, Esc verwerpt ze. Houd %s ingedrukt en teken een kader om vergelijkbare objecten uit te sluiten.</translation>
+    </message>
+    <message>
+        <source>Click the next point, or hold %s and click to finish the LineStrip</source>
+        <translation>Klik op het volgende punt, of houd %s ingedrukt en klik om de polylijn te voltooien</translation>
+    </message>
+    <message>
+        <source>Click first corner for oriented rectangle</source>
+        <translation>Klik op eerste hoek voor georiënteerde rechthoek</translation>
+    </message>
+    <message>
+        <source>Click second corner to set orientation</source>
+        <translation>Klik op tweede hoek om oriëntatie in te stellen</translation>
+    </message>
+    <message>
+        <source>Click third corner to close oriented rectangle</source>
+        <translation>Klik op derde hoek om georiënteerde rechthoek te sluiten</translation>
+    </message>
+    <message>
+        <source>Hold %s and click to delete the point</source>
+        <translation>Houd %s ingedrukt en klik om het punt te verwijderen</translation>
+    </message>
+    <message>
+        <source>Click &amp; drag to rotate the shape</source>
+        <translation>Klik en sleep om vorm te draaien</translation>
+    </message>
+    <message>
+        <source>Click first point on circumference for circle</source>
+        <translation>Klik op eerste punt op omtrek voor cirkel</translation>
+    </message>
+    <message>
+        <source>Click second point on circumference for circle</source>
+        <translation>Klik op tweede punt op omtrek voor cirkel</translation>
+    </message>
+    <message>
+        <source>Click third point on circumference to finish circle</source>
+        <translation>Klik op derde punt op omtrek om cirkel te voltooien</translation>
+    </message>
+</context>
+<context>
+    <name>ConversionDetailDialog</name>
+    <message>
+        <source>Polygon detail</source>
+        <translation>Polygoondetail</translation>
+    </message>
+    <message>
+        <source>Smoother</source>
+        <translation>Gladder</translation>
+    </message>
+    <message>
+        <source>More detail</source>
+        <translation>Meer detail</translation>
+    </message>
+    <message>
+        <source>Convert</source>
+        <translation>Omzetten</translation>
+    </message>
+</context>
+<context>
+    <name>EmptyStateWidget</name>
+    <message>
+        <source>Start annotating</source>
+        <translation>Begin met annoteren</translation>
+    </message>
+    <message>
+        <source>Open an image or a folder of images to begin.</source>
+        <translation>Open een afbeelding of een map met afbeeldingen om te beginnen.</translation>
+    </message>
+    <message>
+        <source>Or drag and drop image files here</source>
+        <translation>Of sleep afbeeldingsbestanden hierheen</translation>
+    </message>
+</context>
+<context>
+    <name>LabelDialog</name>
+    <message>
+        <source>Shape Label</source>
+        <translation>Vormlabel</translation>
+    </message>
+    <message>
+        <source>Enter object label</source>
+        <translation>Voer het objectlabel in</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Label</translation>
+    </message>
+    <message>
+        <source>Group ID</source>
+        <translation>Groeps-ID</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Beschrijving</translation>
+    </message>
+</context>
+<context>
+    <name>MainWindow</name>
+    <message>
+        <source>Flags</source>
+        <translation>Vlaggen</translation>
+    </message>
+    <message>
+        <source>Shape List</source>
+        <translation>Vormenlijst</translation>
+    </message>
+    <message>
+        <source>Label List</source>
+        <translation>Labellijst</translation>
+    </message>
+    <message>
+        <source>Search Filename</source>
+        <translation>Zoek Bestandsnaam</translation>
+    </message>
+    <message>
+        <source>Image List</source>
+        <translation>Afbeeldingenlijst</translation>
+    </message>
+    <message>
+        <source>&amp;Quit</source>
+        <translation>A&amp;fsluiten</translation>
+    </message>
+    <message>
+        <source>Quit application</source>
+        <translation>Applicatie afsluiten</translation>
+    </message>
+    <message>
+        <source>&amp;Next Image</source>
+        <translation>Volgende &amp;Afbeelding</translation>
+    </message>
+    <message>
+        <source>Save automatically</source>
+        <translation>Automatisch opslaan</translation>
+    </message>
+    <message>
+        <source>&amp;Close</source>
+        <translation>S&amp;luiten</translation>
+    </message>
+    <message>
+        <source>Close current file</source>
+        <translation>Huidig bestand sluiten</translation>
+    </message>
+    <message>
+        <source>Keep Previous Annotation</source>
+        <translation>Vorige Annotatie Behouden</translation>
+    </message>
+    <message>
+        <source>Start drawing polygons</source>
+        <translation>Begin met tekenen van polygonen</translation>
+    </message>
+    <message>
+        <source>Start drawing rectangles</source>
+        <translation>Begin met tekenen van rechthoeken</translation>
+    </message>
+    <message>
+        <source>Start drawing circles</source>
+        <translation>Begin met tekenen van cirkels</translation>
+    </message>
+    <message>
+        <source>Start drawing lines</source>
+        <translation>Begin met tekenen van lijnen</translation>
+    </message>
+    <message>
+        <source>Start drawing points</source>
+        <translation>Begin met tekenen van punten</translation>
+    </message>
+    <message>
+        <source>Edit Shapes</source>
+        <translation>Vormen Bewerken</translation>
+    </message>
+    <message>
+        <source>Move and edit the selected shapes</source>
+        <translation>Verplaats en bewerk de geselecteerde vormen</translation>
+    </message>
+    <message>
+        <source>Delete Shapes</source>
+        <translation>Vormen Verwijderen</translation>
+    </message>
+    <message>
+        <source>Save the annotation file</source>
+        <translation>Annotatiebestand opslaan</translation>
+    </message>
+    <message>
+        <source>Save &amp;As…</source>
+        <translation>Op&amp;slaan als…</translation>
+    </message>
+    <message>
+        <source>Save the annotation file under a new name</source>
+        <translation>Annotatiebestand opslaan onder een nieuwe naam</translation>
+    </message>
+    <message>
+        <source>Save Au&amp;tomatically</source>
+        <translation>A&amp;utomatisch opslaan</translation>
+    </message>
+    <message>
+        <source>Embed Image in Annotation File</source>
+        <translation>Afbeelding in annotatiebestand insluiten</translation>
+    </message>
+    <message>
+        <source>Store a copy of the image inside the annotation file</source>
+        <translation>Slaat een kopie van de afbeelding op in het annotatiebestand</translation>
+    </message>
+    <message>
+        <source>Change Annotation &amp;Folder…</source>
+        <translation>Annotatiemap &amp;wijzigen…</translation>
+    </message>
+    <message>
+        <source>Open an image or annotation file</source>
+        <translation>Afbeelding of annotatiebestand openen</translation>
+    </message>
+    <message>
+        <source>&amp;Delete Annotation File</source>
+        <translation>A&amp;nnotatiebestand verwijderen</translation>
+    </message>
+    <message>
+        <source>Delete the current annotation file</source>
+        <translation>Huidig annotatiebestand verwijderen</translation>
+    </message>
+    <message>
+        <source>Delete the selected shapes</source>
+        <translation>Geselecteerde vormen verwijderen</translation>
+    </message>
+    <message>
+        <source>Duplicate Shapes</source>
+        <translation>Vormen Dupliceren</translation>
+    </message>
+    <message>
+        <source>Create a duplicate of the selected shapes</source>
+        <translation>Maak een duplicaat van de geselecteerde vormen</translation>
+    </message>
+    <message>
+        <source>Replace the selected shapes with their bounding boxes</source>
+        <translation>Geselecteerde vormen vervangen door hun begrenzingskaders</translation>
+    </message>
+    <message>
+        <source>Convert the selected shapes to linestrips</source>
+        <translation>Geselecteerde vormen omzetten naar lijnstrips</translation>
+    </message>
+    <message>
+        <source>Undo last drawn point</source>
+        <translation>Laatste getekende punt ongedaan maken</translation>
+    </message>
+    <message>
+        <source>Undo last add and edit of shape</source>
+        <translation>Laatste toevoeging en bewerking van vorm ongedaan maken</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <comment>toolbar</comment>
+        <translation>Selecteren</translation>
+    </message>
+    <message>
+        <source>Click to place LineStrip points; hold %s and click to place the last one.</source>
+        <translation>Klik om punten van de polylijn te plaatsen; houd %s ingedrukt en klik om het laatste te plaatsen.</translation>
+    </message>
+    <message>
+        <source>Open the next image (hold %s to copy the current Shapes)</source>
+        <translation>Volgende afbeelding openen (houd %s ingedrukt om de huidige vormen te kopiëren)</translation>
+    </message>
+    <message>
+        <source>Hide all shapes</source>
+        <translation>Alle vormen verbergen</translation>
+    </message>
+    <message>
+        <source>Show all shapes</source>
+        <translation>Alle vormen tonen</translation>
+    </message>
+    <message>
+        <source>Toggle all shapes</source>
+        <translation>Alle vormen omschakelen</translation>
+    </message>
+    <message>
+        <source>&amp;Tutorial</source>
+        <translation>&amp;Tutorial</translation>
+    </message>
+    <message>
+        <source>Show tutorial page</source>
+        <translation>Tutorialpagina tonen</translation>
+    </message>
+    <message>
+        <source>Zoom</source>
+        <translation>Zoom</translation>
+    </message>
+    <message>
+        <source>Zoom &amp;In</source>
+        <translation>&amp;Inzoomen</translation>
+    </message>
+    <message>
+        <source>&amp;Zoom Out</source>
+        <translation>&amp;Uitzoomen</translation>
+    </message>
+    <message>
+        <source>Adjust brightness and contrast</source>
+        <translation>Helderheid en contrast aanpassen</translation>
+    </message>
+    <message>
+        <source>Image Polygonal Annotation with Python</source>
+        <translation>Polygonale beeldannotatie met Python</translation>
+    </message>
+    <message>
+        <source>Version: %s</source>
+        <translation>Versie: %s</translation>
+    </message>
+    <message>
+        <source>Author: %s</source>
+        <translation>Auteur: %s</translation>
+    </message>
+    <message>
+        <source>Homepage</source>
+        <translation>Website</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Documentatie</translation>
+    </message>
+    <message>
+        <source>Troubleshooting</source>
+        <translation>Probleemoplossing</translation>
+    </message>
+    <message>
+        <source>&amp;About %s</source>
+        <translation>&amp;Over %s</translation>
+    </message>
+    <message>
+        <source>About %s</source>
+        <translation>Over %s</translation>
+    </message>
+    <message>
+        <source>&amp;Save</source>
+        <translation>O&amp;pslaan</translation>
+    </message>
+    <message>
+        <source>Choose where annotation files are read and saved</source>
+        <translation>Kies waar annotatiebestanden worden gelezen en opgeslagen</translation>
+    </message>
+    <message>
+        <source>&amp;Open File…</source>
+        <translation>Bestand &amp;openen…</translation>
+    </message>
+    <message>
+        <source>Open Folder…</source>
+        <translation>Map openen…</translation>
+    </message>
+    <message>
+        <source>Open a folder of images</source>
+        <translation>Een map met afbeeldingen openen</translation>
+    </message>
+    <message>
+        <source>Delete File</source>
+        <comment>toolbar</comment>
+        <translation>Bestand verwijderen</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <comment>toolbar</comment>
+        <translation>Verwijderen</translation>
+    </message>
+    <message>
+        <source>Modify the label of the selected shape</source>
+        <translation>Label van geselecteerde vorm wijzigen</translation>
+    </message>
+    <message>
+        <source>Copy to Clipboard</source>
+        <translation>Naar Klembord Kopiëren</translation>
+    </message>
+    <message>
+        <source>Place the selected shapes on the clipboard</source>
+        <translation>Geselecteerde vormen op het klembord plaatsen</translation>
+    </message>
+    <message>
+        <source>Paste from Clipboard</source>
+        <translation>Vanaf Klembord Plakken</translation>
+    </message>
+    <message>
+        <source>Insert the clipboard shapes into this image</source>
+        <translation>Vormen van het klembord in deze afbeelding invoegen</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <comment>toolbar</comment>
+        <translation>Dupliceren</translation>
+    </message>
+    <message>
+        <source>Merge Shapes</source>
+        <translation>Vormen Samenvoegen</translation>
+    </message>
+    <message>
+        <source>Merge the selected mask shapes into one</source>
+        <translation>Geselecteerde maskervormen samenvoegen tot één</translation>
+    </message>
+    <message>
+        <source>Convert the selected shapes to polygons</source>
+        <translation>Geselecteerde vormen omzetten naar polygonen</translation>
+    </message>
+    <message>
+        <source>Convert the selected shapes to oriented rectangles</source>
+        <translation>Geselecteerde vormen omzetten naar georiënteerde rechthoeken</translation>
+    </message>
+    <message>
+        <source>Convert the selected shapes to circles</source>
+        <translation>Geselecteerde vormen omzetten naar cirkels</translation>
+    </message>
+    <message>
+        <source>Convert the selected shapes to lines</source>
+        <translation>Geselecteerde vormen omzetten naar lijnen</translation>
+    </message>
+    <message>
+        <source>Convert the selected shapes to points</source>
+        <translation>Geselecteerde vormen omzetten naar punten</translation>
+    </message>
+    <message>
+        <source>Mask</source>
+        <translation>Masker</translation>
+    </message>
+    <message>
+        <source>Convert the selected shapes to masks</source>
+        <translation>Geselecteerde vormen omzetten naar maskers</translation>
+    </message>
+    <message>
+        <source>Convert To</source>
+        <translation>Omzetten Naar</translation>
+    </message>
+    <message>
+        <source>Lock Shapes</source>
+        <translation>Vormen Vergrendelen</translation>
+    </message>
+    <message>
+        <source>Lock the selected shapes against editing, or unlock them</source>
+        <translation>Geselecteerde vormen vergrendelen tegen bewerken, of ontgrendelen</translation>
+    </message>
+    <message>
+        <source>Undo</source>
+        <translation>Ongedaan maken</translation>
+    </message>
+    <message>
+        <source>AI-Segment</source>
+        <translation>AI-Segment</translation>
+    </message>
+    <message>
+        <source>Click points or drag a box to segment one object; hold %s and click to finish.</source>
+        <translation>Klik op punten of sleep een kader om één object te segmenteren; houd %s ingedrukt en klik om te voltooien.</translation>
+    </message>
+    <message>
+        <source>AI-Find All</source>
+        <translation>AI-Find All</translation>
+    </message>
+    <message>
+        <source>Find every object that matches the text prompt or an example box</source>
+        <translation>Elk object zoeken dat overeenkomt met de tekstprompt of een voorbeeldkader</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <comment>toolbar</comment>
+        <translation>Volgende</translation>
+    </message>
+    <message>
+        <source>&amp;Previous Image</source>
+        <translation>&amp;Vorige afbeelding</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <comment>toolbar</comment>
+        <translation>Vorige</translation>
+    </message>
+    <message>
+        <source>Open the previous image (hold %s to copy the current Shapes)</source>
+        <translation>Vorige afbeelding openen (houd %s ingedrukt om de huidige vormen te kopiëren)</translation>
+    </message>
+    <message>
+        <source>Fit to &amp;Window</source>
+        <translation>&amp;Aanpassen aan venster</translation>
+    </message>
+    <message>
+        <source>Keep the whole image visible when the window is resized</source>
+        <translation>De hele afbeelding zichtbaar houden wanneer het venster van grootte verandert</translation>
+    </message>
+    <message>
+        <source>Zoom to the selected shapes whenever the selection changes</source>
+        <translation>Inzoomen op de geselecteerde vormen telkens wanneer de selectie verandert</translation>
+    </message>
+    <message>
+        <source>&amp;Brightness/Contrast…</source>
+        <translation>Helderheid/&amp;Contrast…</translation>
+    </message>
+    <message>
+        <source>Make the image appear larger</source>
+        <translation>De afbeelding groter weergeven</translation>
+    </message>
+    <message>
+        <source>Make the image appear smaller</source>
+        <translation>De afbeelding kleiner weergeven</translation>
+    </message>
+    <message>
+        <source>&amp;Actual Size</source>
+        <translation>&amp;Werkelijke grootte</translation>
+    </message>
+    <message>
+        <source>Show the image at 100%</source>
+        <translation>De afbeelding op 100% weergeven</translation>
+    </message>
+    <message>
+        <source>Fill Drawing Polygon</source>
+        <translation>Polygoon Vullen bij Tekenen</translation>
+    </message>
+    <message>
+        <source>Fill polygon while drawing</source>
+        <translation>Polygoon vullen tijdens tekenen</translation>
+    </message>
+    <message>
+        <source>&amp;Hide Shapes</source>
+        <translation>Vormen &amp;verbergen</translation>
+    </message>
+    <message>
+        <source>&amp;Show Shapes</source>
+        <translation>Vormen &amp;tonen</translation>
+    </message>
+    <message>
+        <source>&amp;Toggle Shapes</source>
+        <translation>Vormen &amp;omschakelen</translation>
+    </message>
+    <message>
+        <source>Select Shape Above</source>
+        <translation>Vorm erboven selecteren</translation>
+    </message>
+    <message>
+        <source>Select the nearest shape above the selection</source>
+        <translation>Dichtstbijzijnde vorm boven de selectie selecteren</translation>
+    </message>
+    <message>
+        <source>Select Shape Below</source>
+        <translation>Vorm eronder selecteren</translation>
+    </message>
+    <message>
+        <source>Select the nearest shape below the selection</source>
+        <translation>Dichtstbijzijnde vorm onder de selectie selecteren</translation>
+    </message>
+    <message>
+        <source>Select Shape to the Left</source>
+        <translation>Vorm links selecteren</translation>
+    </message>
+    <message>
+        <source>Select the nearest shape left of the selection</source>
+        <translation>Dichtstbijzijnde vorm links van de selectie selecteren</translation>
+    </message>
+    <message>
+        <source>Select Shape to the Right</source>
+        <translation>Vorm rechts selecteren</translation>
+    </message>
+    <message>
+        <source>Select the nearest shape right of the selection</source>
+        <translation>Dichtstbijzijnde vorm rechts van de selectie selecteren</translation>
+    </message>
+    <message>
+        <source>Fit to Window</source>
+        <translation>Aanpassen aan venster</translation>
+    </message>
+    <message>
+        <source>AI Models…</source>
+        <translation>AI-modellen…</translation>
+    </message>
+    <message>
+        <source>Download or delete AI models</source>
+        <translation>AI-modellen downloaden of verwijderen</translation>
+    </message>
+    <message>
+        <source>&amp;File</source>
+        <translation>&amp;Bestand</translation>
+    </message>
+    <message>
+        <source>&amp;Edit</source>
+        <translation>B&amp;ewerken</translation>
+    </message>
+    <message>
+        <source>&amp;View</source>
+        <translation>Bee&amp;ld</translation>
+    </message>
+    <message>
+        <source>&amp;Help</source>
+        <translation>&amp;Help</translation>
+    </message>
+    <message>
+        <source>Tools</source>
+        <translation>Gereedschappen</translation>
+    </message>
+    <message>
+        <source>More tools</source>
+        <translation>Meer gereedschappen</translation>
+    </message>
+    <message>
+        <source>Shape Tools</source>
+        <translation>Vormgereedschappen</translation>
+    </message>
+    <message>
+        <source>More shape tools</source>
+        <translation>Meer vormgereedschappen</translation>
+    </message>
+    <message>
+        <source>Retry</source>
+        <translation>Opnieuw proberen</translation>
+    </message>
+    <message>
+        <source>Choose a label to start drawing with it. Press &apos;Esc&apos; to clear the selection.</source>
+        <translation>Kies een label om ermee te tekenen. Druk op &apos;Esc&apos; om de selectie op te heffen.</translation>
+    </message>
+    <message>
+        <source>Invalid regular expression. Previous search kept.</source>
+        <translation>Ongeldige reguliere expressie. De vorige zoekopdracht blijft actief.</translation>
+    </message>
+    <message>
+        <source>Your settings couldn’t be loaded.</source>
+        <translation>Uw instellingen konden niet worden geladen.</translation>
+    </message>
+    <message>
+        <source>You can use default settings for now. Resetting saves a backup of your configuration file first.</source>
+        <translation>U kunt voorlopig de standaardinstellingen gebruiken. Voordat de instellingen worden gereset, wordt een back-up van uw configuratiebestand opgeslagen.</translation>
+    </message>
+    <message>
+        <source>Type what to find</source>
+        <translation>Typ wat je wilt zoeken</translation>
+    </message>
+    <message>
+        <source>Finding matches on CPU…</source>
+        <translation>Overeenkomsten zoeken op de CPU…</translation>
+    </message>
+    <message>
+        <source>Finding matches…</source>
+        <translation>Overeenkomsten zoeken…</translation>
+    </message>
+    <message>
+        <source>%s only detects bounding boxes and cannot create &apos;%s&apos; Shapes.
+
+Switch the AI-Find All model to &apos;SAM 3&apos;, or set the output format to &apos;Rectangle&apos;.</source>
+        <translation>%s detecteert alleen selectiekaders en kan geen &apos;%s&apos;-vormen maken.
+
+Wijzig het AI-Find All-model naar &apos;SAM 3&apos; of stel het uitvoerformaat in op &apos;Rectangle&apos;.</translation>
+    </message>
+    <message>
+        <source>The Annotation File belongs to another Image: %s</source>
+        <translation>Het annotatiebestand hoort bij een andere afbeelding: %s</translation>
+    </message>
+    <message>
+        <source>%s can&apos;t use an example box. Choose SAM 3.</source>
+        <translation>%s kan geen voorbeeldkader gebruiken. Kies SAM 3.</translation>
+    </message>
+    <message>
+        <source>Open Folder</source>
+        <translation>Map openen</translation>
+    </message>
+    <message>
+        <source>Command-line settings</source>
+        <translation>Opdrachtregelinstellingen</translation>
+    </message>
+    <message>
+        <source>Fit to S&amp;election</source>
+        <translation>Aanpassen aan &amp;selectie</translation>
+    </message>
+    <message>
+        <source>Could not reset the Config File.
+%s</source>
+        <translation>Het configuratiebestand kon niet worden hersteld.
+%s</translation>
+    </message>
+    <message>
+        <source>Configuration backup saved to %s</source>
+        <translation>Back-up van de configuratie opgeslagen in %s</translation>
+    </message>
+    <message>
+        <source>Saving…</source>
+        <translation>Opslaan…</translation>
+    </message>
+    <message>
+        <source>Mask Output Unavailable</source>
+        <translation>Maskeruitvoer niet beschikbaar</translation>
+    </message>
+    <message>
+        <source>Invalid label &apos;{}&apos; with validation type &apos;{}&apos;</source>
+        <translation>Ongeldig label &apos;{}&apos; met validatietype &apos;{}&apos;</translation>
+    </message>
+    <message>
+        <source>Unlock Shapes</source>
+        <translation>Vormen Ontgrendelen</translation>
+    </message>
+    <message>
+        <source>Saved</source>
+        <translation>Opgeslagen</translation>
+    </message>
+    <message>
+        <source>Save failed</source>
+        <translation>Opslaan mislukt</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;%s&lt;/b&gt;</source>
+        <translation>&lt;b&gt;%s&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>AI inference failed: %s</source>
+        <translation>AI-inferentie mislukt: %s</translation>
+    </message>
+    <message>
+        <source>Fit to Selection</source>
+        <translation>Aanpassen aan selectie</translation>
+    </message>
+    <message>
+        <source>Large image requires more memory</source>
+        <translation>Grote afbeelding vereist meer geheugen</translation>
+    </message>
+    <message>
+        <source>The image is {width}x{height} pixels and needs at least about {required} MB to decode, above the current {limit} MB safety limit. Opening it may temporarily make Labelme or other applications less responsive.</source>
+        <translation>De afbeelding is {width}x{height} pixels en heeft voor het decoderen minstens ongeveer {required} MB nodig, meer dan de huidige veiligheidslimiet van {limit} MB. Door de afbeelding te openen kunnen Labelme of andere toepassingen tijdelijk trager reageren.</translation>
+    </message>
+    <message>
+        <source>Open Anyway</source>
+        <translation>Toch openen</translation>
+    </message>
+    <message>
+        <source>No such file: &lt;b&gt;%s&lt;/b&gt;</source>
+        <translation>Bestand niet gevonden: &lt;b&gt;%s&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>Loading %s...</source>
+        <translation>Laden van %s...</translation>
+    </message>
+    <message>
+        <source>Loaded %s</source>
+        <translation>Geladen %s</translation>
+    </message>
+    <message>
+        <source>Images and annotation files (%s)</source>
+        <translation>Afbeeldingen en annotatiebestanden (%s)</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Verwijderen</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Annuleren</translation>
+    </message>
+    <message>
+        <source>Unsaved changes</source>
+        <translation>Niet-opgeslagen wijzigingen</translation>
+    </message>
+    <message>
+        <source>Download {model}</source>
+        <translation>{model} downloaden</translation>
+    </message>
+    <message>
+        <source>The selected annotation file could not be opened: {path}</source>
+        <translation>Het geselecteerde annotatiebestand kon niet worden geopend: {path}</translation>
+    </message>
+    <message>
+        <source>Annotation Folder not found: %s</source>
+        <translation>Annotatiemap niet gevonden: %s</translation>
+    </message>
+    <message>
+        <source>The image is too large to open: {width}x{height} pixels exceeds the {max_side} pixel per-side limit of the raster engine. Raising the decode limit will not help. Split the image into tiles (for example with gdal_retile.py) or open a smaller copy.</source>
+        <translation>De afbeelding is te groot om te openen: {width}x{height} pixels overschrijdt de limiet van {max_side} pixels per zijde van de raster-engine. Het verhogen van de decodeerlimiet helpt niet. Splits de afbeelding in tegels (bijvoorbeeld met gdal_retile.py) of open een kleinere kopie.</translation>
+    </message>
+    <message>
+        <source>The image is too large to open: {width}x{height} pixels needs about {required} MB, but the decode limit is {limit} MB. Split the image into tiles (for example with gdal_retile.py) or open a smaller copy.</source>
+        <translation>De afbeelding is te groot om te openen: {width}x{height} pixels heeft ongeveer {required} MB nodig, maar de decodeerlimiet is {limit} MB. Splits de afbeelding in tegels (bijvoorbeeld met gdal_retile.py) of open een kleinere kopie.</translation>
+    </message>
+    <message>
+        <source>Toggle &quot;keep previous annotation&quot; mode</source>
+        <translation>Modus &quot;vorige annotatie behouden&quot; omschakelen</translation>
+    </message>
+    <message>
+        <source>Keep Previous Brightness/Contrast</source>
+        <translation>Vorige Helderheid/Contrast Behouden</translation>
+    </message>
+    <message>
+        <source>Reset Layout</source>
+        <translation>Layout herstellen</translation>
+    </message>
+    <message>
+        <source>Polygon</source>
+        <translation>Polygoon</translation>
+    </message>
+    <message>
+        <source>&amp;Edit Label…</source>
+        <translation>Label &amp;bewerken…</translation>
+    </message>
+    <message>
+        <source>Undo Last Point</source>
+        <translation>Laatste punt ongedaan maken</translation>
+    </message>
+    <message>
+        <source>Delete Selected Point</source>
+        <translation>Geselecteerd punt verwijderen</translation>
+    </message>
+    <message>
+        <source>Delete the selected point from the polygon or LineStrip</source>
+        <translation>Verwijdert het geselecteerde punt uit de polygoon of polylijn</translation>
+    </message>
+    <message>
+        <source>Rectangle</source>
+        <translation>Rechthoek</translation>
+    </message>
+    <message>
+        <source>Circle</source>
+        <translation>Cirkel</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Lijn</translation>
+    </message>
+    <message>
+        <source>Point</source>
+        <translation>Punt</translation>
+    </message>
+    <message>
+        <source>LineStrip</source>
+        <translation>Lijnstrip</translation>
+    </message>
+    <message>
+        <source>Continue with Defaults</source>
+        <translation>Doorgaan met standaardinstellingen</translation>
+    </message>
+    <message>
+        <source>Back Up and Reset</source>
+        <translation>Back-up maken en resetten</translation>
+    </message>
+    <message>
+        <source>Finding all &apos;{query}&apos;…</source>
+        <translation>Alle &apos;{query}&apos; zoeken…</translation>
+    </message>
+    <message>
+        <source>Finding all &apos;{query}&apos; on CPU…</source>
+        <translation>Alle &apos;{query}&apos; zoeken op de CPU…</translation>
+    </message>
+    <message>
+        <source>Segmenting on CPU…</source>
+        <translation>Segmenteren op de CPU…</translation>
+    </message>
+    <message>
+        <source>Segmenting…</source>
+        <translation>Segmenteren…</translation>
+    </message>
+    <message>
+        <source>Starting AI…</source>
+        <translation>AI starten…</translation>
+    </message>
+    <message>
+        <source>Loading {model}…</source>
+        <translation>{model} laden…</translation>
+    </message>
+    <message>
+        <source>{status} · {seconds} s</source>
+        <translation>{status} · {seconds} s</translation>
+    </message>
+    <message>
+        <source>Found {count} new &apos;{query}&apos;</source>
+        <translation>{count} nieuwe &apos;{query}&apos; gevonden</translation>
+    </message>
+    <message>
+        <source>No new &apos;{query}&apos; found</source>
+        <translation>Geen nieuwe &apos;{query}&apos; gevonden</translation>
+    </message>
+    <message>
+        <source>Select at least two mask shapes to merge</source>
+        <translation>Selecteer minstens twee maskervormen om samen te voegen</translation>
+    </message>
+    <message>
+        <source>Only mask shapes can be merged</source>
+        <translation>Alleen maskervormen kunnen worden samengevoegd</translation>
+    </message>
+    <message>
+        <source>Unlock the selected shapes to merge them</source>
+        <translation>Ontgrendel de geselecteerde vormen om ze samen te voegen</translation>
+    </message>
+    <message>
+        <source>Only shapes with the same label can be merged</source>
+        <translation>Alleen vormen met hetzelfde label kunnen worden samengevoegd</translation>
+    </message>
+    <message>
+        <source>Select shapes to convert</source>
+        <translation>Selecteer vormen om om te zetten</translation>
+    </message>
+    <message>
+        <source>The selected shapes are already this kind</source>
+        <translation>De geselecteerde vormen zijn al van dit type</translation>
+    </message>
+    <message>
+        <source>Converting to oriented rectangles isn’t supported</source>
+        <translation>Omzetten naar georiënteerde rechthoeken wordt niet ondersteund</translation>
+    </message>
+    <message>
+        <source>Converting to circles isn’t supported</source>
+        <translation>Omzetten naar cirkels wordt niet ondersteund</translation>
+    </message>
+    <message>
+        <source>Converting to points isn’t supported</source>
+        <translation>Omzetten naar punten wordt niet ondersteund</translation>
+    </message>
+    <message>
+        <source>A linestrip needs at least 3 points to become a polygon</source>
+        <translation>Een lijnstrip heeft minstens 3 punten nodig om een polygoon te worden</translation>
+    </message>
+    <message>
+        <source>A linestrip needs exactly 2 points to become a line</source>
+        <translation>Een lijnstrip heeft precies 2 punten nodig om een lijn te worden</translation>
+    </message>
+    <message>
+        <source>A shape with no area has no bounding box</source>
+        <translation>Een vorm zonder oppervlakte heeft geen begrenzingskader</translation>
+    </message>
+    <message>
+        <source>A shape with no area in the image can’t be converted</source>
+        <translation>Een vorm zonder oppervlakte in de afbeelding kan niet worden omgezet</translation>
+    </message>
+    <message>
+        <source>Unlock the selected shapes to convert them</source>
+        <translation>Ontgrendel de geselecteerde vormen om ze om te zetten</translation>
+    </message>
+    <message>
+        <source>Remove from Label List</source>
+        <translation>Verwijderen uit labellijst</translation>
+    </message>
+    <message>
+        <source>Clear Unused Labels</source>
+        <translation>Ongebruikte labels wissen</translation>
+    </message>
+    <message>
+        <source>The label &apos;{label}&apos; is in use by shapes on the canvas.</source>
+        <translation>Het label &apos;{label}&apos; is in gebruik door vormen op het canvas.</translation>
+    </message>
+    <message>
+        <source>Cannot Remove Label</source>
+        <translation>Kan label niet verwijderen</translation>
+    </message>
+    <message>
+        <source>Invalid Label</source>
+        <translation>Ongeldig label</translation>
+    </message>
+    <message>
+        <source>Error Saving Annotation File</source>
+        <translation>Fout bij opslaan van annotatiebestand</translation>
+    </message>
+    <message>
+        <source>Convert to Polygon</source>
+        <translation>Omzetten naar polygoon</translation>
+    </message>
+    <message>
+        <source>Locating the image updates the annotation file to refer to it.</source>
+        <translation>Bij het zoeken van de afbeelding wordt het annotatiebestand bijgewerkt zodat het ernaar verwijst.</translation>
+    </message>
+    <message>
+        <source>Locate Image…</source>
+        <translation>Afbeelding zoeken…</translation>
+    </message>
+    <message>
+        <source>Locate Image</source>
+        <translation>Afbeelding zoeken</translation>
+    </message>
+    <message>
+        <source>Images (%s)</source>
+        <translation>Afbeeldingen (%s)</translation>
+    </message>
+    <message>
+        <source>Annotation Folder: %s</source>
+        <translation>Annotatiemap: %s</translation>
+    </message>
+    <message>
+        <source>Delete the annotation file? You can&apos;t undo this.</source>
+        <translation>Het annotatiebestand verwijderen? Je kunt dit niet ongedaan maken.</translation>
+    </message>
+    <message>
+        <source>Delete &quot;{}&quot;? You can&apos;t undo this.</source>
+        <translation>‘{}’ verwijderen? Je kunt dit niet ongedaan maken.</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Downloaden</translation>
+    </message>
+    <message>
+        <source>Save annotation changes to &quot;{}&quot;?</source>
+        <translation>Annotatiewijzigingen voor ‘{}’ opslaan?</translation>
+    </message>
+    <message>
+        <source>This annotation refers to &quot;{name}&quot;, but that image could not be found.
+
+Expected location: {path}</source>
+        <translation>Deze annotatie verwijst naar “{name}”, maar die afbeelding is niet gevonden.
+
+Verwachte locatie: {path}</translation>
+    </message>
+    <message>
+        <source>Image List is disabled when an annotation file is opened</source>
+        <translation>De afbeeldingenlijst is uitgeschakeld wanneer een annotatiebestand is geopend</translation>
+    </message>
+    <message>
+        <source>Add Point to Edge</source>
+        <translation>Punt aan rand toevoegen</translation>
+    </message>
+    <message>
+        <source>Insert a new point at the hovered polygon edge</source>
+        <translation>Nieuw punt invoegen op de aangewezen polygoonrand</translation>
+    </message>
+    <message>
+        <source>&amp;Keep Previous Zoom</source>
+        <translation>Vorige Zoom &amp;behouden</translation>
+    </message>
+    <message>
+        <source>Allowed formats: {formats}</source>
+        <translation>Toegestane formaten: {formats}</translation>
+    </message>
+    <message>
+        <source>Error Deleting Annotation File</source>
+        <translation>Fout bij het verwijderen van het annotatiebestand</translation>
+    </message>
+    <message>
+        <source>Unsaved Changes</source>
+        <translation>Niet-opgeslagen wijzigingen</translation>
+    </message>
+    <message>
+        <source>Image Not Found</source>
+        <translation>Afbeelding niet gevonden</translation>
+    </message>
+    <message>
+        <source>The selected image file could not be opened: {path}</source>
+        <translation>Het geselecteerde afbeeldingsbestand kon niet worden geopend: {path}</translation>
+    </message>
+    <message>
+        <source>Failed to load: {path}</source>
+        <translation>Laden mislukt: {path}</translation>
+    </message>
+    <message>
+        <source>Oriented Rectangle</source>
+        <translation>Georiënteerde Rechthoek</translation>
+    </message>
+    <message>
+        <source>Start drawing oriented rectangles</source>
+        <translation>Begin met tekenen van georiënteerde rechthoeken</translation>
+    </message>
+    <message>
+        <source>AI inference produced no new annotation.</source>
+        <translation>AI-inferentie heeft geen nieuwe annotatie geproduceerd.</translation>
+    </message>
+    <message>
+        <source>Shape had no area; nothing created.</source>
+        <translation>Vorm heeft geen oppervlak; niets aangemaakt.</translation>
+    </message>
+    <message>
+        <source>Settings…</source>
+        <translation>Instellingen…</translation>
+    </message>
+    <message>
+        <source>Edit settings</source>
+        <translation>Instellingen bewerken</translation>
+    </message>
+    <message>
+        <source>Settings are managed via --config for this session</source>
+        <translation>Instellingen worden voor deze sessie beheerd via --config</translation>
+    </message>
+    <message>
+        <source>Lines and points can’t be converted to polygons</source>
+        <translation>Lijnen en punten kunnen niet worden omgezet naar polygonen</translation>
+    </message>
+    <message>
+        <source>Lines and points can’t be converted to rectangles</source>
+        <translation>Lijnen en punten kunnen niet worden omgezet naar rechthoeken</translation>
+    </message>
+    <message>
+        <source>Only linestrips can be converted to lines</source>
+        <translation>Alleen lijnstrips kunnen worden omgezet naar lijnen</translation>
+    </message>
+    <message>
+        <source>Only polygons and lines can be converted to linestrips</source>
+        <translation>Alleen polygonen en lijnen kunnen worden omgezet naar lijnstrips</translation>
+    </message>
+    <message>
+        <source>Only polygons can be converted to masks</source>
+        <translation>Alleen polygonen kunnen worden omgezet naar maskers</translation>
+    </message>
+    <message>
+        <source>Large Image</source>
+        <translation>Grote afbeelding</translation>
+    </message>
+    <message>
+        <source>Error Opening File</source>
+        <translation>Fout bij openen van bestand</translation>
+    </message>
+    <message>
+        <source>Open File</source>
+        <translation>Bestand openen</translation>
+    </message>
+    <message>
+        <source>Choose Annotation Folder</source>
+        <translation>Annotatiemap kiezen</translation>
+    </message>
+    <message>
+        <source>Save Annotation File</source>
+        <translation>Annotatiebestand opslaan</translation>
+    </message>
+    <message>
+        <source>Annotation files (*%s)</source>
+        <translation>Annotatiebestanden (*%s)</translation>
+    </message>
+    <message>
+        <source>Delete Annotation File</source>
+        <translation>Annotatiebestand verwijderen</translation>
+    </message>
+    <message>
+        <source>Configuration Error</source>
+        <translation>Configuratiefout</translation>
+    </message>
+    <message>
+        <source>Detects boxes only. Switch to Rectangle to use this model.</source>
+        <translation>Detecteert alleen kaders. Schakel over naar Rechthoek om dit model te gebruiken.</translation>
+    </message>
+    <message>
+        <source>3-Point Circle</source>
+        <translation>Cirkel (3 punten)</translation>
+    </message>
+    <message>
+        <source>Start drawing circles with 3 points</source>
+        <translation>Begin met tekenen van cirkels met 3 punten</translation>
+    </message>
+</context>
+<context>
+    <name>ModelPicker</name>
+    <message>
+        <source>Manage models…</source>
+        <translation>Modellen beheren…</translation>
+    </message>
+    <message>
+        <source>Download and use</source>
+        <translation>Downloaden en gebruiken</translation>
+    </message>
+    <message>
+        <source>Choose a model…</source>
+        <translation>Een model kiezen…</translation>
+    </message>
+    <message>
+        <source>Downloading: {model}</source>
+        <translation>Downloaden: {model}</translation>
+    </message>
+    <message>
+        <source>Unavailable: {model}</source>
+        <translation>Niet beschikbaar: {model}</translation>
+    </message>
+    <message>
+        <source>More models…</source>
+        <translation>Meer modellen…</translation>
+    </message>
+</context>
+<context>
+    <name>ModelsDialog</name>
+    <message>
+        <source>AI Models</source>
+        <translation>AI-modellen</translation>
+    </message>
+</context>
+<context>
+    <name>ModelsWidget</name>
+    <message>
+        <source>Downloading…</source>
+        <translation>Downloaden…</translation>
+    </message>
+    <message>
+        <source>Download models to use AI offline. You can keep annotating while downloads run.</source>
+        <translation>Download modellen om AI offline te gebruiken. U kunt blijven annoteren tijdens het downloaden.</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Punten</translation>
+    </message>
+    <message>
+        <source>Boxes</source>
+        <translation>Rechthoeken</translation>
+    </message>
+    <message>
+        <source>Text prompts</source>
+        <translation>Tekstprompts</translation>
+    </message>
+    <message>
+        <source>SAM3 use is subject to the SAM License, including trade-control and end-use restrictions. Read the full agreement before downloading or using it.</source>
+        <translation>Het gebruik van SAM3 valt onder de SAM License, inclusief handelscontroles en beperkingen op eindgebruik. Lees de volledige overeenkomst voordat u het model downloadt of gebruikt.</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Verwijderen</translation>
+    </message>
+    <message>
+        <source>Delete {model}</source>
+        <translation>{model} verwijderen</translation>
+    </message>
+    <message>
+        <source>Downloading {filename} · {done} / {total}</source>
+        <translation>{filename} downloaden · {done} / {total}</translation>
+    </message>
+    <message>
+        <source>Not downloaded</source>
+        <translation>Niet gedownload</translation>
+    </message>
+    <message>
+        <source>Best balance of speed and quality for point and box prompts.</source>
+        <translation>De beste balans tussen snelheid en kwaliteit voor punt- en kaderprompts.</translation>
+    </message>
+    <message>
+        <source>Best for text prompts and finding multiple objects.</source>
+        <translation>Het beste voor tekstprompts en het vinden van meerdere objecten.</translation>
+    </message>
+    <message>
+        <source>Recommended</source>
+        <translation>Aanbevolen</translation>
+    </message>
+    <message>
+        <source>All models</source>
+        <translation>Alle modellen</translation>
+    </message>
+    <message>
+        <source>License: {license}</source>
+        <translation>Licentie: {license}</translation>
+    </message>
+    <message>
+        <source>Details…</source>
+        <translation>Details…</translation>
+    </message>
+    <message>
+        <source>Downloaded</source>
+        <translation>Gedownload</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Mislukt</translation>
+    </message>
+    <message>
+        <source>Deleting…</source>
+        <translation>Verwijderen…</translation>
+    </message>
+    <message>
+        <source>Queued · position {position}</source>
+        <translation>In wachtrij · positie {position}</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Annuleren</translation>
+    </message>
+    <message>
+        <source>Retry</source>
+        <translation>Opnieuw proberen</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Downloaden</translation>
+    </message>
+    <message>
+        <source>Download Failed</source>
+        <translation>Downloaden mislukt</translation>
+    </message>
+    <message>
+        <source>Download failed. Check your connection and retry.</source>
+        <translation>Download mislukt. Controleer uw verbinding en probeer het opnieuw.</translation>
+    </message>
+    <message>
+        <source>Delete Model</source>
+        <translation>Model verwijderen</translation>
+    </message>
+    <message>
+        <source>Delete {model} from this computer? Its selections will be cleared. Your annotations will not change.</source>
+        <translation>{model} van deze computer verwijderen? De selecties van dit model worden gewist. Uw annotaties blijven ongewijzigd.</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsDialog</name>
+    <message>
+        <source>Color theme</source>
+        <translation>Kleurthema</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Systeem</translation>
+    </message>
+    <message>
+        <source>Light</source>
+        <translation>Licht</translation>
+    </message>
+    <message>
+        <source>Dark</source>
+        <translation>Donker</translation>
+    </message>
+    <message>
+        <source>Show label popup on new shape</source>
+        <translation>Labeldialoog tonen bij nieuwe vorm</translation>
+    </message>
+    <message>
+        <source>Show shape labels on canvas</source>
+        <translation>Vormlabels op canvas tonen</translation>
+    </message>
+    <message>
+        <source>Allow points outside the image boundary</source>
+        <translation>Punten buiten de afbeeldingsgrens toestaan</translation>
+    </message>
+    <message>
+        <source>Appearance and language</source>
+        <translation>Uiterlijk en taal</translation>
+    </message>
+    <message>
+        <source>Files and saving</source>
+        <translation>Bestanden en opslaan</translation>
+    </message>
+    <message>
+        <source>Drawing and canvas</source>
+        <translation>Tekenen en canvas</translation>
+    </message>
+    <message>
+        <source>Continue between images</source>
+        <translation>Doorgaan tussen afbeeldingen</translation>
+    </message>
+    <message>
+        <source>Label sources</source>
+        <translation>Labelbronnen</translation>
+    </message>
+    <message>
+        <source>Label behavior</source>
+        <translation>Labelgedrag</translation>
+    </message>
+    <message>
+        <source>AI assist</source>
+        <translation>AI-assistent</translation>
+    </message>
+    <message>
+        <source>Save automatically</source>
+        <translation>Automatisch opslaan</translation>
+    </message>
+    <message>
+        <source>autosave auto save</source>
+        <translation>automatisch opslaan</translation>
+    </message>
+    <message>
+        <source>Embed image in annotation file</source>
+        <translation>Afbeelding in annotatiebestand insluiten</translation>
+    </message>
+    <message>
+        <source>Shape Color Mode</source>
+        <translation>Vormkleurmodus</translation>
+    </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Automatisch</translation>
+    </message>
+    <message>
+        <source>Uniform</source>
+        <translation>Uniform</translation>
+    </message>
+    <message>
+        <source>By Label</source>
+        <translation>Per label</translation>
+    </message>
+    <message>
+        <source>Automatic palette shift</source>
+        <translation>Automatische paletverschuiving</translation>
+    </message>
+    <message>
+        <source>Uniform mode color</source>
+        <translation>Kleur voor modus Uniform</translation>
+    </message>
+    <message>
+        <source>By Label fallback color</source>
+        <translation>Terugvalkleur voor modus Per label</translation>
+    </message>
+    <message>
+        <source>Individual Label colors remain editable in the Config File.</source>
+        <translation>Afzonderlijke labelkleuren blijven bewerkbaar in het configuratiebestand.</translation>
+    </message>
+    <message>
+        <source>Keep previous annotation</source>
+        <translation>Vorige annotatie behouden</translation>
+    </message>
+    <message>
+        <source>Keep previous zoom</source>
+        <translation>Vorige zoom behouden</translation>
+    </message>
+    <message>
+        <source>Keep previous brightness/contrast</source>
+        <translation>Vorige helderheid/contrast behouden</translation>
+    </message>
+    <message>
+        <source>Fill polygon while drawing</source>
+        <translation>Polygoon vullen tijdens tekenen</translation>
+    </message>
+    <message>
+        <source>Let shape points extend beyond the image, e.g. for partially visible objects.</source>
+        <translation>Laat vormpunten buiten de afbeelding vallen, bijv. voor gedeeltelijk zichtbare objecten.</translation>
+    </message>
+    <message>
+        <source>Predefined shape flags</source>
+        <translation>Vooraf gedefinieerde vormvlaggen</translation>
+    </message>
+    <message>
+        <source>One flag name per line. Patterns: ^car$ matches car exactly, car matches a prefix, .* matches every label.</source>
+        <translation>Eén vlagnaam per regel. Patronen: ^car$ komt exact overeen met car, car met een voorvoegsel, .* met elk label.</translation>
+    </message>
+    <message>
+        <source>AI-Find All model</source>
+        <translation>AI-Find All-model</translation>
+    </message>
+    <message>
+        <source>Polygon detail</source>
+        <translation>Polygoondetail</translation>
+    </message>
+    <message>
+        <source>smooth smoothness simplify outline</source>
+        <translation>glad vloeiend vereenvoudigen omtrek</translation>
+    </message>
+    <message>
+        <source>Higher values preserve more Mask boundary detail and smaller lands.</source>
+        <translation>Hogere waarden behouden meer details van de maskerrand en kleinere gebieden.</translation>
+    </message>
+    <message>
+        <source>duplicate duplicates avoid duplicates deduplicate</source>
+        <translation>duplicaat duplicaten voorkomen verwijderen</translation>
+    </message>
+    <message>
+        <source>Compute device</source>
+        <translation>Rekenapparaat</translation>
+    </message>
+    <message>
+        <source>CPU</source>
+        <translation>CPU</translation>
+    </message>
+    <message>
+        <source>Automatic uses the GPU and switches to the CPU if the GPU fails.</source>
+        <translation>Automatisch gebruikt de GPU en schakelt over naar de CPU als de GPU faalt.</translation>
+    </message>
+    <message>
+        <source>gpu cuda processor slow crash</source>
+        <translation>gpu cuda processor traag crash</translation>
+    </message>
+    <message>
+        <source>Predefined labels</source>
+        <translation>Voorgedefinieerde labels</translation>
+    </message>
+    <message>
+        <source>Embeds the image in the annotation file.</source>
+        <translation>Sluit de afbeelding in het annotatiebestand in.</translation>
+    </message>
+    <message>
+        <source>Label validation</source>
+        <translation>Labelvalidatie</translation>
+    </message>
+    <message>
+        <source>Sort labels</source>
+        <translation>Labels sorteren</translation>
+    </message>
+    <message>
+        <source>Sort the label list alphabetically instead of keeping the provided order.</source>
+        <translation>Sorteert de labellijst alfabetisch in plaats van de opgegeven volgorde te behouden.</translation>
+    </message>
+    <message>
+        <source>Show label text field</source>
+        <translation>Labeltekstveld tonen</translation>
+    </message>
+    <message>
+        <source>Label completion</source>
+        <translation>Labelaanvulling</translation>
+    </message>
+    <message>
+        <source>Starts with</source>
+        <translation>Begint met</translation>
+    </message>
+    <message>
+        <source>Contains</source>
+        <translation>Bevat</translation>
+    </message>
+    <message>
+        <source>Default model</source>
+        <translation>Standaardmodel</translation>
+    </message>
+    <message>
+        <source>Suppress existing Shape matches</source>
+        <translation>Overeenkomsten met bestaande vormen onderdrukken</translation>
+    </message>
+    <message>
+        <source>When an AI Assist candidate matches an existing Shape, highlight that Shape instead of creating a new Shape.</source>
+        <translation>Wanneer een kandidaat van de AI-assistent overeenkomt met een bestaande vorm, wordt die vorm gemarkeerd in plaats van een nieuwe vorm te maken.</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Instellingen</translation>
+    </message>
+    <message>
+        <source>Open config file as text…</source>
+        <translation>Configuratiebestand openen als tekst…</translation>
+    </message>
+    <message>
+        <source>Edits made in the text file apply after restart</source>
+        <translation>Wijzigingen in het tekstbestand worden na herstart toegepast</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation>Sluiten</translation>
+    </message>
+    <message>
+        <source>BETA</source>
+        <translation>BETA</translation>
+    </message>
+    <message>
+        <source>(none)</source>
+        <translation>(geen)</translation>
+    </message>
+    <message>
+        <source>one item per line</source>
+        <translation>één item per regel</translation>
+    </message>
+    <message>
+        <source>Configuration Error</source>
+        <translation>Configuratiefout</translation>
+    </message>
+    <message>
+        <source>Predefined labels cannot be empty while Label validation is set to exact. Disable exact validation first.</source>
+        <translation>Voorgedefinieerde labels mogen niet leeg zijn wanneer labelvalidatie is ingesteld op &apos;exact&apos;. Schakel eerst de &apos;exact&apos;-validatie uit.</translation>
+    </message>
+    <message>
+        <source>Select {mode} in Shape Color Mode to edit this setting.</source>
+        <translation>Selecteer {mode} bij de kleurmodus voor vormen om deze instelling te bewerken.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Taal</translation>
+    </message>
+    <message>
+        <source>Takes effect after restart.</source>
+        <translation>Van kracht na opnieuw opstarten.</translation>
+    </message>
+    <message>
+        <source>System default</source>
+        <translation>Systeemstandaard</translation>
+    </message>
+    <message>
+        <source>Predefined image flags</source>
+        <translation>Voorgedefinieerde afbeeldingsvlaggen</translation>
+    </message>
+</context>
+<context>
+    <name>ToolBar</name>
+    <message>
+        <source>More actions</source>
+        <translation>Meer acties</translation>
+    </message>
+</context>
+<context>
+    <name>UniqueLabelQListWidget</name>
+    <message>
+        <source>Label set</source>
+        <translation>Labelset</translation>
+    </message>
+    <message>
+        <source>Edit…</source>
+        <translation>Bewerken…</translation>
+    </message>
+    <message>
+        <source>Clear Unused</source>
+        <translation>Ongebruikte wissen</translation>
+    </message>
+    <message>
+        <source>Found in files</source>
+        <translation>Gevonden in bestanden</translation>
+    </message>
+</context>
+<context>
+    <name>ZoomWidget</name>
+    <message>
+        <source>Zoom</source>
+        <translation>Zoom</translation>
+    </message>
+    <message>
+        <source>Hold %s and scroll to zoom the canvas</source>
+        <translation>Houd %s ingedrukt en scrol om op het canvas te zoomen</translation>
+    </message>
+</context>
+<context>
+    <name>_ColorSwatchButton</name>
+    <message>
+        <source>RGB: {red}, {green}, {blue}</source>
+        <translation>RGB: {red}, {green}, {blue}</translation>
+    </message>
+</context>
+<context>
+    <name>_LabelFlagsEditor</name>
+    <message>
+        <source>Label pattern</source>
+        <translation>Labelpatroon</translation>
+    </message>
+    <message>
+        <source>Shape flags</source>
+        <translation>Vormvlaggen</translation>
+    </message>
+    <message>
+        <source>Add rule</source>
+        <translation>Regel toevoegen</translation>
+    </message>
+    <message>
+        <source>One name per line</source>
+        <translation>Eén naam per regel</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Verwijderen</translation>
+    </message>
+    <message>
+        <source>Remove rule</source>
+        <translation>Regel verwijderen</translation>
+    </message>
+    <message>
+        <source>Enter a pattern and at least one flag name.</source>
+        <translation>Voer een patroon en minstens één vlagnaam in.</translation>
+    </message>
+    <message>
+        <source>Duplicate label pattern.</source>
+        <translation>Dubbel labelpatroon.</translation>
+    </message>
+    <message>
+        <source>Invalid regular expression.</source>
+        <translation>Ongeldige reguliere expressie.</translation>
+    </message>
+    <message>
+        <source>Row {row}: {error} Changes have not been applied.</source>
+        <translation>Rij {row}: {error} Wijzigingen zijn niet toegepast.</translation>
+    </message>
+</context>
+<context>
+    <name>_ModelMenuButton</name>
+    <message>
+        <source>Model</source>
+        <translation>Model</translation>
+    </message>
+    <message>
+        <source>{tool}: {model}</source>
+        <translation>{tool}: {model}</translation>
+    </message>
+    <message>
+        <source>Fastest</source>
+        <translation>Snelst</translation>
+    </message>
+    <message>
+        <source>Balanced</source>
+        <translation>Gebalanceerd</translation>
+    </message>
+    <message>
+        <source>Most accurate</source>
+        <translation>Nauwkeurigst</translation>
+    </message>
+    <message>
+        <source>The original SAM. SAM 2 is faster at every size.</source>
+        <translation>De oorspronkelijke SAM. SAM 2 is bij elke grootte sneller.</translation>
+    </message>
+    <message>
+        <source>Fastest, with rough outlines. Runs well on any computer.</source>
+        <translation>Snelst, met ruwe omtrekken. Werkt goed op elke computer.</translation>
+    </message>
+    <message>
+        <source>Sharper outlines than Tiny, but slower than SAM 2 Base+.</source>
+        <translation>Scherpere omtrekken dan Tiny, maar trager dan SAM 2 Base+.</translation>
+    </message>
+    <message>
+        <source>A smaller download than Base+, a little less accurate.</source>
+        <translation>Kleinere download dan Base+, iets minder nauwkeurig.</translation>
+    </message>
+    <message>
+        <source>Balanced speed and accuracy. Runs well on a CPU.</source>
+        <translation>Evenwicht tussen snelheid en nauwkeurigheid. Werkt goed op een CPU.</translation>
+    </message>
+    <message>
+        <source>More accurate than Base+, but slower.</source>
+        <translation>Nauwkeuriger dan Base+, maar trager.</translation>
+    </message>
+    <message>
+        <source>Most accurate, but slower than SAM 2 Base+. Best with a GPU.</source>
+        <translation>Nauwkeurigst, maar trager dan SAM 2 Base+. Het best met een GPU.</translation>
+    </message>
+    <message>
+        <source>Fastest. Finds boxes, without masks.</source>
+        <translation>Snelst. Vindt kaders, zonder maskers.</translation>
+    </message>
+    <message>
+        <source>Boxes only</source>
+        <translation>Alleen kaders</translation>
+    </message>
+</context>
+<context>
+    <name>_SettingsPage</name>
+    <message>
+        <source>Settings sections</source>
+        <translation>Instellingssecties</translation>
+    </message>
+    <message>
+        <source>Search settings</source>
+        <translation>Instellingen zoeken</translation>
+    </message>
+    <message>
+        <source>Matching settings</source>
+        <translation>Overeenkomende instellingen</translation>
+    </message>
+    <message>
+        <source>{count} matching settings</source>
+        <translation>{count} overeenkomende instellingen</translation>
+    </message>
+    <message>
+        <source>No matching settings in this dialog. Try another term or clear search.</source>
+        <translation>Geen overeenkomende instellingen in dit dialoogvenster. Probeer een andere term of wis de zoekopdracht.</translation>
+    </message>
+</context>
+<context>
+    <name>main</name>
+    <message>
+        <source>Error</source>
+        <translation>Fout</translation>
+    </message>
+    <message>
+        <source>An unexpected error occurred. The application will close.&lt;br/&gt;&lt;br/&gt;Please report the issue by following &lt;a href=&apos;https://labelme.io/docs/troubleshoot&apos;&gt;Troubleshooting&lt;/a&gt;.</source>
+        <translation>Er is een onverwachte fout opgetreden. De applicatie wordt gesloten.&lt;br/&gt;&lt;br/&gt;Meld het probleem volgens &lt;a href=&apos;https://labelme.io/docs/troubleshoot&apos;&gt;Probleemoplossing&lt;/a&gt;.</translation>
+    </message>
+</context>
+</TS>
