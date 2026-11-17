@@ -15,5 +15,6 @@
 .cache/
 .codex/
 .claude/
+.claude.json
 .venv/
 __pycache__/

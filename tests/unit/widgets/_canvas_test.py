@@ -4731,3 +4731,37 @@ def test_mask_render_cache_survives_undo_reload_and_clears_on_reset(
     assert contours.call_count == 2
     canvas.reset_state()
     assert not canvas._render_cache._entries
+
+
+def test_brush_commits_a_cropped_mask_in_image_coordinates(canvas: Canvas) -> None:
+    canvas.set_brush_size(value=3)
+    canvas._brush_mask = np.zeros((_HEIGHT, _WIDTH), dtype=bool)
+    canvas._brush_active = True
+
+    canvas._paint_brush(pos=QPointF(10, 8))
+    canvas._paint_brush(pos=QPointF(14, 8))
+    canvas._commit_brush_mask()
+
+    assert len(canvas.shapes) == 1
+    shape = canvas.shapes[0]
+    assert shape.shape_type == "mask"
+    assert shape.mask is not None
+    np.testing.assert_array_equal(shape.points, [[9, 7], [15, 9]])
+    assert shape.mask.shape == (3, 7)
+    assert shape.mask[1, 1]
+    assert shape.mask[1, 5]
+
+
+def test_brush_cancel_discards_its_unlabeled_mask(canvas: Canvas) -> None:
+    canvas.create_mode = "brush"
+    canvas.shapes = [
+        Shape(
+            shape_type="mask",
+            points=np.array([[0, 0], [0, 0]], dtype=float),
+            mask=np.ones((1, 1), dtype=bool),
+        )
+    ]
+
+    canvas.undo_last_line()
+
+    assert canvas.shapes == []

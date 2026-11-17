@@ -4,6 +4,7 @@ from ._ai_tool_group import AiToolGroup
 from ._annotation_folder_footer import AnnotationFolderFooter
 from ._brightness_contrast_dialog import BrightnessContrastDialog
 from ._canvas import Canvas
+from ._classical_segmentation_dialog import ClassicalSegmentationDialog
 from ._conversion_detail_dialog import ConversionDetailDialog
 from ._empty_state import EmptyStateWidget
 from ._image_list_delegate import ImageListDelegate
@@ -36,6 +37,7 @@ __all__ = [
     "AnnotationFolderFooter",
     "BrightnessContrastDialog",
     "Canvas",
+    "ClassicalSegmentationDialog",
     "ConversionDetailDialog",
     "EmptyStateWidget",
     "ImageListDelegate",

@@ -71,6 +71,7 @@ from ._widgets import AiToolGroup
 from ._widgets import AnnotationFolderFooter
 from ._widgets import BrightnessContrastDialog
 from ._widgets import Canvas
+from ._widgets import ClassicalSegmentationDialog
 from ._widgets import ConversionDetailDialog
 from ._widgets import EmptyStateWidget
 from ._widgets import ImageListDelegate
@@ -210,18 +211,23 @@ class _Actions(NamedTuple):
     undo_last_point: QtGui.QAction
     undo: QtGui.QAction
     add_point_to_edge: QtGui.QAction
+    smooth_mask_borders: QtGui.QAction
+    fill_mask_holes: QtGui.QAction
     create_mode: QtGui.QAction
     edit_mode: QtGui.QAction
     create_rectangle_mode: QtGui.QAction
     create_point_mode: QtGui.QAction
     create_ai_segment_mode: QtGui.QAction
     create_ai_find_all_mode: QtGui.QAction
+    create_brush_mode: QtGui.QAction
+    create_eraser_mode: QtGui.QAction
     open_next_img: QtGui.QAction
     open_prev_img: QtGui.QAction
     keep_prev_zoom: QtGui.QAction
     fit_window: QtGui.QAction
     fit_selection: QtGui.QAction
     brightness_contrast: QtGui.QAction
+    classical_segmentation: QtGui.QAction
     zoom_in: QtGui.QAction
     zoom_out: QtGui.QAction
     zoom_org: QtGui.QAction
@@ -232,6 +238,7 @@ class _Actions(NamedTuple):
     toggle_all: QtGui.QAction
     open_dir: QtGui.QAction
     zoom_widget_action: QtWidgets.QWidgetAction
+    brush_size_action: QtWidgets.QWidgetAction
     draw: list[tuple[str, QtGui.QAction]]
     image: QtGui.QActionGroup
     shape_context_menu: tuple[QtGui.QAction, ...]
@@ -300,6 +307,8 @@ class MainWindow(QtWidgets.QMainWindow):
     _canvas_widgets: _CanvasWidgets
     _status_bar: _StatusBarWidgets
     _zoom_mode_label: QtWidgets.QLabel
+    _review_histogram: QtWidgets.QLabel
+    _review_mode: QtWidgets.QComboBox
     _zoom_mode_captions: dict[_ZoomMode, str]
     _docks: _DockWidgets
     _flag_dock_wanted: bool
@@ -325,6 +334,7 @@ class MainWindow(QtWidgets.QMainWindow):
     _prev_image_path: str | None
     _viewport_states: dict[str, _ViewportState]
     _brightness_contrast_values: dict[str, tuple[int | None, int | None]]
+    _enhancement_states: dict[str, dict]
     # The last Polygon Detail a Conversion used, apart from AI Assist's.
     _conversion_detail: int
     _default_state: QtCore.QByteArray
@@ -359,6 +369,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
         self.setAcceptDrops(True)
         self._canvas_widgets = self._setup_canvas()
+        self._review_mode.currentIndexChanged.connect(self._set_review_mode)
 
         self._actions = self._setup_actions()
         self._canvas_widgets.empty_state.bind_open_actions(
@@ -631,7 +642,7 @@ class MainWindow(QtWidgets.QMainWindow):
             checked=self._config["keep_prev"],
         )
         toggle_keep_prev_brightness_contrast = action(
-            text=self.tr("Keep Previous Brightness/Contrast"),
+            text=self.tr("Keep Previous Annotation Enhancement"),
             checkable=True,
             checked=self._config["keep_prev_brightness_contrast"],
         )
@@ -803,6 +814,20 @@ class MainWindow(QtWidgets.QMainWindow):
             tip=self.tr("Insert a new point at the hovered polygon edge"),
             enabled=False,
         )
+        smooth_mask_borders = action(
+            text=self.tr("Smooth Mask Borders"),
+            slot=self._canvas_widgets.canvas.smooth_selected_masks,
+            icon="phosphor/sparkle.svg",
+            tip=self.tr("Smooth jagged edges of the selected semantic mask"),
+            enabled=False,
+        )
+        fill_mask_holes = action(
+            text=self.tr("Fill Mask Holes"),
+            slot=self._canvas_widgets.canvas.fill_selected_mask_holes,
+            icon="phosphor/plus-circle.svg",
+            tip=self.tr("Fill enclosed holes in the selected semantic mask"),
+            enabled=False,
+        )
         create_mode = mode_action(
             text=self.tr("Polygon"),
             slot=lambda: self._switch_canvas_mode(edit=False, create_mode="polygon"),
@@ -896,6 +921,30 @@ class MainWindow(QtWidgets.QMainWindow):
                 "Find every object that matches the text prompt or an example box"
             ),
         )
+        create_brush_mode = mode_action(
+            text=self.tr("Brush"),
+            slot=self._start_brush,
+            shortcut=shortcuts["create_brush"],
+            icon="phosphor/palette.svg",
+            tip=self.tr("Paint a semantic-segmentation mask"),
+        )
+        create_eraser_mode = mode_action(
+            text=self.tr("Eraser"),
+            slot=lambda: self._switch_canvas_mode(edit=False, create_mode="eraser"),
+            shortcut=None,
+            icon="phosphor/x-circle.svg",
+            tip=self.tr("Erase painted mask pixels"),
+        )
+        brush_size = QtWidgets.QSpinBox()
+        brush_size.setRange(1, 512)
+        brush_size.setValue(10)
+        brush_size.setSuffix(self.tr(" px"))
+        brush_size.setToolTip(self.tr("Brush size in image pixels"))
+        brush_size.valueChanged.connect(
+            lambda value: self._canvas_widgets.canvas.set_brush_size(value=value)
+        )
+        brush_size_action = QtWidgets.QWidgetAction(image_actions)
+        brush_size_action.setDefaultWidget(brush_size)
         open_next_img = action(
             text=self.tr("&Next Image"),
             toolbar_text=self.tr("Next", "toolbar"),
@@ -938,11 +987,18 @@ class MainWindow(QtWidgets.QMainWindow):
             checkable=True,
         )
         brightness_contrast = image_action(
-            text=self.tr("&Brightness/Contrast…"),
+            text=self.tr("&Annotation Enhancement…"),
             slot=self.open_brightness_contrast_dialog,
             shortcut=None,
             icon="phosphor/circle-half-tilt.svg",
-            tip=self.tr("Adjust brightness and contrast"),
+            tip=self.tr("Improve image visibility while annotating"),
+        )
+        classical_segmentation = image_action(
+            text=self.tr("&Classical Segmentation…"),
+            slot=self.open_classical_segmentation_dialog,
+            shortcut=None,
+            icon="phosphor/scan.svg",
+            tip=self.tr("Create an editable mask from a grayscale intensity range"),
         )
         zoom_in = image_action(
             text=self.tr("Zoom &In"),
@@ -1098,6 +1154,8 @@ class MainWindow(QtWidgets.QMainWindow):
             ("linestrip", create_line_strip_mode),
             ("ai_segment", create_ai_segment_mode),
             ("ai_find_all", create_ai_find_all_mode),
+            ("brush", create_brush_mode),
+            ("eraser", create_eraser_mode),
         ]
         # The Edit menu follows the platform Edit-menu convention: history first,
         # then the clipboard group, then the actions that alter a shape.
@@ -1114,9 +1172,12 @@ class MainWindow(QtWidgets.QMainWindow):
             separator(),
             add_point_to_edge,
             remove_point,
+            smooth_mask_borders,
+            fill_mask_holes,
         )
         canvas_context_menu = (
             *[draw_action for _, draw_action in draw],
+            brush_size_action,
             edit_mode,
             separator(),
             *history,
@@ -1163,18 +1224,23 @@ class MainWindow(QtWidgets.QMainWindow):
             undo_last_point=undo_last_point,
             undo=undo,
             add_point_to_edge=add_point_to_edge,
+            smooth_mask_borders=smooth_mask_borders,
+            fill_mask_holes=fill_mask_holes,
             create_mode=create_mode,
             edit_mode=edit_mode,
             create_rectangle_mode=create_rectangle_mode,
             create_point_mode=create_point_mode,
             create_ai_segment_mode=create_ai_segment_mode,
             create_ai_find_all_mode=create_ai_find_all_mode,
+            create_brush_mode=create_brush_mode,
+            create_eraser_mode=create_eraser_mode,
             open_next_img=open_next_img,
             open_prev_img=open_prev_img,
             keep_prev_zoom=keep_prev_zoom,
             fit_window=fit_window,
             fit_selection=fit_selection,
             brightness_contrast=brightness_contrast,
+            classical_segmentation=classical_segmentation,
             zoom_in=zoom_in,
             zoom_out=zoom_out,
             zoom_org=zoom_org,
@@ -1185,6 +1251,7 @@ class MainWindow(QtWidgets.QMainWindow):
             toggle_all=toggle_all,
             open_dir=open_dir,
             zoom_widget_action=zoom_widget_action,
+            brush_size_action=brush_size_action,
             draw=draw,
             image=image_actions,
             shape_context_menu=shape_context_menu,
@@ -1380,6 +1447,7 @@ class MainWindow(QtWidgets.QMainWindow):
                         for mode, a in self._actions.draw
                         if not mode.startswith("ai_")
                     ],
+                    self._actions.brush_size_action,
                     separator(),
                     *[a for mode, a in self._actions.draw if mode.startswith("ai_")],
                 ],
@@ -1415,6 +1483,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self._prev_image_path = None
         self._viewport_states = {}
         self._brightness_contrast_values = {}
+        self._enhancement_states = {}
         self._conversion_detail = 60
 
         if self._config["file_search"]:
@@ -1566,6 +1635,7 @@ class MainWindow(QtWidgets.QMainWindow):
             )
         )
         canvas.shape_moved.connect(self.mark_dirty)
+        canvas.shapes_merged.connect(lambda shapes: self.remove_labels(shapes=shapes))
         canvas.selection_changed.connect(self._on_shape_selection_changed)
         canvas.shape_moved.connect(self._cancel_deferred_fit_selection)
         canvas.shape_double_clicked.connect(self._edit_label)
@@ -1602,7 +1672,39 @@ class MainWindow(QtWidgets.QMainWindow):
         label_list.item_dropped.connect(self._on_label_order_changed)
         shape = QtWidgets.QDockWidget(self.tr("Shape List"), self)
         shape.setObjectName("Labels")
-        shape.setWidget(label_list)
+        review = QtWidgets.QGroupBox(self.tr("Annotation Review"))
+        review_layout = QtWidgets.QVBoxLayout(review)
+        review_mode = QtWidgets.QComboBox()
+        for caption, value in (
+            (self.tr("Enhanced image"), "enhanced"),
+            (self.tr("Original image"), "original"),
+            (self.tr("Split: Original / Enhanced"), "image_split"),
+            (self.tr("Split: Without / With masks"), "mask_split"),
+        ):
+            review_mode.addItem(caption, value)
+        self._review_mode = review_mode
+        review_layout.addWidget(review_mode)
+        self._review_histogram = QtWidgets.QLabel()
+        mask_source = QtWidgets.QCheckBox(self.tr("Use original image for mask split"))
+        mask_source.toggled.connect(
+            lambda checked: self._canvas_widgets.canvas.set_mask_split_use_original(
+                value=checked
+            )
+        )
+        review_layout.addWidget(mask_source)
+        show_histogram = QtWidgets.QCheckBox(self.tr("Show histogram"))
+        show_histogram.toggled.connect(self._review_histogram.setVisible)
+        review_layout.addWidget(show_histogram)
+        self._review_histogram.setMinimumHeight(90)
+        self._review_histogram.setToolTip(self.tr("Image intensity histogram"))
+        self._review_histogram.hide()
+        review_layout.addWidget(self._review_histogram)
+        shape_container = QtWidgets.QWidget()
+        shape_layout = QtWidgets.QVBoxLayout(shape_container)
+        shape_layout.setContentsMargins(0, 0, 0, 0)
+        shape_layout.addWidget(review)
+        shape_layout.addWidget(label_list)
+        shape.setWidget(shape_container)
 
         unique_label_list = UniqueLabelQListWidget(
             on_edit_settings_labels=self._edit_settings_labels,
@@ -2239,6 +2341,15 @@ class MainWindow(QtWidgets.QMainWindow):
         self._actions.delete.setEnabled(
             not busy and any(not shape.locked for shape in selected)
         )
+        self._actions.smooth_mask_borders.setEnabled(
+            not busy
+            and any(
+                shape.shape_type == "mask" and not shape.locked for shape in selected
+            )
+        )
+        self._actions.fill_mask_holes.setEnabled(
+            self._actions.smooth_mask_borders.isEnabled()
+        )
         blocker = _shape.merge_blocker(shapes=selected)
         self._actions.merge.setEnabled(not busy and blocker is None)
         # The tooltip is all a disabled menu item can show: Qt sends no status
@@ -2326,6 +2437,20 @@ class MainWindow(QtWidgets.QMainWindow):
         self._sync_edit_actions()
         self._on_ai_activity_changed()
         self._refresh_text_model_choices()
+
+    def _start_brush(self) -> None:
+        """Choose the semantic class before starting a series of brush strokes."""
+        entry = self._ask_new_shape_entry(query="")
+        if entry is None:
+            self._switch_canvas_mode(edit=True, create_mode=None)
+            return
+        self._canvas_widgets.canvas.set_brush_label(
+            label=entry.label,
+            flags=entry.flags,
+            group_id=entry.group_id,
+            description=entry.description,
+        )
+        self._switch_canvas_mode(edit=False, create_mode="brush")
 
     def _on_ai_output_format_changed(
         self, output_format: _automation.AiOutputFormat, /
@@ -2984,6 +3109,17 @@ class MainWindow(QtWidgets.QMainWindow):
     # Callback functions:
 
     def _on_new_shape(self) -> None:
+        # Brush asks for its class before painting, so its committed mask is
+        # already labeled and must not open a second label dialog on release.
+        last_shape = (
+            self._canvas_widgets.canvas.shapes[-1]
+            if self._canvas_widgets.canvas.shapes
+            else None
+        )
+        if last_shape is not None and last_shape.shape_type == "mask" and last_shape.label:
+            self.add_label(shape=last_shape)
+            self.mark_dirty()
+            return
         entry = self._ask_new_shape_entry(query="")
         if entry is None:
             # Drop the snapshot first so the busy_changed handler that
@@ -3199,6 +3335,44 @@ class MainWindow(QtWidgets.QMainWindow):
         self._canvas_widgets.canvas.load_pixmap(
             pixmap=QtGui.QPixmap.fromImage(qimage), clear_shapes=False
         )
+        self._update_review_histogram()
+
+    def _set_review_mode(self, index: int, /) -> None:
+        self._canvas_widgets.canvas.set_comparison_mode(
+            value=cast(str, self._review_mode.itemData(index))  # ty: ignore[invalid-argument-type]
+        )
+        self._update_review_histogram()
+
+    def _update_review_histogram(self) -> None:
+        """Draw compact RGB intensity distributions above the Shape List."""
+        pixmap = self._canvas_widgets.canvas.pixmap
+        if pixmap.isNull():
+            self._review_histogram.clear()
+            return
+        image = pixmap.toImage().convertToFormat(QtGui.QImage.Format.Format_RGB888)
+        data = np.frombuffer(image.bits(), dtype=np.uint8, count=image.sizeInBytes())
+        pixels = data.reshape(image.height(), image.bytesPerLine())[:, : image.width() * 3]
+        pixels = pixels.reshape(image.height(), image.width(), 3)
+        graph = QtGui.QPixmap(250, 90)
+        graph.fill(Qt.GlobalColor.transparent)
+        painter = QtGui.QPainter(graph)
+        painter.fillRect(graph.rect(), self.palette().color(QtGui.QPalette.ColorRole.Base))
+        maximum = 1
+        histograms = [np.bincount(pixels[..., channel].ravel(), minlength=256) for channel in range(3)]
+        maximum = max(maximum, *(int(histogram.max()) for histogram in histograms))
+        for histogram, color in zip(histograms, ((255, 70, 70), (70, 220, 100), (70, 140, 255)), strict=True):
+            path = QtGui.QPainterPath()
+            for value, count in enumerate(histogram):
+                x = value / 255 * (graph.width() - 1)
+                y = graph.height() - 1 - count / maximum * (graph.height() - 4)
+                if value == 0:
+                    path.moveTo(x, y)
+                else:
+                    path.lineTo(x, y)
+            painter.setPen(QtGui.QPen(QtGui.QColor(*color), 1))
+            painter.drawPath(path)
+        painter.end()
+        self._review_histogram.setPixmap(graph)
 
     def open_brightness_contrast_dialog(
         self,
@@ -3216,12 +3390,13 @@ class MainWindow(QtWidgets.QMainWindow):
         brightness, contrast = self._brightness_contrast_values.get(
             self._image_path, (None, None)
         )
+        state = self._enhancement_states.get(self._image_path)
         if is_initial_load:
             if self._config["keep_prev_brightness_contrast"] and self._prev_image_path:
                 brightness, contrast = self._brightness_contrast_values.get(
                     self._prev_image_path, (None, None)
                 )
-            if brightness is None and contrast is None:
+            if brightness is None and contrast is None and state is None:
                 return
 
         logger.debug(
@@ -3235,23 +3410,95 @@ class MainWindow(QtWidgets.QMainWindow):
             callback=self._on_brightness_contrast_changed,
             brightness=brightness,
             contrast=contrast,
+            state=state,
+            mask_preview=lambda mask: self._canvas_widgets.canvas.set_classical_preview(
+                mask=mask
+            ),
             parent=self,
         )
 
-        if is_initial_load:
-            dialog.apply()
-        else:
+        # Rebuild the preview from the saved controls before the dialog is
+        # shown. The canvas may currently be showing an original/split review
+        # mode, but reopening must never make saved enhancements look reset.
+        dialog.apply()
+        if not is_initial_load:
             dialog.exec()
+            self._canvas_widgets.canvas.set_classical_preview(mask=None)
+            if dialog.generated_mask is not None:
+                self._add_classical_mask(mask=dialog.generated_mask)
             brightness = dialog.slider_brightness.value()
             contrast = dialog.slider_contrast.value()
+            state = dialog.export_state()
 
         self._brightness_contrast_values[self._image_path] = (brightness, contrast)
+        if state is not None:
+            self._enhancement_states[self._image_path] = state
         logger.debug(
             "Updated states for {}: brightness={}, contrast={}",
             self._image_path,
             brightness,
             contrast,
         )
+
+    def open_classical_segmentation_dialog(self, _value: bool, /) -> None:
+        if self._annotation is None:
+            return
+        gray = np.asarray(
+            _image_codec.img_data_to_pil(img_data=self._annotation.image_data).convert("L")
+        )
+        canvas = self._canvas_widgets.canvas
+        dialog = ClassicalSegmentationDialog(
+            gray=gray,
+            preview=lambda mask: canvas.set_classical_preview(mask=mask),
+            parent=self,
+        )
+        dialog.exec()
+        canvas.set_classical_preview(mask=None)
+        if not dialog.was_applied or not dialog.mask.any():
+            return
+        entry = self._ask_new_shape_entry(query="")
+        if entry is None:
+            return
+        ys, xs = np.nonzero(dialog.mask)
+        left, top, right, bottom = xs.min(), ys.min(), xs.max(), ys.max()
+        shape = Shape(
+            label=entry.label,
+            flags=entry.flags,
+            group_id=entry.group_id,
+            description=entry.description,
+            shape_type="mask",
+            points=np.array([[left, top], [right, bottom]], dtype=np.float64),
+            mask=dialog.mask[top : bottom + 1, left : right + 1],
+            closed=True,
+        )
+        canvas.shapes.append(shape)
+        canvas.backup_shapes()
+        canvas.update()
+        self.add_label(shape=shape)
+        self.mark_dirty()
+
+    def _add_classical_mask(self, *, mask: np.ndarray) -> None:
+        entry = self._ask_new_shape_entry(query="")
+        if entry is None:
+            return
+        ys, xs = np.nonzero(mask)
+        left, top, right, bottom = xs.min(), ys.min(), xs.max(), ys.max()
+        shape = Shape(
+            label=entry.label,
+            flags=entry.flags,
+            group_id=entry.group_id,
+            description=entry.description,
+            shape_type="mask",
+            points=np.array([[left, top], [right, bottom]], dtype=np.float64),
+            mask=mask[top : bottom + 1, left : right + 1],
+            closed=True,
+        )
+        canvas = self._canvas_widgets.canvas
+        canvas.shapes.append(shape)
+        canvas.backup_shapes()
+        canvas.update()
+        self.add_label(shape=shape)
+        self.mark_dirty()
 
     def toggle_shape_visibility(self, *, value: bool | None) -> None:
         self._apply_item_visibility(
@@ -3597,6 +3844,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self._image = image
         t0 = time.time()
         self._canvas_widgets.canvas.load_pixmap(pixmap=QtGui.QPixmap.fromImage(image))
+        self._update_review_histogram()
         self._canvas_widgets.surface.setCurrentWidget(self._canvas_widgets.scroll_area)
         logger.debug("Loaded pixmap in {:.0f}ms", (time.time() - t0) * 1000)
         # Record one baseline state. Loading carried-forward shapes separately

@@ -199,7 +199,10 @@ def render_shape(
     if shape.shape_type == "mask" and shape.mask is not None:
         _paint_mask(painter=painter, shape=shape, context=context, cache=cache)
 
-    if len(shape.points) > 0:
+    # Bitmap-mask points are only the crop origin and extent for serialization.
+    # They are not editable vertices, so drawing them would show a misleading
+    # bounding rectangle around a brush annotation.
+    if len(shape.points) > 0 and shape.shape_type != "mask":
         _paint_shape_points(painter=painter, shape=shape, context=context, cache=cache)
 
     if context.show_label:

@@ -15,6 +15,7 @@ from typing import cast
 from typing import override
 
 import numpy as np
+import scipy.ndimage
 import skimage.measure
 from loguru import logger
 from PySide6 import QtCore
@@ -209,6 +210,8 @@ _CreateMode = Literal[
     "linestrip",
     "ai_segment",
     "ai_find_all",
+    "brush",
+    "eraser",
 ]
 
 
@@ -284,6 +287,8 @@ _CREATE_MODE_TO_SHAPE_TYPE: Final[dict[_CreateMode, ShapeType]] = {
     "linestrip": "linestrip",
     "ai_segment": "points",
     "ai_find_all": "rectangle",
+    "brush": "mask",
+    "eraser": "mask",
 }
 
 
@@ -326,6 +331,10 @@ class Canvas(QtWidgets.QWidget):
     get_ai_find_all_query: Callable[[], str]
 
     pixmap: QtGui.QPixmap
+    _original_pixmap: QtGui.QPixmap
+    _comparison_mode: Literal["enhanced", "original", "image_split", "mask_split"]
+    _comparison_ratio: float
+    _mask_split_uses_original: bool
     _pixmap_rgb: np.ndarray | None
     _cursor: CursorRole
     shapes: list[Shape]
@@ -357,6 +366,8 @@ class Canvas(QtWidgets.QWidget):
     selection_changed = QtCore.Signal(list)
     shape_double_clicked = QtCore.Signal()
     shape_moved = QtCore.Signal()
+    # Mask Shapes absorbed by a brush union; the app removes their list rows.
+    shapes_merged = QtCore.Signal(list)
     # Emitted when is_busy or is_drawing may have changed.
     busy_changed = QtCore.Signal()
     vertex_selected = QtCore.Signal(bool)
@@ -416,6 +427,16 @@ class Canvas(QtWidgets.QWidget):
     # What a Conversion would commit, drawn over the shapes it replaces while
     # its Polygon Detail is picked.
     _conversion_preview: list[Shape]
+    _classical_preview: Shape | None
+    _brush_mask: np.ndarray | None
+    _brush_active: bool
+    _brush_size: int
+    _brush_last_pos: QPointF | None
+    _brush_label: str | None
+    _brush_flags: dict[str, bool]
+    _brush_group_id: int | None
+    _brush_description: str
+    _eraser_active: bool
 
     def __init__(self, *args: Any, **kwargs: Any) -> None:  # noqa: ANN401
         self._epsilon = kwargs.pop("epsilon", 10.0)
@@ -449,6 +470,10 @@ class Canvas(QtWidgets.QWidget):
         self._ai_preview_timer.setSingleShot(True)
         self._ai_preview_timer.timeout.connect(self._refresh_ai_segment_preview)
         self._cursor = CursorRole.DEFAULT
+        self._original_pixmap = QtGui.QPixmap()
+        self._comparison_mode = "enhanced"
+        self._comparison_ratio = 0.5
+        self._mask_split_uses_original = False
         self._render_cache = ShapeRenderCache()
         self.reset_state()
 
@@ -479,7 +504,18 @@ class Canvas(QtWidgets.QWidget):
         self._ai_progress_timer.timeout.connect(self._advance_ai_progress)
         self._clear_ai_find_all_draft()
         self._ai_find_all_pending = []
+        self._classical_preview = None
         self._conversion_preview = []
+        self._classical_preview = None
+        self._brush_mask = None
+        self._brush_active = False
+        self._brush_size = 10
+        self._brush_last_pos = None
+        self._brush_label = None
+        self._brush_flags = {}
+        self._brush_group_id = None
+        self._brush_description = ""
+        self._eraser_active = False
         self.ensure_ai_model_ready = lambda _model_name: False
         self._ai_inference_failed = False
         self._ai_suppress_existing_shape_matches = False
@@ -504,11 +540,45 @@ class Canvas(QtWidgets.QWidget):
     def set_fill_drawing(self, *, value: bool) -> None:
         self._fill_drawing = value
 
+    def set_brush_size(self, *, value: int) -> None:
+        """Set the brush diameter in image pixels."""
+        self._brush_size = max(1, value)
+        self.update()
+
+    def set_brush_label(
+        self,
+        *,
+        label: str,
+        flags: dict[str, bool],
+        group_id: int | None,
+        description: str,
+    ) -> None:
+        self._brush_label = label
+        self._brush_flags = flags.copy()
+        self._brush_group_id = group_id
+        self._brush_description = description
+
+    def set_classical_preview(self, *, mask: np.ndarray | None) -> None:
+        self._classical_preview = _shape_from_full_mask(mask=mask) if mask is not None else None
+        self.update()
+
     def set_show_labels(self, *, value: bool) -> None:
         self._show_labels = value
 
     def set_allow_out_of_bounds_points(self, *, value: bool) -> None:
         self._allow_out_of_bounds_points = value
+        self.update()
+
+    def set_comparison_mode(
+        self,
+        *,
+        value: Literal["enhanced", "original", "image_split", "mask_split"],
+    ) -> None:
+        self._comparison_mode = value
+        self.update()
+
+    def set_mask_split_use_original(self, *, value: bool) -> None:
+        self._mask_split_uses_original = value
         self.update()
 
     def pan_view(self, *, step: QPointF, constrain_to_center: bool = True) -> None:
@@ -676,6 +746,10 @@ class Canvas(QtWidgets.QWidget):
             return False
         old_mode = self._create_mode
         self._stroke_press = None
+        if old_mode == "brush":
+            self._brush_mask = None
+            self._brush_active = False
+            self._brush_last_pos = None
         # Update the mode before reconciling so any signals fired from a cancel
         # observe the new mode rather than the one being left behind.
         self._create_mode = new_mode
@@ -695,6 +769,7 @@ class Canvas(QtWidgets.QWidget):
             "point",
             "ai_segment",
             "ai_find_all",
+            "brush",
         )
 
         if self._current is None:
@@ -1208,6 +1283,10 @@ class Canvas(QtWidgets.QWidget):
                 return translate("MainWindow", "AI-Segment")
             case "ai_find_all":
                 return translate("MainWindow", "AI-Find All")
+            case "brush":
+                return translate("MainWindow", "Brush")
+            case "eraser":
+                return translate("MainWindow", "Eraser")
 
     def _get_create_mode_message(self) -> str:
         assert self.mode == _CanvasMode.CREATE
@@ -1239,6 +1318,10 @@ class Canvas(QtWidgets.QWidget):
             return self.tr(
                 "Click the opposite corner to find every object like this one"
             )
+        if self.create_mode == "brush":
+            return self.tr("Drag to paint mask pixels. Brush size: %d px") % self._brush_size
+        if self.create_mode == "eraser":
+            return self.tr("Drag to erase painted mask pixels")
         if self.create_mode == "line":
             if is_new:
                 return self.tr("Click start point for line")
@@ -1290,6 +1373,21 @@ class Canvas(QtWidgets.QWidget):
         self._dispatch_pointer_move(pos=pos, event=a0)
 
     def _dispatch_pointer_move(self, *, pos: QPointF, event: QtGui.QMouseEvent) -> None:
+        if (
+            self._comparison_mode in ("image_split", "mask_split")
+            and event.buttons() & Qt.MouseButton.LeftButton
+        ):
+            origin = self._compute_image_origin_offset(area=None).x() * self.scale
+            self._comparison_ratio = min(
+                1.0,
+                max(
+                    0.0,
+                    (event.position().x() - origin)
+                    / (self.pixmap.width() * self.scale),
+                ),
+            )
+            self.update()
+            return
         if self._pan_anchor is not None:
             self._advance_pan(event=event)
             return
@@ -1317,6 +1415,23 @@ class Canvas(QtWidgets.QWidget):
         self.pan_request.emit(QPoint(int(step.x()), int(step.y())))
 
     def _track_drawing_cursor(self, *, pos: QPointF, event: QtGui.QMouseEvent) -> None:
+        if self.create_mode in ("brush", "eraser"):
+            self._apply_cursor(role=CursorRole.DRAW)
+            if (
+                self.create_mode == "brush"
+                and self._brush_active
+                and event.buttons() & Qt.MouseButton.LeftButton
+            ):
+                self._paint_brush_to(pos=pos)
+            elif (
+                self.create_mode == "eraser"
+                and self._eraser_active
+                and event.buttons() & Qt.MouseButton.LeftButton
+            ):
+                self._erase_masks(pos=pos)
+            self.update()
+            self._update_status(extra_messages=None)
+            return
         if self.create_mode == "ai_segment":
             self._track_ai_segment_cursor(pos=pos, event=event)
             return
@@ -1666,8 +1781,7 @@ class Canvas(QtWidgets.QWidget):
             self._set_highlight(hover=_Hover(shape=target.shape, edge=target.index))
             self._apply_cursor(role=CursorRole.HANDLE)
             status_messages.append(
-                self.tr("Hold %s and click to add a point on the edge")
-                % _utils.modifier_text(modifiers=Qt.KeyboardModifier.AltModifier)
+                self.tr("Click to add a point on the edge")
             )
             return
 
@@ -1726,6 +1840,16 @@ class Canvas(QtWidgets.QWidget):
         if self.is_ai_finalizing:
             return
         pos: QPointF = self.transform_widget_point_to_image(point=a0.position())
+        if self._comparison_mode in ("image_split", "mask_split"):
+            divider = self._comparison_ratio * self.pixmap.width() * self.scale
+            origin = self._compute_image_origin_offset(area=None).x() * self.scale
+            if abs(a0.position().x() - origin - divider) <= 8:
+                self._comparison_ratio = min(
+                    1.0,
+                    max(0.0, (a0.position().x() - origin) / (self.pixmap.width() * self.scale)),
+                )
+                self.update()
+                return
         self._dispatch_pointer_press(pos=pos, event=a0)
         self._update_status(extra_messages=None)
 
@@ -1776,6 +1900,23 @@ class Canvas(QtWidgets.QWidget):
         event: QtGui.QMouseEvent,
         is_shift_pressed: bool,
     ) -> None:
+        if self.create_mode == "brush":
+            if self._should_constrain_to_pixmap(point=pos):
+                return
+            self._brush_mask = np.zeros((self.pixmap.height(), self.pixmap.width()), dtype=bool)
+            self._brush_active = True
+            self._paint_brush(pos=pos)
+            self._brush_last_pos = QPointF(pos)
+            self._ai_prompt_hint_due = False
+            self.update()
+            return
+        if self.create_mode == "eraser":
+            if self._should_constrain_to_pixmap(point=pos):
+                return
+            self.backup_shapes()
+            self._eraser_active = True
+            self._erase_masks(pos=pos)
+            return
         if self._current is None and self._should_constrain_to_pixmap(point=pos):
             return
         self._ai_prompt_hint_due = False
@@ -1983,7 +2124,7 @@ class Canvas(QtWidgets.QWidget):
         # Returns True only when the press is consumed as a terminal edit (a point
         # removal), so the caller skips point selection and starts no drag. Adding
         # a point intentionally falls through so the new vertex can be dragged.
-        if self._is_edge_selected() and modifiers == Qt.KeyboardModifier.AltModifier:
+        if self._is_edge_selected():
             self.add_point_to_edge()
             return False
         if self._is_vertex_selected() and modifiers == (
@@ -2010,6 +2151,30 @@ class Canvas(QtWidgets.QWidget):
     def mouseReleaseEvent(self, a0: QtGui.QMouseEvent, /) -> None:
         self._is_pointer_held = a0.buttons() != Qt.MouseButton.NoButton
         if self.is_ai_finalizing:
+            return
+        if (
+            a0.button() == Qt.MouseButton.LeftButton
+            and self.mode == _CanvasMode.CREATE
+            and self.create_mode == "brush"
+            and self._brush_active
+        ):
+            self._paint_brush_to(
+                pos=self.transform_widget_point_to_image(point=a0.position())
+            )
+            self._commit_brush_mask()
+            self._update_status(extra_messages=None)
+            return
+        if (
+            a0.button() == Qt.MouseButton.LeftButton
+            and self.mode == _CanvasMode.CREATE
+            and self.create_mode == "eraser"
+            and self._eraser_active
+        ):
+            self._erase_masks(pos=self.transform_widget_point_to_image(point=a0.position()))
+            self._eraser_active = False
+            self.backup_shapes()
+            self.shape_moved.emit()
+            self.update()
             return
         if a0.button() == Qt.MouseButton.LeftButton and self._stroke_press is not None:
             if self.mode == _CanvasMode.CREATE and self._current is not None:
@@ -2067,6 +2232,164 @@ class Canvas(QtWidgets.QWidget):
         self._update_drawing_line(pos=pos, is_shift_pressed=False)
         self.update()
         return False
+
+    def _paint_brush(self, *, pos: QPointF) -> None:
+        """Paint one circular stamp, clipped to the image boundary."""
+        mask = self._brush_mask
+        if mask is None:
+            return
+        radius = self._brush_size / 2.0
+        x, y = pos.x(), pos.y()
+        x0 = max(0, int(np.floor(x - radius)))
+        x1 = min(mask.shape[1], int(np.ceil(x + radius)) + 1)
+        y0 = max(0, int(np.floor(y - radius)))
+        y1 = min(mask.shape[0], int(np.ceil(y + radius)) + 1)
+        if x0 >= x1 or y0 >= y1:
+            return
+        yy, xx = np.ogrid[y0:y1, x0:x1]
+        mask[y0:y1, x0:x1] |= (xx - x) ** 2 + (yy - y) ** 2 <= radius**2
+
+    def _paint_brush_to(self, *, pos: QPointF) -> None:
+        """Fill between mouse samples so fast strokes do not leave gaps."""
+        start = self._brush_last_pos
+        if start is None:
+            self._paint_brush(pos=pos)
+            self._brush_last_pos = QPointF(pos)
+            return
+        distance = QtCore.QLineF(start, pos).length()
+        steps = max(1, int(np.ceil(distance / max(self._brush_size / 2.0, 1.0))))
+        for fraction in np.linspace(0.0, 1.0, steps + 1):
+            self._paint_brush(pos=start + (pos - start) * float(fraction))
+        self._brush_last_pos = QPointF(pos)
+
+    def _erase_masks(self, *, pos: QPointF) -> None:
+        radius = self._brush_size / 2.0
+        for shape in self.shapes:
+            if shape.shape_type != "mask" or shape.mask is None or shape.locked:
+                continue
+            origin_x, origin_y = shape.points[0]
+            x0 = max(0, int(np.floor(pos.x() - radius - origin_x)))
+            x1 = min(shape.mask.shape[1], int(np.ceil(pos.x() + radius - origin_x)) + 1)
+            y0 = max(0, int(np.floor(pos.y() - radius - origin_y)))
+            y1 = min(shape.mask.shape[0], int(np.ceil(pos.y() + radius - origin_y)) + 1)
+            if x0 >= x1 or y0 >= y1:
+                continue
+            yy, xx = np.ogrid[y0:y1, x0:x1]
+            shape.mask[y0:y1, x0:x1] &= (
+                (xx + origin_x - pos.x()) ** 2
+                + (yy + origin_y - pos.y()) ** 2
+                > radius**2
+            )
+
+    def smooth_selected_masks(self) -> None:
+        """Round one-pixel jagged mask edges without changing their label."""
+        changed = False
+        for shape in self.selected_shapes:
+            if shape.shape_type != "mask" or shape.mask is None or shape.locked:
+                continue
+            smoothed = scipy.ndimage.gaussian_filter(
+                shape.mask.astype(float), sigma=0.8
+            ) >= 0.5
+            if np.array_equal(shape.mask, smoothed):
+                continue
+            shape.mask = smoothed
+            changed = True
+        if changed:
+            self.backup_shapes()
+            self.shape_moved.emit()
+            self.update()
+
+    def fill_selected_mask_holes(self) -> None:
+        """Fill enclosed background regions of selected semantic masks."""
+        changed = False
+        for shape in self.selected_shapes:
+            if shape.shape_type != "mask" or shape.mask is None or shape.locked:
+                continue
+            filled = scipy.ndimage.binary_fill_holes(shape.mask)
+            if np.array_equal(shape.mask, filled):
+                continue
+            shape.mask = filled
+            changed = True
+        if changed:
+            self.backup_shapes()
+            self.shape_moved.emit()
+            self.update()
+
+    def _brush_preview_shape(self) -> Shape | None:
+        """Return just the painted part of the in-progress brush mask."""
+        mask = self._brush_mask
+        if mask is None or not mask.any():
+            return None
+        ys, xs = np.nonzero(mask)
+        left, top, right, bottom = xs.min(), ys.min(), xs.max(), ys.max()
+        return Shape(
+            shape_type="mask",
+            points=np.array([[left, top], [right, bottom]], dtype=np.float64),
+            mask=mask[top : bottom + 1, left : right + 1],
+            closed=True,
+        )
+
+    def _commit_brush_mask(self) -> None:
+        mask = self._brush_mask
+        if mask is None or not mask.any():
+            self._brush_mask = None
+            self._brush_active = False
+            self._brush_last_pos = None
+            self.update()
+            return
+        preview = self._brush_preview_shape()
+        assert preview is not None
+        preview.label = self._brush_label
+        preview.flags = self._brush_flags.copy()
+        preview.group_id = self._brush_group_id
+        preview.description = self._brush_description
+        self._brush_mask = None
+        self._brush_active = False
+        self._brush_last_pos = None
+        if self._merge_brush_shape(shape=preview):
+            self.backup_shapes()
+            self.shape_moved.emit()
+            self.update()
+            return
+        self._commit_new_shapes(new_shapes=[preview])
+
+    def _merge_brush_shape(self, *, shape: Shape) -> bool:
+        """Union a stroke with every connected mask of the same label."""
+        assert shape.mask is not None
+        combined = shape
+        absorbed: list[Shape] = []
+        # A new stroke can bridge two older masks. Keep looking after every
+        # union: the enlarged result may now touch another component.
+        while True:
+            target = next(
+                (
+                    existing
+                    for existing in self.shapes
+                    if existing not in absorbed
+                    and existing.shape_type == "mask"
+                    and existing.mask is not None
+                    and existing.label == shape.label
+                    and not existing.locked
+                    and _masks_touch(a=combined, b=existing)
+                ),
+                None,
+            )
+            if target is None:
+                break
+            combined = _union_masks(a=combined, b=target)
+            absorbed.append(target)
+        if not absorbed:
+            return False
+        keeper = absorbed[0]
+        keeper.points = combined.points
+        keeper.mask = combined.mask
+        removed = absorbed[1:]
+        self.shapes = [
+            existing for existing in self.shapes if existing not in removed
+        ]
+        if removed:
+            self.shapes_merged.emit(removed)
+        return True
 
     def _dispatch_pointer_release(self, *, event: QtGui.QMouseEvent) -> None:
         button = event.button()
@@ -2619,7 +2942,26 @@ class Canvas(QtWidgets.QWidget):
             self.pixmap.width() * self.scale,
             self.pixmap.height() * self.scale,
         )
+        if (
+            self._comparison_mode == "original"
+            or (self._comparison_mode == "mask_split" and self._mask_split_uses_original)
+        ) and not self._original_pixmap.isNull():
+            painter.drawPixmap(target, self._original_pixmap, QtCore.QRectF(self._original_pixmap.rect()))
+            return
+        if self._comparison_mode != "image_split" or self._original_pixmap.isNull():
+            painter.drawPixmap(target, self.pixmap, QtCore.QRectF(self.pixmap.rect()))
+            return
+        split = target.width() * self._comparison_ratio
+        painter.save()
+        painter.setClipRect(QtCore.QRectF(0, 0, split, target.height()))
+        painter.drawPixmap(target, self._original_pixmap, QtCore.QRectF(self._original_pixmap.rect()))
+        painter.restore()
+        painter.save()
+        painter.setClipRect(QtCore.QRectF(split, 0, target.width() - split, target.height()))
         painter.drawPixmap(target, self.pixmap, QtCore.QRectF(self.pixmap.rect()))
+        painter.setPen(QtGui.QPen(QtGui.QColor(255, 255, 255), 2))
+        painter.drawLine(int(split), 0, int(split), int(target.height()))
+        painter.restore()
 
     def _draw_crosshair_layer(self, painter: QtGui.QPainter, /) -> None:
         cursor: QPointF | None = self._prev_move_point
@@ -2648,7 +2990,7 @@ class Canvas(QtWidgets.QWidget):
     def _should_draw_crosshair(self, *, cursor: QPointF | None) -> bool:
         if self.mode != _CanvasMode.CREATE:
             return False
-        if not self._crosshair[self._create_mode]:
+        if not self._crosshair.get(self._create_mode, False):
             return False
         if cursor is None:
             return False
@@ -2656,6 +2998,12 @@ class Canvas(QtWidgets.QWidget):
 
     def _draw_committed_shapes_layer(self, painter: QtGui.QPainter, /) -> None:
         self._render_cache.begin_paint()
+        if self._comparison_mode == "mask_split":
+            split = self.pixmap.width() * self.scale * self._comparison_ratio
+            painter.save()
+            painter.setClipRect(
+                QtCore.QRectF(split, 0, self.pixmap.width() * self.scale - split, self.pixmap.height() * self.scale)
+            )
         # Zoomed in, the scroll area shows a small part of the canvas, and a
         # partial repaint a smaller one still; skip the shapes outside it. An
         # unshown canvas (offscreen render) has no visible region, so it
@@ -2679,8 +3027,23 @@ class Canvas(QtWidgets.QWidget):
             render_shape(
                 painter=painter, shape=shape, context=context, cache=self._render_cache
             )
+        if self._comparison_mode == "mask_split":
+            split = self.pixmap.width() * self.scale * self._comparison_ratio
+            painter.setPen(QtGui.QPen(QtGui.QColor(255, 255, 255), 2))
+            painter.drawLine(int(split), 0, int(split), int(self.pixmap.height() * self.scale))
+            painter.restore()
 
     def _draw_active_shape_layer(self, painter: QtGui.QPainter, /) -> None:
+        if self.create_mode == "brush":
+            if (preview := self._brush_preview_shape()) is not None:
+                context = self._draft_render_context(
+                    selected=True,
+                    fill=True,
+                    highlight=None,
+                    rotation_highlight=None,
+                )
+                render_shape(painter=painter, shape=preview, context=context)
+            return
         if self.create_mode == "ai_segment":
             self._draw_ai_segment_drafts(painter=painter)
             return
@@ -2703,6 +3066,11 @@ class Canvas(QtWidgets.QWidget):
                 self._render_draft(painter=painter, draft=draft, highlighted=False)
 
     def _draw_preview_overlay_layer(self, painter: QtGui.QPainter, /) -> None:
+        if self._classical_preview is not None:
+            context = self._draft_render_context(
+                selected=True, fill=True, highlight=None, rotation_highlight=None
+            )
+            render_shape(painter=painter, shape=self._classical_preview, context=context)
         if self.create_mode == "ai_segment":
             self._draw_ai_segment_proposals(painter=painter)
             return
@@ -3245,6 +3613,14 @@ class Canvas(QtWidgets.QWidget):
         return shapes
 
     def undo_last_line(self) -> None:
+        if self.create_mode == "brush":
+            # A brush stroke is already a finished bitmap mask, not a vertex
+            # draft. Cancelling its label dialog must discard it rather than
+            # trying to restore polygon-style drawing state.
+            while self.shapes and self.shapes[-1].label is None:
+                self.shapes.pop()
+            self._cancel_current_shape()
+            return
         if self.create_mode in _AI_CREATE_MODES:
             # Remove all unlabeled shapes at the tail (added by AI in one shot)
             while self.shapes and self.shapes[-1].label is None:
@@ -3348,6 +3724,8 @@ class Canvas(QtWidgets.QWidget):
 
     def load_pixmap(self, *, pixmap: QtGui.QPixmap, clear_shapes: bool = True) -> None:
         self.pixmap = pixmap
+        if clear_shapes:
+            self._original_pixmap = QtGui.QPixmap(pixmap)
         self._drag_anchor = None
         self._pixmap_rgb = None
         # A new image is a fresh inference context that should surface its own
@@ -3401,9 +3779,13 @@ class Canvas(QtWidgets.QWidget):
         self._ai_segment_preview = None
         self._ai_segment_preview_key = None
         self._ai_segment_press = None
+        self._brush_mask = None
+        self._brush_active = False
+        self._brush_last_pos = None
         self._clear_ai_find_all_draft()
         self._release_cursor()
         self.pixmap = QtGui.QPixmap()
+        self._original_pixmap = QtGui.QPixmap()
         self._pixmap_rgb = None
         self._drag_anchor = None
         self._stroke_press = None
@@ -3422,6 +3804,64 @@ class Canvas(QtWidgets.QWidget):
         # The draft and any pending AI job are gone with the old image.
         self.busy_changed.emit()
         self.update()
+
+
+def _shape_from_full_mask(*, mask: np.ndarray) -> Shape | None:
+    if not mask.any():
+        return None
+    ys, xs = np.nonzero(mask)
+    left, top, right, bottom = xs.min(), ys.min(), xs.max(), ys.max()
+    return Shape(
+        shape_type="mask",
+        points=np.array([[left, top], [right, bottom]], dtype=np.float64),
+        mask=mask[top : bottom + 1, left : right + 1],
+        closed=True,
+    )
+
+
+def _mask_union_canvas(*, a: Shape, b: Shape) -> tuple[np.ndarray, int, int]:
+    """Place two cropped masks into their shared image-coordinate canvas."""
+    assert a.mask is not None and b.mask is not None
+    left = min(int(a.points[0, 0]), int(b.points[0, 0]))
+    top = min(int(a.points[0, 1]), int(b.points[0, 1]))
+    right = max(
+        int(a.points[0, 0]) + a.mask.shape[1],
+        int(b.points[0, 0]) + b.mask.shape[1],
+    )
+    bottom = max(
+        int(a.points[0, 1]) + a.mask.shape[0],
+        int(b.points[0, 1]) + b.mask.shape[0],
+    )
+    canvas = np.zeros((bottom - top, right - left), dtype=bool)
+    for shape in (a, b):
+        assert shape.mask is not None
+        x, y = int(shape.points[0, 0]) - left, int(shape.points[0, 1]) - top
+        canvas[y : y + shape.mask.shape[0], x : x + shape.mask.shape[1]] |= shape.mask
+    return canvas, left, top
+
+
+def _masks_touch(*, a: Shape, b: Shape) -> bool:
+    """Whether two masks overlap or have edge/corner-adjacent pixels."""
+    assert a.mask is not None and b.mask is not None
+    canvas, left, top = _mask_union_canvas(a=a, b=b)
+    a_canvas = np.zeros_like(canvas)
+    x, y = int(a.points[0, 0]) - left, int(a.points[0, 1]) - top
+    a_canvas[y : y + a.mask.shape[0], x : x + a.mask.shape[1]] = a.mask
+    b_canvas = np.zeros_like(canvas)
+    x, y = int(b.points[0, 0]) - left, int(b.points[0, 1]) - top
+    b_canvas[y : y + b.mask.shape[0], x : x + b.mask.shape[1]] = b.mask
+    return bool((scipy.ndimage.binary_dilation(a_canvas) & b_canvas).any())
+
+
+def _union_masks(*, a: Shape, b: Shape) -> Shape:
+    canvas, left, top = _mask_union_canvas(a=a, b=b)
+    merged = a.copy()
+    merged.points = np.array(
+        [[left, top], [left + canvas.shape[1] - 1, top + canvas.shape[0] - 1]],
+        dtype=np.float64,
+    )
+    merged.mask = canvas
+    return merged
 
 
 def _simplify_stroke(
