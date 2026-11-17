@@ -2,6 +2,11 @@
 
 ## Annotation
 
+For interactive mask preparation in this fork, see
+[Semantic Mask Tools](../../docs/semantic-mask-tools.md). The Brush, Eraser,
+Annotation Enhancement, and Classical Segmentation workflow create standard
+editable `mask` annotations that export through the commands below.
+
 ```bash
 labelme data_annotated --labels labels.txt --validate-label exact --config '{shape_color: {mode: auto, auto: {shift: -2}}}'
 ```

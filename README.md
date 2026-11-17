@@ -57,6 +57,29 @@ It is written in Python and uses Qt for its graphical interface.
 - [x] Exporting COCO-format dataset for [instance segmentation](examples/instance_segmentation)
 - [x] AI-assisted point-to-polygon/mask annotation by SAM, EfficientSAM models
 - [x] AI text-to-annotation by YOLO-world, SAM3 models
+- [x] Interactive semantic-mask brush, eraser, hole filling, and edge smoothing
+- [x] Annotation Enhancement pipeline with filter ordering, histogram, split review, and editable classical mask preview
+
+## Semantic Mask Workflow
+
+This fork adds an interactive workflow for preparing semantic-segmentation masks.
+Choose **Brush**, select the class before painting, and draw directly on the
+image. Overlapping or touching strokes of the same class are combined into one
+editable mask. Use **Eraser**, **Smooth Mask Borders**, and **Fill Mask Holes**
+from the shape context menu to refine the result.
+
+<img src="docs/images/semantic-mask-workflow.png" width="100%" alt="Semantic mask brush, enhancement, and review workflow" />
+
+Use **Annotation Enhancement** for non-destructive display-only preprocessing.
+Filters are applied in the order shown in the filter pipeline. Its Classical
+Segmentation section thresholds the current filtered preview into a live mask;
+click **Create Editable Mask** to label it and continue editing with Brush or
+Eraser. See [Semantic Mask Tools](docs/semantic-mask-tools.md) for details.
+
+### Fork enhancement development
+
+Semantic-mask and annotation-review enhancements in this fork were developed by
+**Mohammad Zakaria Rajabi**.
 
 **🌏 Available in 21 languages** - English · 日本語 · 한국어 · 简体中文 · 繁體中文 · Deutsch · Ελληνικά · Français · Español · Italiano · Português · Nederlands · Magyar · Русский · ไทย · Tiếng Việt · Türkçe · Українська · Polski · Bahasa Indonesia · فارسی (`LANG=ja_JP.UTF-8 labelme`)
 
