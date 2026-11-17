@@ -71,7 +71,6 @@ from ._widgets import AiToolGroup
 from ._widgets import AnnotationFolderFooter
 from ._widgets import BrightnessContrastDialog
 from ._widgets import Canvas
-from ._widgets import ClassicalSegmentationDialog
 from ._widgets import ConversionDetailDialog
 from ._widgets import EmptyStateWidget
 from ._widgets import ImageListDelegate
@@ -227,7 +226,6 @@ class _Actions(NamedTuple):
     fit_window: QtGui.QAction
     fit_selection: QtGui.QAction
     brightness_contrast: QtGui.QAction
-    classical_segmentation: QtGui.QAction
     zoom_in: QtGui.QAction
     zoom_out: QtGui.QAction
     zoom_org: QtGui.QAction
@@ -993,13 +991,6 @@ class MainWindow(QtWidgets.QMainWindow):
             icon="phosphor/circle-half-tilt.svg",
             tip=self.tr("Improve image visibility while annotating"),
         )
-        classical_segmentation = image_action(
-            text=self.tr("&Classical Segmentation…"),
-            slot=self.open_classical_segmentation_dialog,
-            shortcut=None,
-            icon="phosphor/scan.svg",
-            tip=self.tr("Create an editable mask from a grayscale intensity range"),
-        )
         zoom_in = image_action(
             text=self.tr("Zoom &In"),
             slot=lambda _: self._add_zoom(steps=1, pos=None),
@@ -1240,7 +1231,6 @@ class MainWindow(QtWidgets.QMainWindow):
             fit_window=fit_window,
             fit_selection=fit_selection,
             brightness_contrast=brightness_contrast,
-            classical_segmentation=classical_segmentation,
             zoom_in=zoom_in,
             zoom_out=zoom_out,
             zoom_org=zoom_org,
@@ -3439,43 +3429,6 @@ class MainWindow(QtWidgets.QMainWindow):
             brightness,
             contrast,
         )
-
-    def open_classical_segmentation_dialog(self, _value: bool, /) -> None:
-        if self._annotation is None:
-            return
-        gray = np.asarray(
-            _image_codec.img_data_to_pil(img_data=self._annotation.image_data).convert("L")
-        )
-        canvas = self._canvas_widgets.canvas
-        dialog = ClassicalSegmentationDialog(
-            gray=gray,
-            preview=lambda mask: canvas.set_classical_preview(mask=mask),
-            parent=self,
-        )
-        dialog.exec()
-        canvas.set_classical_preview(mask=None)
-        if not dialog.was_applied or not dialog.mask.any():
-            return
-        entry = self._ask_new_shape_entry(query="")
-        if entry is None:
-            return
-        ys, xs = np.nonzero(dialog.mask)
-        left, top, right, bottom = xs.min(), ys.min(), xs.max(), ys.max()
-        shape = Shape(
-            label=entry.label,
-            flags=entry.flags,
-            group_id=entry.group_id,
-            description=entry.description,
-            shape_type="mask",
-            points=np.array([[left, top], [right, bottom]], dtype=np.float64),
-            mask=dialog.mask[top : bottom + 1, left : right + 1],
-            closed=True,
-        )
-        canvas.shapes.append(shape)
-        canvas.backup_shapes()
-        canvas.update()
-        self.add_label(shape=shape)
-        self.mark_dirty()
 
     def _add_classical_mask(self, *, mask: np.ndarray) -> None:
         entry = self._ask_new_shape_entry(query="")
